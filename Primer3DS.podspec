@@ -10,7 +10,7 @@ A wrapper around the 3rd party 3DS SDK.
   s.homepage         = 'https://primer.io/'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Primer' => 'dx@primer.io' }
-  s.source           = { :git => 'https://github.com/primer-io/primer-sdk-3ds-ios', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/primer-io/primer-sdk-3ds-ios.git', :tag => s.version.to_s }
 
   s.swift_version = '4.2'
   s.ios.deployment_target = '10.0'
