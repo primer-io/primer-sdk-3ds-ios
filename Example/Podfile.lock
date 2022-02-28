@@ -1,0 +1,16 @@
+PODS:
+  - Primer3DS (0.1.33)
+
+DEPENDENCIES:
+  - Primer3DS (from `../`)
+
+EXTERNAL SOURCES:
+  Primer3DS:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Primer3DS: 514ade98e3f33ea5e8b614f6fb14cfdf253bf254
+
+PODFILE CHECKSUM: c8e8a5615676f6ba052e8768a228e6d1a3842647
+
+COCOAPODS: 1.11.2

@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)"
+options: "49230e68ce0228930e6da9faf6b905f7"
+build_time: [1630259908, 92713000]
+inputs:
+  "/Users/evangelospittas/Xcode/primer-3ds-sdk-ios/Sources/Primer3DS/Classes/Primer3DS.swift": [1630259835, 219143257]
+  "/Users/evangelospittas/Xcode/primer-3ds-sdk-ios/Sources/Primer3DS/Classes/Primer3DSProtocols.swift": [1630259900, 162759432]
+  "/Users/evangelospittas/Xcode/primer-3ds-sdk-ios/Sources/Primer3DS/Classes/Primer3DSStructures.swift": !dirty [1630259900, 805988198]
