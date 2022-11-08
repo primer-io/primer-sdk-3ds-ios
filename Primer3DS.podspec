@@ -14,9 +14,13 @@ A wrapper around the 3rd party 3DS SDK.
 
   s.swift_version = '4.2'
   s.ios.deployment_target = '10.0'
-
+  
   s.ios.source_files = 'Sources/Primer3DS/Classes/*.{swift}'
   s.ios.frameworks  = 'Foundation', 'UIKit'
   s.ios.vendored_frameworks = 'Sources/Frameworks/ThreeDS_SDK.xcframework'
-
+  
+  s.xcconfig = {
+      'GENERATE_INFOPLIST_FILE' => true
+  }
+  
 end
