@@ -19,8 +19,4 @@ A wrapper around the 3rd party 3DS SDK.
   s.ios.frameworks  = 'Foundation', 'UIKit'
   s.ios.vendored_frameworks = 'Sources/Frameworks/ThreeDS_SDK.xcframework'
   
-  s.xcconfig = {
-      'GENERATE_INFOPLIST_FILE' => true
-  }
-  
 end
