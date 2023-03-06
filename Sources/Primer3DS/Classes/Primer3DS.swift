@@ -170,12 +170,22 @@ extension Primer3DS: ChallengeStatusReceiver {
     }
     
     public func protocolError(protocolErrorEvent: ProtocolErrorEvent) {
-        let userInfo: [String: Any] = [
-            NSLocalizedDescriptionKey: "\(protocolErrorEvent.getErrorMessage())",
-            "sdkTransactionId": "\(protocolErrorEvent.getSDKTransactionID())"
+        let errorMessage = protocolErrorEvent.getErrorMessage()
+        
+        var userInfo: [String: Any] = [
+            NSLocalizedDescriptionKey: errorMessage.getErrorDescription(),
+            "errorCode": errorMessage.getErrorCode(),
+            "errorType": errorMessage.getErrorMessageType(),
+            "component": errorMessage.getErrorComponent(),
+            "transactionId": errorMessage.getTransactionID(),
+            "version": errorMessage.getMessageVersionNumber()
         ]
         
-        let err = NSError(domain: "Primer3DS", code: -1, userInfo: userInfo)
+        if let errorDetail = errorMessage.getErrorDetail() {
+            userInfo["errorDetails"] = errorDetail
+        }
+        
+        let err = NSError(domain: "Primer3DS", code: Int(errorMessage.getErrorCode()) ?? -1, userInfo: userInfo)
         sdkCompletion?(nil, err)
     }
     
