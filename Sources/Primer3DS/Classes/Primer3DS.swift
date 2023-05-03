@@ -11,6 +11,9 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
     private let sdk: ThreeDS2Service = ThreeDS2ServiceSDK()
     private var sdkCompletion: ((_ netceteraThreeDSCompletion: Primer3DSCompletion?, _ err: Error?) -> Void)?
     private var transaction: Transaction?
+    public var version: String? = {
+        return Bundle(for: Primer3DS.self).infoDictionary?["CFBundleShortVersionString"] as? String
+    }()
     
     public static func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return ThreeDSSDKAppDelegate.shared.appOpened(url: url)
