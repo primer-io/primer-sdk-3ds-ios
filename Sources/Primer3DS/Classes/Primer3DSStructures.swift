@@ -86,6 +86,7 @@ public enum Environment: String, Codable {
 }
 
 @objc internal class SDKAuthData: NSObject, Primer3DSSDKGeneratedAuthData {
+    
     var sdkAppId: String
     var sdkTransactionId: String
     var sdkTimeout: Int
@@ -101,6 +102,18 @@ public enum Environment: String, Codable {
         self.sdkEphemPubKey = sdkEphemPubKey
         self.sdkEphemPubKey = sdkEphemPubKey
         self.sdkReferenceNumber = sdkReferenceNumber
+        super.init()
+    }
+}
+
+@objc public class SDKAuthResult: NSObject {
+    
+    public var authData: Primer3DSSDKGeneratedAuthData
+    public var maxSupportedThreeDsProtocolVersion: String
+    
+    init(authData: Primer3DSSDKGeneratedAuthData, maxSupportedThreeDsProtocolVersion: String) {
+        self.authData = authData
+        self.maxSupportedThreeDsProtocolVersion = maxSupportedThreeDsProtocolVersion
         super.init()
     }
 }
