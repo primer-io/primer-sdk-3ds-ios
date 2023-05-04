@@ -139,6 +139,64 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         }
     }
     
+    public func performChallenge(threeDSAuthData: Primer3DSServerAuthData,
+                                 supportedThreeDsProtocolVersions: [String]?,
+                                 threeDsAppRequestorUrl: URL?,
+                                 presentOn viewController: UIViewController,
+                                 completion: @escaping (Primer3DSCompletion?, Error?) -> Void
+    ) {
+        guard let transaction = transaction else {
+            let nsErr = NSError(domain: "Primer3DS", code: 100, userInfo: [NSLocalizedDescriptionKey: "Failed to find transaction"])
+            completion(nil, nsErr)
+            return
+        }
+        
+        let challengeParameters = ChallengeParameters(
+            threeDSServerTransactionID: threeDSAuthData.transactionId,
+            acsTransactionID: threeDSAuthData.acsTransactionId,
+            acsRefNumber: threeDSAuthData.acsReferenceNumber,
+            acsSignedContent: threeDSAuthData.acsSignedContent)
+        
+        if let threeDsAppRequestorUrl = threeDsAppRequestorUrl, let transactionId = threeDSAuthData.transactionId, !transactionId.isEmpty {
+            let queryItems = [URLQueryItem(name: "transID", value: transactionId)]
+            if var urlComps = URLComponents(url: threeDsAppRequestorUrl, resolvingAgainstBaseURL: false) {
+                urlComps.queryItems = queryItems
+                if let url = urlComps.url {
+                    challengeParameters.setThreeDSRequestorAppURL(threeDSRequestorAppURL: url.absoluteString)
+                }
+            }
+        }
+        
+        sdkCompletion = { [weak self] (netceteraThreeDSCompletion, err) in
+            if let err = err {
+                completion(nil, err)
+            } else if let netceteraThreeDSCompletion = netceteraThreeDSCompletion {
+                completion(netceteraThreeDSCompletion, nil)
+            } else {
+                precondition(false, "Should always receive a completion or an error")
+            }
+            
+            self?.sdkCompletion = nil
+        }
+        
+        do {
+            try transaction.doChallenge(challengeParameters: challengeParameters,
+                                        challengeStatusReceiver: self,
+                                        timeOut: 60,
+                                        inViewController: viewController)
+            
+        } catch {
+            var userInfo: [String: Any] = [:]
+            userInfo[NSUnderlyingErrorKey] = "\((error as NSError).domain):\((error as NSError).code)"
+            userInfo.merge((error as NSError).userInfo) { (_, new) in new }
+            userInfo[NSLocalizedDescriptionKey] = "Failed to present challenge"
+            let nsErr = NSError(domain: "Primer3DS", code: 100, userInfo: userInfo)
+            completion(nil, nsErr)
+            sdkCompletion = nil
+        }
+    }
+    
+    @available(swift, obsoleted: 4.0, renamed: "performChallenge(threeDSAuthData:supportedThreeDsProtocolVersions:threeDsAppRequestorUrl:presentOn:completion:)")
     public func performChallenge(with threeDSecureAuthResponse: Primer3DSServerAuthData, urlScheme: String?, presentOn viewController: UIViewController, completion: @escaping (Primer3DSCompletion?, Error?) -> Void) {
         guard let transaction = transaction else {
             let nsErr = NSError(domain: "Primer3DS", code: 100, userInfo: [NSLocalizedDescriptionKey: "Failed to find transaction"])
