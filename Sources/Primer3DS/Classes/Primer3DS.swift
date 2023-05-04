@@ -14,6 +14,10 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
     public var version: String? = {
         return Bundle(for: Primer3DS.self).infoDictionary?["CFBundleShortVersionString"] as? String
     }()
+    public var threeDsSdkProvider: String = "NETCETERA"
+    public var threeDsSdkVersion: String? {
+        return try? sdk.getSDKVersion()
+    }
     
     public static func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return ThreeDSSDKAppDelegate.shared.appOpened(url: url)
