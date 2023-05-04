@@ -96,6 +96,30 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         }
     }
     
+    public func createTransaction(directoryServerId: String, supportedThreeDsProtocolVersions: [String]) throws -> SDKAuthResult {
+        guard let maxSupportedThreeDsProtocolVersion = getMaxValidSupportedThreeDSVersion(supportedThreeDsProtocolVersions) else {
+            let nsErr = NSError(domain: "Primer3DS", code: 200, userInfo: [NSLocalizedDescriptionKey: "Failed to find valid 3DS protocol version in \(supportedThreeDsProtocolVersions)"])
+            throw nsErr
+        }
+        
+        do {
+            transaction = try sdk.createTransaction(
+                directoryServerId: directoryServerId,
+                messageVersion: maxSupportedThreeDsProtocolVersion)
+            let authData = try transaction!.buildThreeDSecureAuthData()
+            return SDKAuthResult(authData: authData, maxSupportedThreeDsProtocolVersion: maxSupportedThreeDsProtocolVersion)
+            
+        } catch {
+            var userInfo: [String: Any] = [:]
+            userInfo[NSUnderlyingErrorKey] = "\((error as NSError).domain):\((error as NSError).code)"
+            userInfo.merge((error as NSError).userInfo) { (_, new) in new }
+            userInfo[NSLocalizedDescriptionKey] = "Failed to create transaction"
+            let nsErr = NSError(domain: "Primer3DS", code: 100, userInfo: userInfo)
+            throw nsErr
+        }
+    }
+    
+    @available(swift, obsoleted: 4.0, renamed: "createTransaction(directoryServerId:supportedThreeDsProtocolVersions:)")
     public func createTransaction(directoryServerId: String, protocolVersion: String) throws -> Primer3DSSDKGeneratedAuthData {
         do {
             transaction = try sdk.createTransaction(directoryServerId: directoryServerId, messageVersion: protocolVersion)
