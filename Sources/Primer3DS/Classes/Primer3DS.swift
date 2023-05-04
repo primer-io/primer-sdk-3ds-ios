@@ -156,7 +156,13 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
             sdkCompletion = nil
         }
     }
-    
+        
+    internal func getMaxValidSupportedThreeDSVersion(_ supportedThreeDsVersions: [String]) -> String? {
+        let uniqueSupportedThreeDsVersions = supportedThreeDsVersions.unique
+        let sdkSupportedProtocolVersions = uniqueSupportedThreeDsVersions.filter({ $0.compareWithVersion("2.3") == .orderedAscending && ($0.compareWithVersion("2.1") == .orderedDescending || $0.compareWithVersion("2.1") == .orderedSame) })
+        let orderedSdkSupportedProtocolVersions = sdkSupportedProtocolVersions.sorted(by: { $0.compare($1, options: .numeric) == .orderedDescending })
+        return orderedSdkSupportedProtocolVersions.first
+    }
 }
 
 extension Primer3DS: ChallengeStatusReceiver {
