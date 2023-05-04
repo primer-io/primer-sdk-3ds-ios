@@ -24,8 +24,8 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
     }
     
     public static func application(_ application: UIApplication,
-                            continue userActivity: NSUserActivity,
-                            restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+                                   continue userActivity: NSUserActivity,
+                                   restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         return ThreeDSSDKAppDelegate.shared.appOpened(userActivity: userActivity)
     }
     
@@ -60,8 +60,8 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
 
             let configParameters = configBuilder.configParameters()
             try sdk.initialize(configParameters,
-                                           locale: nil,
-                                           uiCustomization: nil)
+                               locale: nil,
+                               uiCustomization: nil)
             
         } catch {
             throw error
