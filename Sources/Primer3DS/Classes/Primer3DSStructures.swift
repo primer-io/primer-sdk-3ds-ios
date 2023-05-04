@@ -55,36 +55,6 @@ public enum Environment: String, Codable {
     }
 }
 
-// Internal structures
-
-@objc internal enum ProtocolVersion: Int {
-    case v_2_1_0 = 1
-    case v_2_2_0 = 2
-    case invalid = -1
-    
-    init(version: String) {
-        switch version {
-        case ProtocolVersion.v_2_1_0.stringValue:
-            self = .v_2_1_0
-        case ProtocolVersion.v_2_2_0.stringValue:
-            self = .v_2_2_0
-        default:
-            self = .invalid
-        }
-    }
-    
-    var stringValue: String {
-        switch self {
-        case .v_2_1_0:
-            return "2.1.0"
-        case .v_2_2_0:
-            return "2.2.0"
-        default:
-            return "invalid"
-        }
-    }
-}
-
 @objc internal class SDKAuthData: NSObject, Primer3DSSDKGeneratedAuthData {
     
     var sdkAppId: String
