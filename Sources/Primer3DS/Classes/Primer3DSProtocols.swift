@@ -8,7 +8,6 @@ import UIKit
     @objc func initializeSDK(licenseKey: String, certificates: [Primer3DSCertificate]?, enableWeakValidation: Bool) throws
     @objc func createTransaction(directoryServerId: String, supportedThreeDsProtocolVersions: [String]) throws -> SDKAuthResult
     @objc func performChallenge(threeDSAuthData: Primer3DSServerAuthData,
-                                supportedThreeDsProtocolVersions: [String]?,
                                 threeDsAppRequestorUrl: URL?,
                                 presentOn viewController: UIViewController,
                                 completion: @escaping (Primer3DSCompletion?, Error?) -> Void)

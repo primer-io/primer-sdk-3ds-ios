@@ -140,7 +140,6 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
     }
     
     public func performChallenge(threeDSAuthData: Primer3DSServerAuthData,
-                                 supportedThreeDsProtocolVersions: [String]?,
                                  threeDsAppRequestorUrl: URL?,
                                  presentOn viewController: UIViewController,
                                  completion: @escaping (Primer3DSCompletion?, Error?) -> Void
