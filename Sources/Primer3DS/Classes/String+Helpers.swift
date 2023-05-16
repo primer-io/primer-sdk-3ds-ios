@@ -9,7 +9,7 @@
 
 import Foundation
 
-internal extension String {
+extension String {
     
     func compareWithVersion(_ otherVersion: String) -> ComparisonResult {
         let versionDelimiter = "."
