@@ -1,7 +1,9 @@
 #if canImport(UIKit)
 #if canImport(ThreeDS_SDK)
 
+import Foundation
 import ThreeDS_SDK
+import UIKit
 
 public class Primer3DS: NSObject, Primer3DSProtocol {
     
@@ -12,7 +14,6 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
     public private(set) var environment: Environment
     public var is3DSSanityCheckEnabled: Bool = true
     public private(set) var isWeakValidationEnabled: Bool = true
-    private let sdk: ThreeDS2Service = ThreeDS2ServiceSDK()
     private var sdkCompletion: ((_ netceteraThreeDSCompletion: Primer3DSCompletion?, _ err: Primer3DSError?) -> Void)?
     private var transaction: Transaction?
     
@@ -20,9 +21,11 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         return ThreeDSSDKAppDelegate.shared.appOpened(url: url)
     }
     
-    public static func application(_ application: UIApplication,
-                                   continue userActivity: NSUserActivity,
-                                   restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+    public static func application(
+        _ application: UIApplication,
+        continue userActivity: NSUserActivity,
+        restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void
+    ) -> Bool {
         return ThreeDSSDKAppDelegate.shared.appOpened(userActivity: userActivity)
     }
     
@@ -54,15 +57,20 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
                     try configBuilder.add(scheme)
                 }
             }
-
+            
             let configParameters = configBuilder.configParameters()
-            try sdk.initialize(configParameters,
-                               locale: nil,
-                               uiCustomization: nil)
+            try Primer3DSSDKProvider.shared.sdk.initialize(configParameters,
+                                                           locale: nil,
+                                                           uiCustomization: nil)
             
         } catch {
-            let err = Primer3DSError.initializationError(error: error, warnings: nil)
-            throw err
+            let nsErr = error as NSError
+            if nsErr.domain == "com.netcetera.ThreeDS-SDK" && nsErr.code == 1001 {
+                // Continue
+            } else {
+                let err = Primer3DSError.initializationError(error: error, warnings: nil)
+                throw err
+            }
         }
         
         try self.verifyWarnings()
@@ -73,7 +81,7 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         
         var sdkWarnings: [Warning] = []
         do {
-            sdkWarnings = try sdk.getWarnings()
+            sdkWarnings = try Primer3DSSDKProvider.shared.sdk.getWarnings()
             
         } catch {
             let err = Primer3DSError.initializationError(error: error, warnings: nil)
@@ -96,7 +104,7 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         }
         
         do {
-            transaction = try sdk.createTransaction(
+            transaction = try Primer3DSSDKProvider.shared.sdk.createTransaction(
                 directoryServerId: directoryServerId,
                 messageVersion: maxSupportedThreeDsProtocolVersion)
             let authData = try transaction!.buildThreeDSecureAuthData()
@@ -108,10 +116,11 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         }
     }
     
-    public func performChallenge(threeDSAuthData: Primer3DSServerAuthData,
-                                 threeDsAppRequestorUrl: URL?,
-                                 presentOn viewController: UIViewController,
-                                 completion: @escaping (Primer3DSCompletion?, Error?) -> Void
+    public func performChallenge(
+        threeDSAuthData: Primer3DSServerAuthData,
+        threeDsAppRequestorUrl: URL?,
+        presentOn viewController: UIViewController,
+        completion: @escaping (Primer3DSCompletion?, Error?) -> Void
     ) {
         guard let transaction = transaction else {
             let err = Primer3DSError.unknown(description: "Failed to find transaction")
