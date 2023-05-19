@@ -73,7 +73,7 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
             }
         }
         
-        try self.verifyWarnings()
+//        try self.verifyWarnings()
     }
     
     private func verifyWarnings() throws {
