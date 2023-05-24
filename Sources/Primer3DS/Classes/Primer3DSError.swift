@@ -18,6 +18,7 @@ public enum Primer3DSError: CustomNSError, LocalizedError {
     case timeOut
     case cancelled
     case challengeFailed(error: Error)
+    case invalidChallengeStatus(status: String, sdkTransactionId: String)
     case protocolError(description: String, code: String, type: String, component: String, transactionId: String, protocolVersion: String, details: String?)
     case runtimeError(description: String, code: String?)
     case unknown(description: String)
@@ -31,6 +32,8 @@ public enum Primer3DSError: CustomNSError, LocalizedError {
         case .unsupportedProtocolVersion:
             return "unsupported-protocol-version"
         case .challengeFailed:
+            return "challenge-failed"
+        case .invalidChallengeStatus:
             return "challenge-failed"
         case .timeOut:
             return "challenge-timed-out"
@@ -83,6 +86,8 @@ public enum Primer3DSError: CustomNSError, LocalizedError {
             return "3DS Challenge cancelled by user."
         case .challengeFailed(let error):
             return "3DS challenge failed with error '\((error as NSError).description)'."
+        case .invalidChallengeStatus(let status, let sdkTransactionId):
+            return "3DS challenge for transaction with id '\(sdkTransactionId)' failed with status '\(status)'."
         case .protocolError(let description, _, _, _, _, _, _):
             return description
         case .runtimeError(let description, _):
@@ -107,6 +112,8 @@ public enum Primer3DSError: CustomNSError, LocalizedError {
         case .cancelled:
             return nil
         case .challengeFailed:
+            return nil
+        case .invalidChallengeStatus:
             return nil
         case .protocolError:
             return nil
@@ -139,6 +146,8 @@ public enum Primer3DSError: CustomNSError, LocalizedError {
             return (error as NSError).code
         case .challengeFailed(error: let error):
             return (error as NSError).code
+        case .invalidChallengeStatus:
+            return -5
         case .protocolError(_, let code, _, _, _, _, _):
             return Int(code)
         case .runtimeError(_, let code):

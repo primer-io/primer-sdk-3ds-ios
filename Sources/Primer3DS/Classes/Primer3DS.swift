@@ -182,8 +182,14 @@ extension Primer3DS: ChallengeStatusReceiver {
     public func completed(completionEvent: CompletionEvent) {
         let sdkTransactionId = completionEvent.getSDKTransactionID()
         let authenticationStatus = AuthenticationStatus(rawValue: completionEvent.getTransactionStatus())
-        let netceteraThreeDSCompletion = AuthCompletion(sdkTransactionId: sdkTransactionId, transactionStatus: authenticationStatus.rawValue)
-        sdkCompletion?(netceteraThreeDSCompletion, nil)
+        
+        if authenticationStatus == .y {
+            let netceteraThreeDSCompletion = AuthCompletion(sdkTransactionId: sdkTransactionId, transactionStatus: authenticationStatus.rawValue)
+            sdkCompletion?(netceteraThreeDSCompletion, nil)
+        } else {
+            let err = Primer3DSError.invalidChallengeStatus(status: authenticationStatus.rawValue, sdkTransactionId: sdkTransactionId)
+            sdkCompletion?(nil, err)
+        }
     }
     
     public func protocolError(protocolErrorEvent: ProtocolErrorEvent) {
