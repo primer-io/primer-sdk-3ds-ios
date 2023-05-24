@@ -162,19 +162,6 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
                                         timeOut: 60,
                                         inViewController: viewController)
             
-//            Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
-//                self.protocolError(protocolErrorEvent: ThreeDS_SDK.ProtocolErrorEvent(
-//                    sdkTransactionID: "mock-transaction-id",
-//                    errorMessage: ErrorMessage(
-//                        transactionID: "mock-transaction-id",
-//                        errorCode: "666",
-//                        errorDescription: "mock description",
-//                        errorDetail: "mock detail",
-//                        errorComponent: "mock component",
-//                        errorMessageType: "mock type",
-//                        errorMessageVersionNumber: "mock version")))
-//            }
-            
         } catch {
             let err = Primer3DSError.challengeFailed(error: error)
             completion(nil, err)
