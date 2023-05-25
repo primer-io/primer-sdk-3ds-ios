@@ -5,9 +5,12 @@ import Foundation
 import UIKit
 
 @objc public protocol Primer3DSProtocol {
-    @objc func initializeSDK(licenseKey: String, certificates: [Primer3DSCertificate]?) throws
-    @objc func createTransaction(directoryServerId: String, protocolVersion: String) throws -> Primer3DSSDKGeneratedAuthData
-    @objc func performChallenge(with threeDSecureAuthResponse: Primer3DSServerAuthData, urlScheme: String?, presentOn viewController: UIViewController, completion: @escaping (Primer3DSCompletion?, Error?) -> Void)
+    @objc func initializeSDK(licenseKey: String, certificates: [Primer3DSCertificate]?, enableWeakValidation: Bool) throws
+    @objc func createTransaction(directoryServerId: String, supportedThreeDsProtocolVersions: [String]) throws -> SDKAuthResult
+    @objc func performChallenge(threeDSAuthData: Primer3DSServerAuthData,
+                                threeDsAppRequestorUrl: URL?,
+                                presentOn viewController: UIViewController,
+                                completion: @escaping (Primer3DSCompletion?, Error?) -> Void)
 }
 
 @objc public protocol Primer3DSCertificate {
