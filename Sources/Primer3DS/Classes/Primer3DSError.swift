@@ -32,13 +32,13 @@ public enum Primer3DSError: CustomNSError, LocalizedError {
         case .unsupportedProtocolVersion:
             return "unsupported-protocol-version"
         case .challengeFailed:
-            return "challenge-failed"
+            return "3ds-challenge-failed"
         case .invalidChallengeStatus:
-            return "challenge-failed"
+            return "3ds-challenge-failed"
         case .timeOut:
-            return "challenge-timed-out"
+            return "3ds-challenge-timed-out"
         case .cancelled:
-            return "challenge-cancelled-by-the-user"
+            return "3ds-challenge-cancelled-by-the-user"
         case .failedToCreateTransaction:
             return "failed-to-create-3ds-transaction"
         case .protocolError:
@@ -100,7 +100,7 @@ public enum Primer3DSError: CustomNSError, LocalizedError {
     public var recoverySuggestion: String? {
         switch self {
         case .initializationError:
-            return "If this application is not installed from a trusted source (e.g. a debug version, or used on an emulator), try to set 'PrimerDebugOptions.is3DSSanityCheckEnabled' to false."
+            return "If this application is not installed from a trusted source (e.g. a debug version, or used on an simulator), try to set 'PrimerDebugOptions.is3DSSanityCheckEnabled' to false."
         case .missingDsRid:
             return nil
         case .unsupportedProtocolVersion:
