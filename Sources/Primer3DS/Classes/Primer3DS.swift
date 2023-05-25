@@ -73,7 +73,7 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
             }
         }
         
-        try self.verifyWarnings()
+//        try self.verifyWarnings()
     }
     
     private func verifyWarnings() throws {
@@ -87,7 +87,7 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
             let err = Primer3DSError.initializationError(error: error, warnings: nil)
             throw err
         }
-        
+
         let sdkWarningMessages = sdkWarnings.compactMap({ $0.getMessage() })
         
         if !sdkWarningMessages.isEmpty {
@@ -143,7 +143,7 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
                 }
             }
         }
-        
+                
         sdkCompletion = { [weak self] (netceteraThreeDSCompletion, err) in
             if let err = err {
                 completion(nil, err)
@@ -168,7 +168,7 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
             sdkCompletion = nil
         }
     }
-    
+        
     internal func getMaxValidSupportedThreeDSVersion(_ supportedThreeDsVersions: [String]) -> String? {
         let uniqueSupportedThreeDsVersions = supportedThreeDsVersions.unique
         let sdkSupportedProtocolVersions = uniqueSupportedThreeDsVersions.filter({ $0.compareWithVersion("2.3") == .orderedAscending && ($0.compareWithVersion("2.1") == .orderedDescending || $0.compareWithVersion("2.1") == .orderedSame) })
