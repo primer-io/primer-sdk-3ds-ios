@@ -8,6 +8,7 @@ import UIKit
 public class Primer3DS: NSObject, Primer3DSProtocol {
     
     public static let version: String? = Bundle(for: Primer3DS.self).infoDictionary?["CFBundleShortVersionString"] as? String
+    public static let hardcodedVersion: String = "1.1.1"
     public static let threeDsSdkProvider: String = "NETCETERA"
     public static var threeDsSdkVersion: String? = Bundle(identifier: "com.netcetera.ThreeDS-SDK")?.infoDictionary?["CFBundleShortVersionString"] as? String
     
