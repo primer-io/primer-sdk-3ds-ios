@@ -164,9 +164,14 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
                                         inViewController: viewController)
             
         } catch {
+            if let transaction = self.transaction {
+                try? transaction.close()
+            }
+            
             let err = Primer3DSError.challengeFailed(error: error)
             completion(nil, err)
             sdkCompletion = nil
+            self.cleanup()
         }
     }
         
@@ -175,6 +180,10 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         let sdkSupportedProtocolVersions = uniqueSupportedThreeDsVersions.filter({ $0.compareWithVersion("2.3") == .orderedAscending && ($0.compareWithVersion("2.1") == .orderedDescending || $0.compareWithVersion("2.1") == .orderedSame) })
         let orderedSdkSupportedProtocolVersions = sdkSupportedProtocolVersions.sorted(by: { $0.compare($1, options: .numeric) == .orderedDescending })
         return orderedSdkSupportedProtocolVersions.first
+    }
+    
+    public func cleanup() {
+        try? Primer3DSSDKProvider.shared.sdk.cleanup()
     }
 }
 
@@ -191,6 +200,8 @@ extension Primer3DS: ChallengeStatusReceiver {
             let err = Primer3DSError.invalidChallengeStatus(status: authenticationStatus.rawValue, sdkTransactionId: sdkTransactionId)
             sdkCompletion?(nil, err)
         }
+        
+        self.cleanup()
     }
     
     public func protocolError(protocolErrorEvent: ProtocolErrorEvent) {
@@ -205,6 +216,7 @@ extension Primer3DS: ChallengeStatusReceiver {
             protocolVersion: errorMessage.getMessageVersionNumber(),
             details: errorMessage.getErrorDetail())
         sdkCompletion?(nil, err)
+        self.cleanup()
     }
     
     public func runtimeError(runtimeErrorEvent: RuntimeErrorEvent) {
@@ -212,16 +224,19 @@ extension Primer3DS: ChallengeStatusReceiver {
             description: runtimeErrorEvent.getErrorMessage(),
             code: runtimeErrorEvent.getErrorCode())
         sdkCompletion?(nil, err)
+        self.cleanup()
     }
     
     public func timedout() {
         let err = Primer3DSError.timeOut
         sdkCompletion?(nil, err)
+        self.cleanup()
     }
     
     public func cancelled() {
         let err = Primer3DSError.cancelled
         sdkCompletion?(nil, err)
+        self.cleanup()
     }
 }
 
