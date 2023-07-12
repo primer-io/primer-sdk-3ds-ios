@@ -182,7 +182,7 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         return orderedSdkSupportedProtocolVersions.first
     }
     
-    internal func cleanup() {
+    public func cleanup() {
         try? Primer3DSSDKProvider.shared.sdk.cleanup()
     }
 }
