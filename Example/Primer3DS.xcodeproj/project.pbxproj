@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3572B5C94A25EDEF40321FD1 /* Pods_Primer3DS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC499FE26FF9E5B7F753F7D /* Pods_Primer3DS_Example.framework */; };
+		4AF922CEF4B8F3CC5BE633C3 /* Pods_Primer3DS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F6483A51041DDF40A0CB01 /* Pods_Primer3DS_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -28,7 +28,6 @@
 
 /* Begin PBXFileReference section */
 		04539D5DC779D5F220D2A371 /* Primer3DS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Primer3DS.podspec; path = ../Primer3DS.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		11F993F2D3E3F8AE152A1DA3 /* Pods-Primer3DS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Primer3DS_Example.debug.xcconfig"; path = "Target Support Files/Pods-Primer3DS_Example/Pods-Primer3DS_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		2EB646134BF51FFC536776BA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Primer3DS_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Primer3DS_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,9 +39,10 @@
 		607FACE51AFB9204008FA782 /* Primer3DS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Primer3DS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		7D794D0051C0EB5D394A46CC /* Pods-Primer3DS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Primer3DS_Example.debug.xcconfig"; path = "Target Support Files/Pods-Primer3DS_Example/Pods-Primer3DS_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		B2F6483A51041DDF40A0CB01 /* Pods_Primer3DS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Primer3DS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B75EA0E1EBA9402C2949415A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		EDC499FE26FF9E5B7F753F7D /* Pods_Primer3DS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Primer3DS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F45B399E519264B1B8514EA5 /* Pods-Primer3DS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Primer3DS_Example.release.xcconfig"; path = "Target Support Files/Pods-Primer3DS_Example/Pods-Primer3DS_Example.release.xcconfig"; sourceTree = "<group>"; };
+		CC2616CC59FFB068E592814A /* Pods-Primer3DS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Primer3DS_Example.release.xcconfig"; path = "Target Support Files/Pods-Primer3DS_Example/Pods-Primer3DS_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3572B5C94A25EDEF40321FD1 /* Pods_Primer3DS_Example.framework in Frameworks */,
+				4AF922CEF4B8F3CC5BE633C3 /* Pods_Primer3DS_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,14 +64,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0870FB9A63E1A8F83E278F57 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EDC499FE26FF9E5B7F753F7D /* Pods_Primer3DS_Example.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -80,7 +72,7 @@
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				624E673B6327255DD7AAC4A9 /* Pods */,
-				0870FB9A63E1A8F83E278F57 /* Frameworks */,
+				7E98867F42DF09369BCDC8A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,10 +137,18 @@
 		624E673B6327255DD7AAC4A9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				11F993F2D3E3F8AE152A1DA3 /* Pods-Primer3DS_Example.debug.xcconfig */,
-				F45B399E519264B1B8514EA5 /* Pods-Primer3DS_Example.release.xcconfig */,
+				7D794D0051C0EB5D394A46CC /* Pods-Primer3DS_Example.debug.xcconfig */,
+				CC2616CC59FFB068E592814A /* Pods-Primer3DS_Example.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		7E98867F42DF09369BCDC8A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2F6483A51041DDF40A0CB01 /* Pods_Primer3DS_Example.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,11 +158,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Primer3DS_Example" */;
 			buildPhases = (
-				549F557AC17C23843296AA96 /* [CP] Check Pods Manifest.lock */,
+				66E2BD0F8BC3C83D616F0F50 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				D8A606D17BAE6DC1340FB459 /* [CP] Embed Pods Frameworks */,
+				5ABCA8455E912C9DDB7EB93D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -255,7 +255,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		549F557AC17C23843296AA96 /* [CP] Check Pods Manifest.lock */ = {
+		5ABCA8455E912C9DDB7EB93D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Primer3DS_Example/Pods-Primer3DS_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Primer3DS/Primer3DS.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Primer3DS/ThreeDS_SDK.framework/ThreeDS_SDK",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Primer3DS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ThreeDS_SDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Primer3DS_Example/Pods-Primer3DS_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66E2BD0F8BC3C83D616F0F50 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -275,26 +295,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D8A606D17BAE6DC1340FB459 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Primer3DS_Example/Pods-Primer3DS_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Primer3DS/Primer3DS.framework",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Primer3DS/ThreeDS_SDK.framework/ThreeDS_SDK",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Primer3DS.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ThreeDS_SDK.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Primer3DS_Example/Pods-Primer3DS_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -448,7 +448,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11F993F2D3E3F8AE152A1DA3 /* Pods-Primer3DS_Example.debug.xcconfig */;
+			baseConfigurationReference = 7D794D0051C0EB5D394A46CC /* Pods-Primer3DS_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N8UN9TR5DY;
@@ -464,7 +464,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F45B399E519264B1B8514EA5 /* Pods-Primer3DS_Example.release.xcconfig */;
+			baseConfigurationReference = CC2616CC59FFB068E592814A /* Pods-Primer3DS_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N8UN9TR5DY;
