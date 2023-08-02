@@ -1,6 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 #source 'https://github.com/ios-3ds-sdk/Specs.git'
-source 'https://github.com/primer-io/primer-podspecs.git'
+#source 'https://github.com/primer-io/primer-podspecs.git'
 
 use_frameworks!
 
