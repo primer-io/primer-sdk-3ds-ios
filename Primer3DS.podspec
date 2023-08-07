@@ -15,7 +15,7 @@ A wrapper around the 3rd party 3DS SDK.
   s.swift_version = '4.2'
   s.ios.deployment_target = '10.0'
   
-  s.ios.source_files = 'Sources/Primer_3DS/Classes/*.{swift}'
+  s.ios.source_files = 'Sources/Primer3DS/Classes/*.{swift}'
   s.ios.frameworks  = 'Foundation', 'UIKit'
   s.ios.vendored_frameworks = 'Sources/Frameworks/ThreeDS_SDK.xcframework'
   s.ios.pod_target_xcconfig = { "BUILD_LIBRARY_FOR_DISTRIBUTION" => 'YES' }
