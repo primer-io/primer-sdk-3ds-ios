@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Primer3DS'
-  s.version          = '1.2.1'
+  s.version          = '2.0.0'
   s.summary          = 'A wrapper for the 3DS SDK.'
 
   s.description      = <<-DESC
