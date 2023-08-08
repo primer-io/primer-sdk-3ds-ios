@@ -13,7 +13,7 @@ A wrapper around the 3rd party 3DS SDK.
   s.source           = { :git => 'https://github.com/primer-io/primer-sdk-3ds-ios.git', :tag => s.version.to_s }
 
   s.swift_version = '5'
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
   
   s.ios.source_files = 'Sources/Primer3DS/Classes/*.{swift}'
   s.ios.frameworks  = 'Foundation', 'UIKit'
