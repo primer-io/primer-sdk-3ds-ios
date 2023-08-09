@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Primer3DS'
-  s.version          = '1.2.0'
+  s.version          = '1.2.1'
   s.summary          = 'A wrapper for the 3DS SDK.'
 
   s.description      = <<-DESC
@@ -19,5 +19,5 @@ A wrapper around the 3rd party 3DS SDK.
   s.ios.frameworks  = 'Foundation', 'UIKit'
   s.ios.vendored_frameworks = 'Sources/Frameworks/ThreeDS_SDK.xcframework'
   s.ios.pod_target_xcconfig = { "BUILD_LIBRARY_FOR_DISTRIBUTION" => 'YES' }
-  
+  s.xcconfig = { 'OTHER_SWIFT_FLAGS' => '-no-verify-emitted-module-interface' }
 end
