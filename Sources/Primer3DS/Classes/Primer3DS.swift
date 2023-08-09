@@ -35,52 +35,46 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
     }
     
     public func initializeSDK(licenseKey: String, certificates: [Primer3DSCertificate]? = nil, enableWeakValidation: Bool = true) throws {
-        
-        if #available(iOS 11, *) {
-            do {
-                let configBuilder = ThreeDS_SDK.ConfigurationBuilder()
-                try configBuilder.license(key: licenseKey)
+        do {
+            let configBuilder = ThreeDS_SDK.ConfigurationBuilder()
+            try configBuilder.license(key: licenseKey)
+            
+            if enableWeakValidation {
+                try configBuilder.weakValidationEnabled(true)
+                self.isWeakValidationEnabled = true
+            }
+            
+            if environment != .production {
+                try configBuilder.log(to: .debug)
                 
-                if enableWeakValidation {
-                    try configBuilder.weakValidationEnabled(true)
-                    self.isWeakValidationEnabled = true
-                }
+                let supportedSchemeIds: [String] = ["A999999999"]
                 
-                if environment != .production {
-                    try configBuilder.log(to: .debug)
-                    
-                    let supportedSchemeIds: [String] = ["A999999999"]
-                    
-                    for certificate in certificates ?? [] {
-                        let scheme = Scheme(name: certificate.cardScheme)
-                        scheme.ids = supportedSchemeIds
-                        scheme.encryptionKeyValue = certificate.encryptionKey
-                        scheme.rootCertificateValue = certificate.rootCertificate
-                        scheme.logoImageName = "visa"
-                        try configBuilder.add(scheme)
-                    }
-                }
-                
-                let configParameters = configBuilder.configParameters()
-                try Primer3DSSDKProvider.shared.sdk.initialize(configParameters,
-                                                               locale: nil,
-                                                               uiCustomization: nil)
-                
-            } catch {
-                let nsErr = error as NSError
-                if nsErr.domain == "com.netcetera.ThreeDS-SDK" && nsErr.code == 1001 {
-                    // Continue
-                } else {
-                    let err = Primer3DSError.initializationError(error: error, warnings: nil)
-                    throw err
+                for certificate in certificates ?? [] {
+                    let scheme = Scheme(name: certificate.cardScheme)
+                    scheme.ids = supportedSchemeIds
+                    scheme.encryptionKeyValue = certificate.encryptionKey
+                    scheme.rootCertificateValue = certificate.rootCertificate
+                    scheme.logoImageName = "visa"
+                    try configBuilder.add(scheme)
                 }
             }
             
-            try self.verifyWarnings()
-        } else {
-            let err = Primer3DSError.runtimeError(description: "Versions lower then iOS 11 are not supported anymore.", code: nil)
-            throw err
+            let configParameters = configBuilder.configParameters()
+            try Primer3DSSDKProvider.shared.sdk.initialize(configParameters,
+                                                           locale: nil,
+                                                           uiCustomization: nil)
+            
+        } catch {
+            let nsErr = error as NSError
+            if nsErr.domain == "com.netcetera.ThreeDS-SDK" && nsErr.code == 1001 {
+                // Continue
+            } else {
+                let err = Primer3DSError.initializationError(error: error, warnings: nil)
+                throw err
+            }
         }
+        
+        try self.verifyWarnings()
     }
     
     private func verifyWarnings() throws {
