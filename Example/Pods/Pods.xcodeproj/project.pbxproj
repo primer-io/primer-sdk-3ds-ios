@@ -378,7 +378,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		08323E2961B949A641402A4D1917B9EA /* Release */ = {
+		31CCB32B3EC3A8E965516A9BDE659551 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D25647ADCC36794CF7796D5197A87485 /* Primer3DS.release.xcconfig */;
 			buildSettings = {
@@ -394,7 +394,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Primer3DS/Primer3DS-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Primer3DS/Primer3DS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Primer3DS/Primer3DS.modulemap";
 				PRODUCT_MODULE_NAME = Primer3DS;
@@ -409,37 +409,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		181630DFC6D9CC252719788C8A70F0DD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF61BB5641B0146D03721502D3DB5658 /* Primer3DS.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Primer3DS/Primer3DS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Primer3DS/Primer3DS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Primer3DS/Primer3DS.modulemap";
-				PRODUCT_MODULE_NAME = Primer3DS;
-				PRODUCT_NAME = Primer3DS;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		594863D93DFB100D3ED0D9D600786431 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -636,6 +605,37 @@
 			};
 			name = Debug;
 		};
+		F4A09D9EACAFC82EE191950DAED6C854 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF61BB5641B0146D03721502D3DB5658 /* Primer3DS.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Primer3DS/Primer3DS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Primer3DS/Primer3DS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Primer3DS/Primer3DS.modulemap";
+				PRODUCT_MODULE_NAME = Primer3DS;
+				PRODUCT_NAME = Primer3DS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -651,8 +651,8 @@
 		311195162B26C6B43B9CF34A470A6AAD /* Build configuration list for PBXNativeTarget "Primer3DS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				181630DFC6D9CC252719788C8A70F0DD /* Debug */,
-				08323E2961B949A641402A4D1917B9EA /* Release */,
+				F4A09D9EACAFC82EE191950DAED6C854 /* Debug */,
+				31CCB32B3EC3A8E965516A9BDE659551 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
