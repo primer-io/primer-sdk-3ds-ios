@@ -1,6 +1,6 @@
 {
   "name": "Primer3DS",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "summary": "A wrapper for the 3DS SDK.",
   "description": "A wrapper around the 3rd party 3DS SDK.",
   "homepage": "https://primer.io/",
@@ -13,11 +13,11 @@
   },
   "source": {
     "git": "https://github.com/primer-io/primer-sdk-3ds-ios.git",
-    "tag": "1.2.0"
+    "tag": "2.0.0"
   },
   "swift_versions": "5",
   "platforms": {
-    "ios": "10.0"
+    "ios": "11.0"
   },
   "ios": {
     "source_files": "Sources/Primer3DS/Classes/*.{swift}",
@@ -29,6 +29,9 @@
     "pod_target_xcconfig": {
       "BUILD_LIBRARY_FOR_DISTRIBUTION": "YES"
     }
+  },
+  "xcconfig": {
+    "OTHER_SWIFT_FLAGS": "-no-verify-emitted-module-interface"
   },
   "swift_version": "5"
 }
