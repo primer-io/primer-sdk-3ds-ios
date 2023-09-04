@@ -1,6 +1,3 @@
-#if canImport(UIKit)
-#if canImport(ThreeDS_SDK)
-
 import Foundation
 import ThreeDS_SDK
 import UIKit
@@ -239,6 +236,3 @@ extension Primer3DS: ChallengeStatusReceiver {
         self.cleanup()
     }
 }
-
-#endif
-#endif

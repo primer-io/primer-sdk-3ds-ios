@@ -5,8 +5,6 @@
 //  Created by Evangelos Pittas on 4/5/23.
 //
 
-#if canImport(UIKit)
-
 import Foundation
 
 extension String {
@@ -33,5 +31,3 @@ extension String {
         }
     }
 }
-
-#endif

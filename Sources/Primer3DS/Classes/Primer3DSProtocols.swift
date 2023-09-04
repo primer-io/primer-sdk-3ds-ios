@@ -1,6 +1,3 @@
-
-#if canImport(UIKit)
-
 import Foundation
 import UIKit
 
@@ -40,5 +37,3 @@ import UIKit
     var sdkTransactionId: String { get }
     var transactionStatus: String { get }
 }
-
-#endif

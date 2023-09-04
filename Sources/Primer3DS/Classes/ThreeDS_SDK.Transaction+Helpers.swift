@@ -5,8 +5,6 @@
 //  Created by Evangelos Pittas on 4/5/23.
 //
 
-#if canImport(UIKit)
-
 import Foundation
 import ThreeDS_SDK
 
@@ -30,5 +28,3 @@ extension Transaction {
             sdkReferenceNumber: sdkReferenceNumber) as Primer3DSSDKGeneratedAuthData
     }
 }
-
-#endif
