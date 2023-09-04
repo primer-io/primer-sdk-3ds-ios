@@ -9,7 +9,7 @@ github_run_number = ENV["GITHUB_RUN_NUMBER"]
 # Xcode
 app_workspace = "Example/Primer3DS.xcworkspace"
 app_xcode_proj = "Example/Primer3DS.xcodeproj"
-app_scheme = "Debug App"
+app_scheme = "Primer3DS-Example"
 
 # Utils
 sdk_version_name_source_branch = ENV['SOURCE_BRANCH']
