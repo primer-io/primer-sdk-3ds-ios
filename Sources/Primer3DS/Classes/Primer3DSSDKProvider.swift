@@ -13,6 +13,8 @@ import ThreeDS_SDK
 import UIKit
 
 private let _Primer3DSSDKProvider = Primer3DSSDKProvider()
+// ⚠️ ThreeDS2ServiceSDK should only be initialized once
+private let _threeDS2Service: ThreeDS2Service = ThreeDS2ServiceSDK()
 
 internal class Primer3DSSDKProvider {
     
@@ -20,8 +22,7 @@ internal class Primer3DSSDKProvider {
         return _Primer3DSSDKProvider
     }
     
-    // ⚠️ ThreeDS2ServiceSDK should only be initialized once
-    let sdk: ThreeDS2Service = ThreeDS2ServiceSDK()
+    var sdk: ThreeDS2Service { _threeDS2Service }
     
     fileprivate init() {}
 }
