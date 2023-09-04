@@ -43,13 +43,18 @@ platform :ios do
     )
 
     # Build for browserstack
-    build_app(
+    xcodebuild(
       scheme: app_scheme,
       workspace: app_workspace,
       configuration: "Debug",
       include_bitcode: false,
-      export_method: "development",
-      skip_package_dependencies_resolution: true
+      build: true,
+      destination: "generic/platform=iOS",
+      skip_package_dependencies_resolution: true,
+      build_settings: {
+        "CODE_SIGNING_REQUIRED" => "NO",
+        "CODE_SIGN_IDENTITY" => ""
+      }
     )
   end
 
