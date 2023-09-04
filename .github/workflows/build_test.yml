@@ -28,16 +28,16 @@ jobs:
         with:
           xcode-version: latest-stable
 
-      - name: Install SSH key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.SSH_KEY }}
-          name: id_rsa_github_actions
-          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+      # - name: Install SSH key
+      #   uses: shimataro/ssh-key-action@v2
+      #   with:
+      #     key: ${{ secrets.SSH_KEY }}
+      #     name: id_rsa_github_actions
+      #     known_hosts: ${{ secrets.KNOWN_HOSTS }}
 
-      - uses: webfactory/ssh-agent@v0.7.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_KEY }}
+      # - uses: webfactory/ssh-agent@v0.7.0
+      #   with:
+      #     ssh-private-key: ${{ secrets.SSH_KEY }}
 
       - uses: ruby/setup-ruby@v1
         with:
