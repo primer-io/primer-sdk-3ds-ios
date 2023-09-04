@@ -60,9 +60,9 @@ platform :ios do
 
     set_version_and_build_number
 
-    setup_signing(
-      match_type: "development"
-    )
+    # setup_signing(
+    #   match_type: "development"
+    # )
 
   end
 
