@@ -18,6 +18,8 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
     private var sdkCompletion: ((_ netceteraThreeDSCompletion: Primer3DSCompletion?, _ err: Primer3DSError?) -> Void)?
     private var transaction: Transaction?
     
+    let sdkProvider: Primer3DSSDKProvider
+        
     public static func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return ThreeDSSDKAppDelegate.shared.appOpened(url: url)
     }
@@ -30,7 +32,12 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         return ThreeDSSDKAppDelegate.shared.appOpened(userActivity: userActivity)
     }
     
-    public init(environment: Environment) {
+    public convenience init(environment: Environment) {
+        self.init(sdkProvider: .shared, environment: environment)
+    }
+    
+    init(sdkProvider: Primer3DSSDKProvider, environment: Environment) {
+        self.sdkProvider = Primer3DSSDKProvider.shared
         self.environment = environment
     }
     
@@ -60,7 +67,7 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
             }
             
             let configParameters = configBuilder.configParameters()
-            try Primer3DSSDKProvider.shared.sdk.initialize(configParameters,
+            try sdkProvider.sdk.initialize(configParameters,
                                                            locale: nil,
                                                            uiCustomization: nil)
             
@@ -82,7 +89,7 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         
         var sdkWarnings: [Warning] = []
         do {
-            sdkWarnings = try Primer3DSSDKProvider.shared.sdk.getWarnings()
+            sdkWarnings = try sdkProvider.sdk.getWarnings()
             
         } catch {
             let err = Primer3DSError.initializationError(error: error, warnings: nil)

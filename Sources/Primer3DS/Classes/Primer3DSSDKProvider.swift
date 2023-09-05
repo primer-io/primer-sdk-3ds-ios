@@ -24,6 +24,22 @@ internal class Primer3DSSDKProvider {
     
     var sdk: ThreeDS2Service { _threeDS2Service }
     
+    func initialize(configParameters: ConfigParameters, locale: String?, uiCustomization: UiCustomization?) throws {
+        try sdk.initialize(configParameters, locale: locale, uiCustomization: uiCustomization)
+    }
+    
+    func getWarnings() throws -> [Warning] {
+        return try sdk.getWarnings()
+    }
+    
+    func cleanup() throws {
+        try sdk.cleanup()
+    }
+    
+    func createTransaction(directoryServerId: String, messageVersion: String) throws -> Transaction {
+        return try sdk.createTransaction(directoryServerId: directoryServerId, messageVersion: messageVersion)
+    }
+    
     fileprivate init() {}
 }
 
