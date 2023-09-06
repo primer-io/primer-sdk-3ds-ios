@@ -11,6 +11,7 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
     public static let hardcodedVersion: String = "1.2.1"
     public static let threeDsSdkProvider: String = "NETCETERA"
     public static var threeDsSdkVersion: String? = Bundle(identifier: "com.netcetera.ThreeDS-SDK")?.infoDictionary?["CFBundleShortVersionString"] as? String
+    public static let supportedSchemeId = "A999999999"
     
     public private(set) var environment: Environment
     public var is3DSSanityCheckEnabled: Bool = true
@@ -18,7 +19,7 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
     private var sdkCompletion: ((_ netceteraThreeDSCompletion: Primer3DSCompletion?, _ err: Primer3DSError?) -> Void)?
     private var transaction: Transaction?
     
-    let sdkProvider: Primer3DSSDKProvider
+    let sdkProvider: Primer3DSSDKProviderProtocol
         
     public static func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return ThreeDSSDKAppDelegate.shared.appOpened(url: url)
@@ -33,11 +34,11 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
     }
     
     public convenience init(environment: Environment) {
-        self.init(sdkProvider: .shared, environment: environment)
+        self.init(sdkProvider: Primer3DSSDKProvider.shared, environment: environment)
     }
     
-    init(sdkProvider: Primer3DSSDKProvider, environment: Environment) {
-        self.sdkProvider = Primer3DSSDKProvider.shared
+    init(sdkProvider: Primer3DSSDKProviderProtocol, environment: Environment) {
+        self.sdkProvider = sdkProvider
         self.environment = environment
     }
     
@@ -54,7 +55,7 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
             if environment != .production {
                 try configBuilder.log(to: .debug)
                 
-                let supportedSchemeIds: [String] = ["A999999999"]
+                let supportedSchemeIds: [String] = [Self.supportedSchemeId]
                 
                 for certificate in certificates ?? [] {
                     let scheme = Scheme(name: certificate.cardScheme)
@@ -67,9 +68,9 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
             }
             
             let configParameters = configBuilder.configParameters()
-            try sdkProvider.sdk.initialize(configParameters,
-                                                           locale: nil,
-                                                           uiCustomization: nil)
+            try sdkProvider.initialize(configParameters: configParameters,
+                                     locale: nil,
+                                     uiCustomization: nil)
             
         } catch {
             let nsErr = error as NSError
@@ -89,7 +90,7 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         
         var sdkWarnings: [Warning] = []
         do {
-            sdkWarnings = try sdkProvider.sdk.getWarnings()
+            sdkWarnings = try sdkProvider.getWarnings()
             
         } catch {
             let err = Primer3DSError.initializationError(error: error, warnings: nil)
@@ -112,13 +113,13 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         }
         
         do {
-            transaction = try Primer3DSSDKProvider.shared.sdk.createTransaction(
+            transaction = try sdkProvider.createTransaction(
                 directoryServerId: directoryServerId,
                 messageVersion: maxSupportedThreeDsProtocolVersion)
             let authData = try transaction!.buildThreeDSecureAuthData()
             return SDKAuthResult(authData: authData, maxSupportedThreeDsProtocolVersion: maxSupportedThreeDsProtocolVersion)
             
-        } catch {
+        } catch let error {
             let err = Primer3DSError.failedToCreateTransaction(error: error)
             throw err
         }
@@ -190,7 +191,7 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
     }
     
     public func cleanup() {
-        try? Primer3DSSDKProvider.shared.sdk.cleanup()
+        try? sdkProvider.cleanup()
     }
 }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04B6FF952AA875A400779407 /* Primer3DSChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6FF942AA875A400779407 /* Primer3DSChallengeTests.swift */; };
+		04B6FF972AA875BB00779407 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6FF962AA875BB00779407 /* Mocks.swift */; };
 		4AF922CEF4B8F3CC5BE633C3 /* Pods_Primer3DS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F6483A51041DDF40A0CB01 /* Pods_Primer3DS_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		04539D5DC779D5F220D2A371 /* Primer3DS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Primer3DS.podspec; path = ../Primer3DS.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		04B6FF942AA875A400779407 /* Primer3DSChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primer3DSChallengeTests.swift; sourceTree = "<group>"; };
+		04B6FF962AA875BB00779407 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		1602C72186397E35BACD06A6 /* Pods-Primer3DS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Primer3DS_Tests.release.xcconfig"; path = "Target Support Files/Pods-Primer3DS_Tests/Pods-Primer3DS_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		2C3499BAC61D75AF0AB90C58 /* Pods_Primer3DS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Primer3DS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EB646134BF51FFC536776BA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -115,7 +119,9 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				04B6FF962AA875BB00779407 /* Mocks.swift */,
 				607FACEB1AFB9204008FA782 /* Primer3DSTests.swift */,
+				04B6FF942AA875A400779407 /* Primer3DSChallengeTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -344,6 +350,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACEC1AFB9204008FA782 /* Primer3DSTests.swift in Sources */,
+				04B6FF952AA875A400779407 /* Primer3DSChallengeTests.swift in Sources */,
+				04B6FF972AA875BB00779407 /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
