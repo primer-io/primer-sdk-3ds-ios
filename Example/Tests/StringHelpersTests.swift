@@ -47,5 +47,4 @@ final class StringHelpersTests: XCTestCase {
         let value = "2.2.0".compareWithVersion(versionNumber)
         XCTAssertEqual(value, .orderedSame)
     }
-
 }

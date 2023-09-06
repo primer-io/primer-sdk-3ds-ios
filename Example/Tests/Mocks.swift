@@ -30,8 +30,6 @@ class MockSDKProvider: Primer3DSSDKProviderProtocol {
         }
         return transactions["\(directoryServerId):\(messageVersion)"]!
     }
-    
-    
 }
 
 class MockTransaction: Transaction {
@@ -68,14 +66,11 @@ class MockTransaction: Transaction {
     }
     
     func close() throws {
-        //
     }
-    
-    
 }
 
-
 class MockServerAuthData: Primer3DSServerAuthData {
+    
     var acsReferenceNumber: String? = "ASCReferenceNumber"
     
     var acsSignedContent: String? = "ACSSignedContent"

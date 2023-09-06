@@ -53,7 +53,7 @@ jobs:
 
       - name: Test & Build 🚀
         run: |
-          bundle exec fastlane build_and_test
+          bundle exec fastlane unit_tests
         env:
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
           MATCH_GIT_PRIVATE_KEY: ${{ secrets.SSH_KEY }}

@@ -22,7 +22,6 @@ final class Primer3DSChallengeTests: XCTestCase {
     // NOTE: We can't test 'completed' (success flow) as it takes a parameter that is a non-open class from the Three_DS SDK with no init
     
     func testSDKPerformChallenge_Cancelled() throws {
-        
         let transaction = MockTransaction()
         try setupSDK(withTransaction: transaction)
         
@@ -50,7 +49,6 @@ final class Primer3DSChallengeTests: XCTestCase {
     }
     
     func testSDKPerformChallenge_Timeout() throws {
-        
         let transaction = MockTransaction()
         try setupSDK(withTransaction: transaction)
         
@@ -78,7 +76,6 @@ final class Primer3DSChallengeTests: XCTestCase {
     }
     
     func testSDKPerformChallenge_RuntimeError() throws {
-        
         let transaction = MockTransaction()
         try setupSDK(withTransaction: transaction)
         
@@ -109,7 +106,6 @@ final class Primer3DSChallengeTests: XCTestCase {
     }
     
     func testSDKPerformChallenge_ProtocolError() throws {
-        
         let transaction = MockTransaction()
         try setupSDK(withTransaction: transaction)
         
