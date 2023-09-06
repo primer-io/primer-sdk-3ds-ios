@@ -25,42 +25,11 @@ platform :ios do
 
 ###################### PUBLIC LANES #######################
 
-  lane :tests do
-    # TODO: enable this when unit tests have been added
-    # run_tests(workspace: app_workspace, 
-    #           scheme: "Debug App Tests",
-    #           destination: "platform=iOS Simulator,name=iPhone 14 Pro",
-    #           xcargs: "EXCLUDED_ARCHS[sdk=iphonesimulator*]=arm64")
-  end
-
-  lane :build do
-    common_pre_build_action
-
-    cocoapods(
-      clean_install: true,
-      use_bundle_exec: true,
-      podfile: "Example/Podfile"
-    )
-
-    # Build for browserstack
-    xcodebuild(
-      scheme: app_scheme,
-      workspace: app_workspace,
-      configuration: "Debug",
-      include_bitcode: false,
-      build: true,
-      destination: "generic/platform=iOS",
-      skip_package_dependencies_resolution: true,
-      build_settings: {
-        "CODE_SIGNING_REQUIRED" => "NO",
-        "CODE_SIGN_IDENTITY" => ""
-      }
-    )
-  end
-
-  lane :build_and_test do 
-    build
-    tests
+  lane :unit_tests do
+    run_tests(workspace: app_workspace, 
+              scheme: "Primer3DS-Example",
+              destination: "platform=iOS Simulator,name=iPhone 14 Pro",
+              xcargs: "EXCLUDED_ARCHS[sdk=iphonesimulator*]=arm64")
   end
 
   ######################### PRIVATE LANES #########################
