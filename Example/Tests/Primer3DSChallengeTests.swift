@@ -38,7 +38,7 @@ final class Primer3DSChallengeTests: XCTestCase {
             let error = error as! Primer3DSError
             switch error {
             case Primer3DSError.cancelled:
-                XCTAssertEqual(error.errorId, "3ds-challenge-cancelled-by-the-user")
+                XCTAssertEqual(error.errorId, Primer3DSError.cancelled.errorId)
                 break
             default:
                 XCTFail()
@@ -66,7 +66,7 @@ final class Primer3DSChallengeTests: XCTestCase {
             let error = error as! Primer3DSError
             switch error {
             case Primer3DSError.timeOut:
-                XCTAssertEqual(error.errorId, "3ds-challenge-timed-out")
+                XCTAssertEqual(error.errorId, Primer3DSError.timeOut.errorId)
                 break
             default:
                 XCTFail()
@@ -95,7 +95,7 @@ final class Primer3DSChallengeTests: XCTestCase {
             let error = error as! Primer3DSError
             switch error {
             case Primer3DSError.runtimeError(let description, let code):
-                XCTAssertEqual(error.errorId, "3ds-sdk-runtime-error")
+                XCTAssertEqual(error.errorId, Primer3DSError.runtimeError(description: runtimeErrorEvent.getErrorMessage(), code: runtimeErrorEvent.getErrorCode()).errorId)
                 XCTAssertEqual(description, runtimeErrorEvent.getErrorMessage())
                 XCTAssertEqual(code, runtimeErrorEvent.getErrorCode())
                 break

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04AC5AB52AA8AD9E00EE5FD0 /* StringHelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC5AB42AA8AD9E00EE5FD0 /* StringHelpersTests.swift */; };
 		04B6FF952AA875A400779407 /* Primer3DSChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6FF942AA875A400779407 /* Primer3DSChallengeTests.swift */; };
 		04B6FF972AA875BB00779407 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6FF962AA875BB00779407 /* Mocks.swift */; };
 		4AF922CEF4B8F3CC5BE633C3 /* Pods_Primer3DS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F6483A51041DDF40A0CB01 /* Pods_Primer3DS_Example.framework */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		04539D5DC779D5F220D2A371 /* Primer3DS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Primer3DS.podspec; path = ../Primer3DS.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		04AC5AB42AA8AD9E00EE5FD0 /* StringHelpersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelpersTests.swift; sourceTree = "<group>"; };
 		04B6FF942AA875A400779407 /* Primer3DSChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primer3DSChallengeTests.swift; sourceTree = "<group>"; };
 		04B6FF962AA875BB00779407 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		1602C72186397E35BACD06A6 /* Pods-Primer3DS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Primer3DS_Tests.release.xcconfig"; path = "Target Support Files/Pods-Primer3DS_Tests/Pods-Primer3DS_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				607FACEB1AFB9204008FA782 /* Primer3DSTests.swift */,
 				04B6FF942AA875A400779407 /* Primer3DSChallengeTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				04AC5AB42AA8AD9E00EE5FD0 /* StringHelpersTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04AC5AB52AA8AD9E00EE5FD0 /* StringHelpersTests.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Primer3DSTests.swift in Sources */,
 				04B6FF952AA875A400779407 /* Primer3DSChallengeTests.swift in Sources */,
 				04B6FF972AA875BB00779407 /* Mocks.swift in Sources */,
