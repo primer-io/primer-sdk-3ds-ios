@@ -26,11 +26,10 @@ platform :ios do
 ###################### PUBLIC LANES #######################
 
   lane :tests do
-    # TODO: enable this when unit tests have been added
-    # run_tests(workspace: app_workspace, 
-    #           scheme: "Debug App Tests",
-    #           destination: "platform=iOS Simulator,name=iPhone 14 Pro",
-    #           xcargs: "EXCLUDED_ARCHS[sdk=iphonesimulator*]=arm64")
+    run_tests(workspace: app_workspace, 
+              scheme: "Primer3DS-Example",
+              destination: "platform=iOS Simulator,name=iPhone 14 Pro",
+              xcargs: "EXCLUDED_ARCHS[sdk=iphonesimulator*]=arm64")
   end
 
   lane :build do
