@@ -1,1 +1,24 @@
-{"object": {"artifacts": [{"packageRef": {"identity": "primer-3ds-sdk-ios", "kind": "root", "name": "primer-3ds-sdk-ios", "path": "/Users/evangelospittas/Xcode/primer-3ds-sdk-ios"}, "source": {"path": "Sources/Frameworks/ThreeDS_SDK.xcframework", "type": "local"}, "targetName": "ThreeDS_SDK"}], "dependencies": []}, "version": 4}
+{
+  "object" : {
+    "artifacts" : [
+      {
+        "kind" : "xcframework",
+        "packageRef" : {
+          "identity" : "primer-sdk-3ds-ios",
+          "kind" : "root",
+          "location" : "/Users/niallquinn/Code/iOS/primer-sdk-3ds-ios",
+          "name" : "primer-sdk-3ds-ios"
+        },
+        "path" : "/Users/niallquinn/Code/iOS/primer-sdk-3ds-ios/Sources/Frameworks/ThreeDS_SDK.xcframework",
+        "source" : {
+          "type" : "local"
+        },
+        "targetName" : "ThreeDS_SDK"
+      }
+    ],
+    "dependencies" : [
+
+    ]
+  },
+  "version" : 6
+}
