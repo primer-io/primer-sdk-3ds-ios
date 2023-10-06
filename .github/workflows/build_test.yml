@@ -20,6 +20,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
   build-and-test:
+    needs: danger
     runs-on: macos-latest
     timeout-minutes: 20
     name: "Build and test"
