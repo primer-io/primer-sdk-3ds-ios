@@ -8,6 +8,17 @@ on:
       - synchronize
 
 jobs:
+  danger:
+    runs-on: ubuntu-latest
+    name: "Run Danger"
+    steps:
+      - uses: actions/checkout@v1
+      - name: Danger
+        uses: docker://ghcr.io/danger/danger-swift:3.13.0
+        with:
+            args: --failOnErrors --no-publish-check --remove-previous-comments
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
   build-and-test:
     runs-on: macos-latest
     timeout-minutes: 20
