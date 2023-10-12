@@ -1,0 +1,5 @@
+.github/CODEOWNERS                        @primer-io/checkout-pci-reviewers
+.github/workflows                         @primer-io/checkout-pci-reviewers
+
+/Sources/Primer3DS/Classes/version.swift  @primer-io/checkout-pci-reviewers
+Primer3DS.podspec                         @primer-io/checkout-pci-reviewers
