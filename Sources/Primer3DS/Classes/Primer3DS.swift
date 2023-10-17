@@ -7,10 +7,10 @@ import UIKit
 
 public class Primer3DS: NSObject, Primer3DSProtocol {
 
-    public static let version: String? = Bundle(identifier: "org.cocoapods.Primer3DS")?.infoDictionary?["CFBundleShortVersionString"] as? String
-    public static let hardcodedVersion: String = "1.2.1"
+    public static var version: String = VersionUtils.primer3DSVersionNumber
+    public static var hardcodedVersion = VersionUtils.primer3DSVersionNumber
     public static let threeDsSdkProvider: String = "NETCETERA"
-    public static var threeDsSdkVersion: String? = Bundle(identifier: "com.netcetera.ThreeDS-SDK")?.infoDictionary?["CFBundleShortVersionString"] as? String
+    public static var threeDsSdkVersion = VersionUtils.wrappedSdkVersionNumber
     public static let supportedSchemeId = "A999999999"
     
     public private(set) var environment: Environment
