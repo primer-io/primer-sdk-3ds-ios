@@ -21,7 +21,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
   build-and-test:
     needs: danger
-    runs-on: macos-latest
+    runs-on: macos-13
     timeout-minutes: 20
     name: "Build and test"
     steps:
