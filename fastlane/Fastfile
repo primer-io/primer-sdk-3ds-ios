@@ -17,6 +17,8 @@ pr_number = ENV['PR_NUMBER']
 
 ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
 
+podfile_path = "Example/Podfile"
+
 #--------------------- END CONSTANTS -----------------------#
 
 #----------------------- FASTLANE -------------------------#
@@ -26,6 +28,11 @@ platform :ios do
 ###################### PUBLIC LANES #######################
 
   lane :unit_tests do
+    cocoapods(
+      clean_install: true,
+      use_bundle_exec: true,
+      podfile: podfile_path,
+    )
     run_tests(workspace: app_workspace, 
               scheme: "Primer3DS-Example",
               destination: "platform=iOS Simulator,name=iPhone 14 Pro",
