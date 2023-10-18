@@ -8,7 +8,7 @@ import UIKit
 public class Primer3DS: NSObject, Primer3DSProtocol {
 
     public static var version: String = VersionUtils.wrapperSDKVersionNumber
-    public static var threeDsSdkVersion = VersionUtils.threeDsSdkVersionNumber
+    public static var threeDsSdkVersion = VersionUtils.threeDSSDKVersionNumber
     
     @available(*, deprecated, message: "use `version` instead")
     public static var hardcodedVersion = VersionUtils.wrapperSDKVersionNumber

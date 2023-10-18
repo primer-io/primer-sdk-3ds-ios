@@ -17,7 +17,7 @@ final class VersionUtilsTests: XCTestCase {
     }
     
     func test_3DSVersionNumber() throws {
-        XCTAssertEqual(VersionUtils.threeDsSdkVersionNumber, NetceteraSDKVersion)
+        XCTAssertEqual(VersionUtils.threeDSSDKVersionNumber, NetceteraSDKVersion)
     }
 
     func test_3DSMatchesNetcetera() throws {
@@ -27,6 +27,6 @@ final class VersionUtilsTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual(netceteraVersion, VersionUtils.threeDsSdkVersionNumber)
+        XCTAssertEqual(netceteraVersion, VersionUtils.threeDSSDKVersionNumber)
     }
 }

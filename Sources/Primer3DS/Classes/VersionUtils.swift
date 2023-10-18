@@ -23,7 +23,7 @@ struct VersionUtils {
      
      The version specified as `NetceteraSDKVersion` in the file `"sources/version.swift"` will be returned.
      */
-    static var threeDsSdkVersionNumber: String {
+    static var threeDSSDKVersionNumber: String {
         NetceteraSDKVersion
     }
 }
