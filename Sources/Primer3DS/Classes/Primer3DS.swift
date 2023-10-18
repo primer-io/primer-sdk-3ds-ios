@@ -7,10 +7,13 @@ import UIKit
 
 public class Primer3DS: NSObject, Primer3DSProtocol {
 
-    public static var version: String = VersionUtils.primer3DSVersionNumber
-    public static var hardcodedVersion = VersionUtils.primer3DSVersionNumber
+    public static var version: String = VersionUtils.wrapperSDKVersionNumber
+    public static var threeDsSdkVersion = VersionUtils.threeDsSdkVersionNumber
+    
+    @available(*, deprecated, message: "use `version` instead")
+    public static var hardcodedVersion = VersionUtils.wrapperSDKVersionNumber
+    
     public static let threeDsSdkProvider: String = "NETCETERA"
-    public static var threeDsSdkVersion = VersionUtils.wrappedSdkVersionNumber
     public static let supportedSchemeId = "A999999999"
     
     public private(set) var environment: Environment

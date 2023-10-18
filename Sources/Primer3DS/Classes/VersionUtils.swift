@@ -14,7 +14,7 @@ struct VersionUtils {
      
      The version specified as `Primer3DSVersion` in the file `"sources/version.swift"` will be returned.
      */
-    static var primer3DSVersionNumber: String {
+    static var wrapperSDKVersionNumber: String {
         Primer3DSVersion
     }
     
@@ -23,7 +23,7 @@ struct VersionUtils {
      
      The version specified as `NetceteraSDKVersion` in the file `"sources/version.swift"` will be returned.
      */
-    static var wrappedSdkVersionNumber: String {
+    static var threeDsSdkVersionNumber: String {
         NetceteraSDKVersion
     }
 }
