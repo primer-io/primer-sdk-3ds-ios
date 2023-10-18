@@ -1,1 +1,0 @@
-{"object": {"artifacts": [{"packageRef": {"identity": "primer-3ds-sdk-ios", "kind": "root", "name": "primer-3ds-sdk-ios", "path": "/Users/evangelospittas/Xcode/primer-3ds-sdk-ios"}, "source": {"path": "Sources/Frameworks/ThreeDS_SDK.xcframework", "type": "local"}, "targetName": "ThreeDS_SDK"}], "dependencies": []}, "version": 4}
