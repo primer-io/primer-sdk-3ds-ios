@@ -12,10 +12,10 @@ struct VersionUtils {
     /**
      Returns the version string of the _wrapper_ sdk in the format `"major.minor.patch"`
      
-     The version specified as `Primer3DSVersion` in the file `"sources/version.swift"` will be returned.
+     The version specified as `Primer3DSSDKVersion` in the file `"sources/version.swift"` will be returned.
      */
     static var wrapperSDKVersionNumber: String {
-        Primer3DSVersion
+        Primer3DSSDKVersion
     }
     
     /**

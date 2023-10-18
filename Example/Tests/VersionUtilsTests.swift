@@ -13,7 +13,7 @@ import ThreeDS_SDK
 final class VersionUtilsTests: XCTestCase {
 
     func test_wrapperVersionNumber() throws {
-        XCTAssertEqual(VersionUtils.wrapperSDKVersionNumber, Primer3DSVersion)
+        XCTAssertEqual(VersionUtils.wrapperSDKVersionNumber, Primer3DSSDKVersion)
     }
     
     func test_3DSVersionNumber() throws {
