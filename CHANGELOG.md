@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.0.1 (2023-10-25)
+
+### Fix
+
+- surface sdk versions from version.swift (#23)
+
 ## 2.0.0
 
 ### Breaking Changes
