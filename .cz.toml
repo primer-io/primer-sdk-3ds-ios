@@ -2,6 +2,6 @@
 version_scheme = "semver"
 version = "2.0.0"
 version_files = [
-  "Sources/Primer3DS/Classes/version.swift:let Primer3DSVersion",
+  "Sources/Primer3DS/Classes/version.swift:let Primer3DSSDKVersion",
   "Primer3DS.podspec:s.version"
 ]

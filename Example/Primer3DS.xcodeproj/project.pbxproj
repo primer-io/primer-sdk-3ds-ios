@@ -17,6 +17,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Primer3DSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Primer3DSTests.swift */; };
+		F0398B462ADFF62F00775C5F /* VersionUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0398B452ADFF62F00775C5F /* VersionUtilsTests.swift */; };
 		F9E39A13F614499D63B6FD51 /* Pods_Primer3DS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3499BAC61D75AF0AB90C58 /* Pods_Primer3DS_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,8 @@
 		B2F6483A51041DDF40A0CB01 /* Pods_Primer3DS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Primer3DS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B75EA0E1EBA9402C2949415A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		CC2616CC59FFB068E592814A /* Pods-Primer3DS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Primer3DS_Example.release.xcconfig"; path = "Target Support Files/Pods-Primer3DS_Example/Pods-Primer3DS_Example.release.xcconfig"; sourceTree = "<group>"; };
+		F0398B452ADFF62F00775C5F /* VersionUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionUtilsTests.swift; sourceTree = "<group>"; };
+		F0398B472ADFF8FD00775C5F /* ThreeDS_SDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ThreeDS_SDK.xcframework; path = ../Sources/Frameworks/ThreeDS_SDK.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,7 @@
 				04B6FF942AA875A400779407 /* Primer3DSChallengeTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 				04AC5AB42AA8AD9E00EE5FD0 /* StringHelpersTests.swift */,
+				F0398B452ADFF62F00775C5F /* VersionUtilsTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -162,6 +166,7 @@
 		7E98867F42DF09369BCDC8A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F0398B472ADFF8FD00775C5F /* ThreeDS_SDK.xcframework */,
 				B2F6483A51041DDF40A0CB01 /* Pods_Primer3DS_Example.framework */,
 				2C3499BAC61D75AF0AB90C58 /* Pods_Primer3DS_Tests.framework */,
 			);
@@ -353,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04AC5AB52AA8AD9E00EE5FD0 /* StringHelpersTests.swift in Sources */,
+				F0398B462ADFF62F00775C5F /* VersionUtilsTests.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Primer3DSTests.swift in Sources */,
 				04B6FF952AA875A400779407 /* Primer3DSChallengeTests.swift in Sources */,
 				04B6FF972AA875BB00779407 /* Mocks.swift in Sources */,
