@@ -1,4 +1,0 @@
-module Primer3DS {
-    header "/Users/evangelospittas/Xcode/primer-3ds-sdk-ios/.build/x86_64-apple-macosx/debug/Primer3DS.build/Primer3DS-Swift.h"
-    requires objc
-}
