@@ -5,8 +5,6 @@
 //  Created by Evangelos Pittas on 4/5/23.
 //
 
-#if canImport(UIKit)
-
 import Foundation
 
 internal extension Sequence where Element: Hashable {
@@ -16,5 +14,3 @@ internal extension Sequence where Element: Hashable {
         return filter { set.insert($0).inserted }
     }
 }
-
-#endif

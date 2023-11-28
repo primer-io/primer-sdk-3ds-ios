@@ -5,9 +5,6 @@
 //  Created by Evangelos Pittas on 19/5/23.
 //
 
-#if canImport(UIKit)
-#if canImport(ThreeDS_SDK)
-
 import Foundation
 import ThreeDS_SDK
 import UIKit
@@ -49,7 +46,3 @@ internal class Primer3DSSDKProvider: Primer3DSSDKProviderProtocol {
     
     fileprivate init() {}
 }
-
-#endif
-#endif
-
