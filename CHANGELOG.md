@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.0.2 (2023-10-25)
+
+### Fix
+
+- removed canImport(UIKit) everywhere
+
 ## 2.0.1 (2023-10-25)
 
 ### Fix
