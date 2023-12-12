@@ -15,7 +15,7 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
     
     public private(set) var environment: Environment
     public var is3DSSanityCheckEnabled: Bool = true
-    public private(set) var isWeakValidationEnabled: Bool = true
+    
     private var sdkCompletion: ((_ netceteraThreeDSCompletion: Primer3DSCompletion?, _ err: Primer3DSError?) -> Void)?
     private var transaction: Transaction?
     
@@ -42,15 +42,10 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         self.environment = environment
     }
     
-    public func initializeSDK(licenseKey: String, certificates: [Primer3DSCertificate]? = nil, enableWeakValidation: Bool = true) throws {
+    public func initializeSDK(apiKey: String, certificates: [Primer3DSCertificate]? = nil) throws {
         do {
             let configBuilder = ThreeDS_SDK.ConfigurationBuilder()
-            try configBuilder.license(key: licenseKey)
-            
-            if enableWeakValidation {
-                try configBuilder.weakValidationEnabled(true)
-                self.isWeakValidationEnabled = true
-            }
+            try configBuilder.api(key: apiKey)
             
             if environment != .production {
                 try configBuilder.log(to: .debug)
