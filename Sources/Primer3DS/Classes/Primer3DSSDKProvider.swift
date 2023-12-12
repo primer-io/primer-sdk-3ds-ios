@@ -46,6 +46,9 @@ internal class Primer3DSSDKProvider: Primer3DSSDKProviderProtocol {
     
     fileprivate init() {}
     
+    // We dont currently support setting UiCustomization from the Primer SDK side
+    // If and when we do, this will need to be updated to handle default and dark customizations
+    // Currently this is here solely for correctness to satisfy compiler warnings.
     private func customizationMap(_ customization: UiCustomization?) -> CustomizationMap? {
         if let customization {
             return [Self.kCustomizationMapDefault: customization, Self.kCustomizationMapDark: customization]

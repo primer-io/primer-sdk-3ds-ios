@@ -18,8 +18,7 @@ class ViewController: UIViewController {
         
         do {
             try primer3DS.initializeSDK(apiKey: "")
-            _ = try primer3DS.createTransaction(directoryServerId: "",
-                                                              supportedThreeDsProtocolVersions: [""])
+            _ = try primer3DS.createTransaction(directoryServerId: "", supportedThreeDsProtocolVersions: [""])
 
             primer3DS.performChallenge(threeDSAuthData: ThreeDSAuth(), 
                                        threeDsAppRequestorUrl: URL(string: ""),
