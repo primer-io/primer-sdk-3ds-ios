@@ -22,23 +22,24 @@ final class Primer3DSTests: XCTestCase {
     
     func testSDKInitialization_Success() throws {
         
-        let licenseKey = "LicenseKey"
+        let apiKey = "ApiKey"
         
         // SDK Setup
-        let certificate = MockCertificate(cardScheme: "CardScheme", encryptionKey: "EncryptionKey", rootCertificate: "RootCertificate")
-        XCTAssertTrue(primer3DS.isWeakValidationEnabled)
+        let certificate = MockCertificate(cardScheme: "CardScheme", 
+                                          encryptionKey: "EncryptionKey",
+                                          rootCertificate: "RootCertificate")
 
         let expectation = self.expectation(description: "Expect initialized configuration with expected values")
 
         sdkProvider.onInitializeCalled = { config, _, _ in
-            XCTAssertEqual(try config.getParamValue(group: nil, paramName: "license-key"), licenseKey)
+            XCTAssertEqual(try config.getParamValue(group: nil, paramName: "api-key"), apiKey)
             XCTAssertEqual(try config.getParamValue(group: "schema_ds_ids", paramName: "cardscheme"), Primer3DS.supportedSchemeId)
             XCTAssertEqual(try config.getParamValue(group: "schema_root_public_key", paramName: "cardscheme"), certificate.rootCertificate)
             XCTAssertEqual(try config.getParamValue(group: "schema_public_key", paramName: "cardscheme"), certificate.encryptionKey)
             expectation.fulfill()
         }
         
-        try primer3DS.initializeSDK(licenseKey: licenseKey, certificates: [certificate], enableWeakValidation: true)
+        try primer3DS.initializeSDK(apiKey: apiKey, certificates: [certificate])
 
         wait(for: [expectation], timeout: 60.0)
     }
@@ -52,7 +53,7 @@ final class Primer3DSTests: XCTestCase {
         sdkProvider.warnings = warnings
         
         do {
-            try primer3DS.initializeSDK(licenseKey: "LicenseKey")
+            try primer3DS.initializeSDK(apiKey: "LicenseKey")
         } catch let error as Primer3DSError {
             XCTAssertEqual(error.errorDescription, "Primer3DS SDK init failed with warnings '[WarningMessage]'.")
             XCTAssertEqual(error.errorId, "3ds-sdk-init-failed")
@@ -77,7 +78,7 @@ final class Primer3DSTests: XCTestCase {
         let transaction = MockTransaction()
         sdkProvider.transactions = ["\(directoryServerId):\(protocolVersion)": transaction]
         
-        try primer3DS.initializeSDK(licenseKey: "LicenseKey")
+        try primer3DS.initializeSDK(apiKey: "ApiKey")
         let authResult = try primer3DS.createTransaction(directoryServerId: directoryServerId, supportedThreeDsProtocolVersions: [protocolVersion])
         
         XCTAssertEqual(authResult.authData.sdkAppId, transaction.mockAuthRequestParameters.getSDKAppID())

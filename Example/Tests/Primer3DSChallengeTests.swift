@@ -161,7 +161,7 @@ final class Primer3DSChallengeTests: XCTestCase {
             sdkProvider.transactions = ["\(directoryServerId):\(protocolVersion)": transaction]
         }
         
-        try primer3DS.initializeSDK(licenseKey: "LicenseKey")
+        try primer3DS.initializeSDK(apiKey: "ApiKey")
         _ = try primer3DS.createTransaction(directoryServerId: directoryServerId, supportedThreeDsProtocolVersions: [protocolVersion])
     }
 

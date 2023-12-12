@@ -17,11 +17,13 @@ class ViewController: UIViewController {
         let primer3DS = Primer3DS(environment: .staging)
         
         do {
-            try primer3DS.initializeSDK(licenseKey: "")
-            let transaction = try primer3DS.createTransaction(directoryServerId: "", supportedThreeDsProtocolVersions: [""])
+            try primer3DS.initializeSDK(apiKey: "")
+            _ = try primer3DS.createTransaction(directoryServerId: "",
+                                                              supportedThreeDsProtocolVersions: [""])
 
-            primer3DS.performChallenge(threeDSAuthData: ThreeDSAuth(), threeDsAppRequestorUrl: URL(string: ""), presentOn: self) { (sdkAuthCompletion, err) in
-                
+            primer3DS.performChallenge(threeDSAuthData: ThreeDSAuth(), 
+                                       threeDsAppRequestorUrl: URL(string: ""),
+                                       presentOn: self) { (sdkAuthCompletion, err) in
             }
         } catch {
             print(error)
