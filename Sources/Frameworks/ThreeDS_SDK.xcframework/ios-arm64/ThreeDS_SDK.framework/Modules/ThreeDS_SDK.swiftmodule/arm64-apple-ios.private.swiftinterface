@@ -76,12 +76,17 @@ public enum ThreeDS2ErrorCode : Swift.String {
   case noLogoImageForGivenDirectoryServerID
   case missingConfigurationForScheme
   case configurationValidationFailed
+  case invalidUiCustomizationType
+  case apiKeyMissing
+  case apiKeyInvalidUUID
+  case apiKeyInvalid
   case licenseKeyMissing
   case licenseFormatInvalid
   case licenseExpired
   case licenseSignatureInvalid
   case licenseInvalid
   case licenseModuleInvalid
+  case licenseAppIdInvalid
   case errorGettingSDKVersion
   case challengeError
   case challengeProcessingFailed
@@ -114,7 +119,8 @@ public protocol ChallengeTimeout {
 @_inheritsConvenienceInitializers @objc(NCATextBoxCustomization) @objcMembers public class TextBoxCustomization : ThreeDS_SDK.Customization {
   @objc public func setBorderWidth(borderWidth: Swift.Int) throws
   @objc public func setBorderColor(hexColorCode: Swift.String) throws
-  @objc public func setDarkBorderColor(hexColorCode: Swift.String) throws
+  @objc @available(*, deprecated, message: "Starting with protocol version 2.3.1, for dark mode UI customization,\nthe integrators shall use setBorderColor(...) and insert\nthe UiCustomization object into the uiCustomizationMap with key \"DARK\".")
+  public func setDarkBorderColor(hexColorCode: Swift.String) throws
   @objc public func setCornerRadius(cornerRadius: Swift.Int) throws
   @objc public func getBorderWidth() -> Swift.Int
   @objc public func getBorderColor() -> Swift.String
@@ -180,7 +186,8 @@ extension ThreeDS_SDK.Scheme {
 }
 @_inheritsConvenienceInitializers @objc(NCAButtonCustomization) @objcMembers public class ButtonCustomization : ThreeDS_SDK.Customization {
   @objc public func setBackgroundColor(hexColorCode: Swift.String) throws
-  @objc public func setDarkBackgroundColor(hexColorCode: Swift.String) throws
+  @objc @available(*, deprecated, message: "Starting with protocol version 2.3.1, for dark mode UI customization,\nthe integrators shall use setBackgroundColor(...) and insert\nthe UiCustomization object into the uiCustomizationMap with key \"DARK\".")
+  public func setDarkBackgroundColor(hexColorCode: Swift.String) throws
   @objc public func setCornerRadius(cornerRadius: Swift.Int) throws
   @objc public func getBackgroundColor() -> Swift.String
   @objc public func getCornerRadius() -> Swift.Int
@@ -198,7 +205,10 @@ extension ThreeDS_SDK.RuntimeErrorEvent : Foundation.NSCopying {
   @objc dynamic public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
 }
 @objc(NCAThreeDS2Service) public protocol ThreeDS2Service {
-  @objc func initialize(_ configParameters: ThreeDS_SDK.ConfigParameters, locale: Swift.String?, uiCustomization: ThreeDS_SDK.UiCustomization?) throws
+  @objc @available(*, deprecated, message: "Starting with protocol version 2.3.1, integrators should pass the UICustomization as a map.")
+  func initialize(_ configParameters: ThreeDS_SDK.ConfigParameters, locale: Swift.String?, uiCustomization: ThreeDS_SDK.UiCustomization?) throws
+  @objc func initialize(_ configParameters: ThreeDS_SDK.ConfigParameters, locale: Swift.String?, uiCustomizationMap: [Swift.String : ThreeDS_SDK.UiCustomization]?) throws
+  @objc func initialize(_ configParameters: ThreeDS_SDK.ConfigParameters, locale: Swift.String?, uiCustomizationMap: [Swift.String : ThreeDS_SDK.UiCustomization]?, success: @escaping () -> (), failure: @escaping (Swift.Error) -> ())
   @objc func createTransaction(directoryServerId: Swift.String, messageVersion: Swift.String?) throws -> ThreeDS_SDK.Transaction
   @objc func getWarnings() throws -> [ThreeDS_SDK.Warning]
   @objc func getSDKVersion() throws -> Swift.String
@@ -234,7 +244,8 @@ extension UIKit.UIControl {
 }
 @_inheritsConvenienceInitializers @objc(NCAToolbarCustomization) @objcMembers public class ToolbarCustomization : ThreeDS_SDK.Customization {
   @objc public func setBackgroundColor(hexColorCode: Swift.String) throws
-  @objc public func setDarkBackgroundColor(hexColorCode: Swift.String) throws
+  @objc @available(*, deprecated, message: "Starting with protocol version 2.3.1, for dark mode UI customization,\nthe integrators shall use setBackgroundColor(...) and insert\nthe UiCustomization object into the uiCustomizationMap with key \"DARK\".")
+  public func setDarkBackgroundColor(hexColorCode: Swift.String) throws
   @objc public func setHeaderText(headerText: Swift.String) throws
   @objc public func setButtonText(buttonText: Swift.String) throws
   @objc public func getBackgroundColor() -> Swift.String
@@ -283,7 +294,8 @@ extension ThreeDS_SDK.ProtocolErrorEvent : Foundation.NSCopying {
   @objc required override dynamic public init()
   @objc public func setTextFontName(fontName: Swift.String) throws
   @objc public func setTextColor(hexColorCode: Swift.String) throws
-  @objc public func setDarkTextColor(hexColorCode: Swift.String) throws
+  @objc @available(*, deprecated, message: "Starting with protocol version 2.3.1, for dark mode UI customization,\nthe integrators shall use setTextColor(...) and insert\nthe UiCustomization object into the uiCustomizationMap with key \"DARK\".")
+  public func setDarkTextColor(hexColorCode: Swift.String) throws
   @objc public func setTextFontSize(fontSize: Swift.Int) throws
   @objc public func getTextFontName() -> Swift.String
   @objc public func getTextColor() -> Swift.String
@@ -300,7 +312,8 @@ extension ThreeDS_SDK.ProtocolErrorEvent : Foundation.NSCopying {
 }
 @_inheritsConvenienceInitializers @objc(NCALabelCustomization) @objcMembers public class LabelCustomization : ThreeDS_SDK.Customization {
   @objc public func setHeadingTextColor(hexColorCode: Swift.String) throws
-  @objc public func setHeadingDarkTextColor(hexColorCode: Swift.String) throws
+  @objc @available(*, deprecated, message: "Starting with protocol version 2.3.1, for dark mode UI customization,\nthe integrators shall use setHeadingTextColor(...) and insert\nthe UiCustomization object into the uiCustomizationMap with key \"DARK\".")
+  public func setHeadingDarkTextColor(hexColorCode: Swift.String) throws
   @objc public func setHeadingTextFontName(fontName: Swift.String) throws
   @objc public func setHeadingTextFontSize(fontSize: Swift.Int) throws
   @objc public func getHeadingTextColor() -> Swift.String
@@ -374,6 +387,8 @@ extension ThreeDS_SDK.ProtocolErrorEvent : Foundation.NSCopying {
   @objc public init(bundle: Foundation.Bundle)
   @objc convenience override dynamic public init()
   @objc public func initialize(_ configParameters: ThreeDS_SDK.ConfigParameters, locale: Swift.String?, uiCustomization: ThreeDS_SDK.UiCustomization?) throws
+  @objc public func initialize(_ configParameters: ThreeDS_SDK.ConfigParameters, locale: Swift.String?, uiCustomizationMap: [Swift.String : ThreeDS_SDK.UiCustomization]?) throws
+  @objc public func initialize(_ configParameters: ThreeDS_SDK.ConfigParameters, locale: Swift.String?, uiCustomizationMap: [Swift.String : ThreeDS_SDK.UiCustomization]?, success: @escaping () -> (), failure: @escaping (Swift.Error) -> ())
   @objc public func createTransaction(directoryServerId: Swift.String, messageVersion: Swift.String?) throws -> ThreeDS_SDK.Transaction
   @objc public func getWarnings() throws -> [ThreeDS_SDK.Warning]
   @objc public func getSDKVersion() throws -> Swift.String
@@ -413,14 +428,26 @@ extension ThreeDS_SDK.UiCustomization {
     }
     public init?(rawValue: ThreeDS_SDK.UiCustomization.ButtonType.RawValue)
   }
+  @objc(NCAUICustomizationType) public enum UICustomizationType : Swift.Int, Swift.RawRepresentable {
+    case DEFAULT
+    case DARK
+    case MONOCHROME
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+    public init?(rawValue: ThreeDS_SDK.UiCustomization.UICustomizationType.RawValue)
+  }
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(NCAConfigurationBuilder) @objcMembers public class ConfigurationBuilder : ObjectiveC.NSObject {
   @objc override dynamic public init()
-  @objc public func license(key: Swift.String) throws
+  @objc public func api(key: Swift.String) throws
   @objc public func restrictedParameters(_ parameters: [Swift.String]) throws
   @objc public func add(_ scheme: ThreeDS_SDK.Scheme) throws
   @objc public func log(to level: ThreeDS_SDK.LogLevel) throws
-  @objc public func weakValidationEnabled(_ value: Swift.Bool) throws
+  @objc public func bridgingMessageExtensionEnabled(_ enabled: Swift.Bool) throws
+  @objc @available(*, deprecated, message: "The Weak Validation configuration has been restructured and incorporated into the default behaviour of the SDK. As a result, this method should no longer be used and will be removed in the next iteration of the SDK.")
+  public func weakValidationEnabled(_ value: Swift.Bool) throws
   @objc public func configParameters() -> ThreeDS_SDK.ConfigParameters
   @objc deinit
 }
@@ -435,6 +462,7 @@ extension ThreeDS_SDK.ConfigurationBuilder : Foundation.NSCopying {
   @objc public static let union: Swift.String
   @objc public static let jcb: Swift.String
   @objc public static let cartesBancaires: Swift.String
+  @objc public static let eftpos: Swift.String
   @objc override dynamic public init()
   @objc deinit
 }
@@ -453,3 +481,5 @@ extension ThreeDS_SDK.ASN1Identifier.TagNumber : Swift.Hashable {}
 extension ThreeDS_SDK.ASN1Identifier.TagNumber : Swift.RawRepresentable {}
 extension ThreeDS_SDK.UiCustomization.ButtonType : Swift.Equatable {}
 extension ThreeDS_SDK.UiCustomization.ButtonType : Swift.Hashable {}
+extension ThreeDS_SDK.UiCustomization.UICustomizationType : Swift.Equatable {}
+extension ThreeDS_SDK.UiCustomization.UICustomizationType : Swift.Hashable {}
