@@ -29,7 +29,7 @@ internal class Primer3DSSDKProvider: Primer3DSSDKProviderProtocol {
     private var sdk: ThreeDS2Service { _threeDS2Service }
     
     func initialize(configParameters: ConfigParameters, locale: String?, uiCustomization: UiCustomization?) throws {
-        try sdk.initialize(configParameters, locale: locale, uiCustomization: uiCustomization)
+        try sdk.initialize(configParameters, locale: locale, uiCustomizationMap: customizationMap(uiCustomization))
     }
     
     func getWarnings() throws -> [Warning] {
@@ -45,4 +45,15 @@ internal class Primer3DSSDKProvider: Primer3DSSDKProviderProtocol {
     }
     
     fileprivate init() {}
+    
+    private func customizationMap(_ customization: UiCustomization?) -> CustomizationMap? {
+        if let customization {
+            return [Self.kCustomizationMapDefault: customization, Self.kCustomizationMapDark: customization]
+        }
+        return nil
+    }
+    
+    typealias CustomizationMap = [String: UiCustomization]
+    private static let kCustomizationMapDefault = "DEFAULT"
+    private static let kCustomizationMapDark = "DARK"
 }

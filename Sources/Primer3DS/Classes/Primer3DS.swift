@@ -66,8 +66,8 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
             
             let configParameters = configBuilder.configParameters()
             try sdkProvider.initialize(configParameters: configParameters,
-                                     locale: nil,
-                                     uiCustomization: nil)
+                                       locale: nil,
+                                       uiCustomization: nil)
             
         } catch {
             let nsErr = error as NSError
