@@ -29,7 +29,7 @@ internal class Primer3DSSDKProvider: Primer3DSSDKProviderProtocol {
     private var sdk: ThreeDS2Service { _threeDS2Service }
     
     func initialize(configParameters: ConfigParameters, locale: String?, uiCustomization: UiCustomization?) throws {
-        try sdk.initialize(configParameters, locale: locale, uiCustomization: uiCustomization)
+        try sdk.initialize(configParameters, locale: locale, uiCustomizationMap: customizationMap(uiCustomization))
     }
     
     func getWarnings() throws -> [Warning] {
@@ -45,4 +45,18 @@ internal class Primer3DSSDKProvider: Primer3DSSDKProviderProtocol {
     }
     
     fileprivate init() {}
+    
+    // We dont currently support setting UiCustomization from the Primer SDK side
+    // If and when we do, this will need to be updated to handle default and dark customizations
+    // Currently this is here solely for correctness to satisfy compiler warnings.
+    private func customizationMap(_ customization: UiCustomization?) -> CustomizationMap? {
+        if let customization {
+            return [Self.kCustomizationMapDefault: customization, Self.kCustomizationMapDark: customization]
+        }
+        return nil
+    }
+    
+    typealias CustomizationMap = [String: UiCustomization]
+    private static let kCustomizationMapDefault = "DEFAULT"
+    private static let kCustomizationMapDark = "DARK"
 }

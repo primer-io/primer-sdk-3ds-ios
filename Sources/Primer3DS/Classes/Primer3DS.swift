@@ -15,13 +15,15 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
     
     public private(set) var environment: Environment
     public var is3DSSanityCheckEnabled: Bool = true
-    public private(set) var isWeakValidationEnabled: Bool = true
+    
     private var sdkCompletion: ((_ netceteraThreeDSCompletion: Primer3DSCompletion?, _ err: Primer3DSError?) -> Void)?
     private var transaction: Transaction?
     
     let sdkProvider: Primer3DSSDKProviderProtocol
         
-    public static func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    public static func application(_ app: UIApplication, 
+                                   open url: URL,
+                                   options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return ThreeDSSDKAppDelegate.shared.appOpened(url: url)
     }
     
@@ -42,15 +44,10 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         self.environment = environment
     }
     
-    public func initializeSDK(licenseKey: String, certificates: [Primer3DSCertificate]? = nil, enableWeakValidation: Bool = true) throws {
+    public func initializeSDK(apiKey: String, certificates: [Primer3DSCertificate]? = nil) throws {
         do {
             let configBuilder = ThreeDS_SDK.ConfigurationBuilder()
-            try configBuilder.license(key: licenseKey)
-            
-            if enableWeakValidation {
-                try configBuilder.weakValidationEnabled(true)
-                self.isWeakValidationEnabled = true
-            }
+            try configBuilder.api(key: apiKey)
             
             if environment != .production {
                 try configBuilder.log(to: .debug)
@@ -69,8 +66,8 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
             
             let configParameters = configBuilder.configParameters()
             try sdkProvider.initialize(configParameters: configParameters,
-                                     locale: nil,
-                                     uiCustomization: nil)
+                                       locale: nil,
+                                       uiCustomization: nil)
             
         } catch {
             let nsErr = error as NSError
@@ -106,7 +103,8 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         }
     }
     
-    public func createTransaction(directoryServerId: String, supportedThreeDsProtocolVersions: [String]) throws -> SDKAuthResult {
+    public func createTransaction(directoryServerId: String, 
+                                  supportedThreeDsProtocolVersions: [String]) throws -> SDKAuthResult {
         guard let maxSupportedThreeDsProtocolVersion = getMaxValidSupportedThreeDSVersion(supportedThreeDsProtocolVersions) else {
             let err = Primer3DSError.unsupportedProtocolVersion(supportedProtocols: supportedThreeDsProtocolVersions)
             throw err
@@ -117,7 +115,8 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
                 directoryServerId: directoryServerId,
                 messageVersion: maxSupportedThreeDsProtocolVersion)
             let authData = try transaction!.buildThreeDSecureAuthData()
-            return SDKAuthResult(authData: authData, maxSupportedThreeDsProtocolVersion: maxSupportedThreeDsProtocolVersion)
+            return SDKAuthResult(authData: authData, 
+                                 maxSupportedThreeDsProtocolVersion: maxSupportedThreeDsProtocolVersion)
             
         } catch let error {
             let err = Primer3DSError.failedToCreateTransaction(error: error)
@@ -143,7 +142,9 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
             acsRefNumber: threeDSAuthData.acsReferenceNumber,
             acsSignedContent: threeDSAuthData.acsSignedContent)
         
-        if let threeDsAppRequestorUrl = threeDsAppRequestorUrl, let transactionId = threeDSAuthData.transactionId, !transactionId.isEmpty {
+        if let threeDsAppRequestorUrl = threeDsAppRequestorUrl, 
+            let transactionId = threeDSAuthData.transactionId,
+            !transactionId.isEmpty {
             let queryItems = [URLQueryItem(name: "transID", value: transactionId)]
             if var urlComps = URLComponents(url: threeDsAppRequestorUrl, resolvingAgainstBaseURL: false) {
                 urlComps.queryItems = queryItems
@@ -185,8 +186,13 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         
     internal func getMaxValidSupportedThreeDSVersion(_ supportedThreeDsVersions: [String]) -> String? {
         let uniqueSupportedThreeDsVersions = supportedThreeDsVersions.unique
-        let sdkSupportedProtocolVersions = uniqueSupportedThreeDsVersions.filter({ $0.compareWithVersion("2.3") == .orderedAscending && ($0.compareWithVersion("2.1") == .orderedDescending || $0.compareWithVersion("2.1") == .orderedSame) })
-        let orderedSdkSupportedProtocolVersions = sdkSupportedProtocolVersions.sorted(by: { $0.compare($1, options: .numeric) == .orderedDescending })
+        let sdkSupportedProtocolVersions = uniqueSupportedThreeDsVersions.filter(
+            { $0.compareWithVersion("2.3") == .orderedAscending &&
+                ($0.compareWithVersion("2.1") == .orderedDescending || $0.compareWithVersion("2.1") == .orderedSame)
+            })
+        let orderedSdkSupportedProtocolVersions = sdkSupportedProtocolVersions.sorted(by: {
+            $0.compare($1, options: .numeric) == .orderedDescending
+        })
         return orderedSdkSupportedProtocolVersions.first
     }
     
@@ -202,10 +208,12 @@ extension Primer3DS: ChallengeStatusReceiver {
         let authenticationStatus = AuthenticationStatus(rawValue: completionEvent.getTransactionStatus())
         
         if authenticationStatus == .y {
-            let netceteraThreeDSCompletion = AuthCompletion(sdkTransactionId: sdkTransactionId, transactionStatus: authenticationStatus.rawValue)
+            let netceteraThreeDSCompletion = AuthCompletion(sdkTransactionId: sdkTransactionId, 
+                                                            transactionStatus: authenticationStatus.rawValue)
             sdkCompletion?(netceteraThreeDSCompletion, nil)
         } else {
-            let err = Primer3DSError.invalidChallengeStatus(status: authenticationStatus.rawValue, sdkTransactionId: sdkTransactionId)
+            let err = Primer3DSError.invalidChallengeStatus(status: authenticationStatus.rawValue, 
+                                                            sdkTransactionId: sdkTransactionId)
             sdkCompletion?(nil, err)
         }
         

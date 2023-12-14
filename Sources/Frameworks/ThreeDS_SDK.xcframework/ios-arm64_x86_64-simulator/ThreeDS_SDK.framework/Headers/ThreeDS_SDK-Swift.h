@@ -323,7 +323,7 @@ SWIFT_CLASS_NAMED("Customization")
 ///
 /// throws:
 /// InvalidInput
-- (BOOL)setDarkTextColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)setDarkTextColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("\n    Starting with protocol version 2.3.1, for dark mode UI customization,\n    the integrators shall use setTextColor(...) and insert\n    the UiCustomization object into the uiCustomizationMap with key \"DARK\".\n    ");
 /// Setter fot the text font size
 /// \param fontSize the font size given as an integer value
 ///
@@ -363,7 +363,7 @@ SWIFT_CLASS_NAMED("ButtonCustomization")
 /// Set the dark background color of the button.
 /// \param hexColorCode Color code in Hex format.
 ///
-- (BOOL)setDarkBackgroundColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)setDarkBackgroundColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("\n    Starting with protocol version 2.3.1, for dark mode UI customization,\n    the integrators shall use setBackgroundColor(...) and insert\n    the UiCustomization object into the uiCustomizationMap with key \"DARK\".\n    ");
 /// Sets the radius of the button corners.
 /// \param cornerRadius Radius (integer value) for the button corners.
 ///
@@ -506,15 +506,16 @@ SWIFT_CLASS_NAMED("ConfigurationBuilder")
 @interface NCAConfigurationBuilder : NSObject
 /// Create  an emprty object with clean config parameters.
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-/// Add a license key to the ConfigParam object.
-/// \param key Value for the key.
+/// Add an api key to the ConfigParam object.
+/// \param key Value for the key as UUID string.
 ///
-- (BOOL)licenseWithKey:(NSString * _Nonnull)key error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)apiWithKey:(NSString * _Nonnull)key error:(NSError * _Nullable * _Nullable)error;
 /// Add restricted device info parameters to the ConfigParameters.
 /// \param parameters List of parameters.
 ///
 - (BOOL)restrictedParameters:(NSArray<NSString *> * _Nonnull)parameters error:(NSError * _Nullable * _Nullable)error;
 /// Add a scheme object to the configuration.
+/// Integrator defined SchemeConfiguration takes priority over prebundled 3DS SDK SchemeConfiguration for use during EMVCo Authentication. If the integrator wishes to utilise the automatic updates of SchemeConfiguration provided by the 3DS SDK, custom encryption certificates for the SDK should not be added/overriden.
 /// \param scheme Scheme object.
 ///
 - (BOOL)add:(NCAScheme * _Nonnull)scheme error:(NSError * _Nullable * _Nullable)error;
@@ -522,12 +523,16 @@ SWIFT_CLASS_NAMED("ConfigurationBuilder")
 /// \param level The desired log level.
 ///
 - (BOOL)logTo:(enum NCALogLevel)level error:(NSError * _Nullable * _Nullable)error;
+/// Modifies the support for sending and receiving bridging message extensions. By default the support is disabled.
+/// \param enabled Boolean that decides whether bridging message extension is enabled or disabled.
+///
+- (BOOL)bridgingMessageExtensionEnabled:(BOOL)enabled error:(NSError * _Nullable * _Nullable)error;
 /// Modifies the level of validation of the challenge response parameters. If the passed value is equal to true, the 3DS SDK will use weak validation for some of the challenge response parameters. The weak validation removes the mandatory status and the string length validation of several challenge response parameters.
 /// note:
 /// By using this method the Netcetera 3DS SDK will no longer be compliant with the latest bulletin of the EMVCo Protocol and Core Functions Specification. If any legal actions or consequences arise, the responsibility falls on the integrator of the Netcetera iOS 3DS SDK.
 /// \param value Decides whether weak validation should be enabled.
 ///
-- (BOOL)weakValidationEnabled:(BOOL)value error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)weakValidationEnabled:(BOOL)value error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("The Weak Validation configuration has been restructured and incorporated into the default behaviour of the SDK. As a result, this method should no longer be used and will be removed in the next iteration of the SDK.");
 /// Return a created ConfigParameters object.
 - (NCAConfigParameters * _Nonnull)configParameters SWIFT_WARN_UNUSED_RESULT;
 @end
@@ -556,6 +561,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (NSString * _Nonnull)jcb SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull cartesBancaires;)
 + (NSString * _Nonnull)cartesBancaires SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull eftpos;)
++ (NSString * _Nonnull)eftpos SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -635,7 +642,7 @@ SWIFT_CLASS_NAMED("LabelCustomization")
 ///
 /// throws:
 /// InvalidInputExcpetion
-- (BOOL)setHeadingDarkTextColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)setHeadingDarkTextColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("\n    Starting with protocol version 2.3.1, for dark mode UI customization,\n    the integrators shall use setHeadingTextColor(...) and insert\n    the UiCustomization object into the uiCustomizationMap with key \"DARK\".\n    ");
 /// Sets the font type of the heading label text.
 /// \param fontName Font type for the heading label text.
 ///
@@ -841,7 +848,7 @@ SWIFT_CLASS_NAMED("TextBoxCustomization")
 ///
 /// throws:
 /// InvalidInput
-- (BOOL)setDarkBorderColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)setDarkBorderColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("\n    Starting with protocol version 2.3.1, for dark mode UI customization,\n    the integrators shall use setBorderColor(...) and insert\n    the UiCustomization object into the uiCustomizationMap with key \"DARK\".\n    ");
 /// Sets the corner radius of the text box corners.
 /// \param cornerRadius Radius (integer value) for the text box corners.
 ///
@@ -913,7 +920,32 @@ SWIFT_PROTOCOL_NAMED("ThreeDS2Service")
 ///
 /// throws:
 /// InvalidInput, SDKAlreadyInitialized, SDKRuntime
-- (BOOL)initialize:(NCAConfigParameters * _Nonnull)configParameters locale:(NSString * _Nullable)locale uiCustomization:(NCAUiCustomization * _Nullable)uiCustomization error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)initialize:(NCAConfigParameters * _Nonnull)configParameters locale:(NSString * _Nullable)locale uiCustomization:(NCAUiCustomization * _Nullable)uiCustomization error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("Starting with protocol version 2.3.1, integrators should pass the UICustomization as a map.");
+/// Initializes the 3DS SDK instance.
+/// \param configParameters Configuration information that shall be used during initialization.
+///
+/// \param locale String that represents the locale for the app’s user interface.
+///
+/// \param uiCustomizationMap UI configuration information that is used to specify the UI layout and theme. For example, font style and font size.
+/// Use UICustomizationType raw values as String keys for the uiCustomization dictionary. Each key represents a UI customization for a particular iOS appearance.
+///
+///
+/// throws:
+/// InvalidInput, SDKAlreadyInitialized, SDKRuntime
+- (BOOL)initialize:(NCAConfigParameters * _Nonnull)configParameters locale:(NSString * _Nullable)locale uiCustomizationMap:(NSDictionary<NSString *, NCAUiCustomization *> * _Nullable)uiCustomizationMap error:(NSError * _Nullable * _Nullable)error;
+/// Initializes the 3DS SDK instance.
+/// \param configParameters Configuration information that shall be used during initialization.
+///
+/// \param locale String that represents the locale for the app’s user interface.
+///
+/// \param uiCustomizationMap UI configuration information that is used to specify the UI layout and theme. For example, font style and font size.
+/// Use UICustomizationType raw values as String keys for the uiCustomization dictionary. Each key represents a UI customization for a particular iOS appearance.
+///
+/// \param success A closure that is called when the initialization finishes successfully.
+///
+/// \param failure A closure that is called when the initialization finishes unsuccessfully. The failure closure takes an Error parameter that contains the failure details.
+///
+- (void)initialize:(NCAConfigParameters * _Nonnull)configParameters locale:(NSString * _Nullable)locale uiCustomizationMap:(NSDictionary<NSString *, NCAUiCustomization *> * _Nullable)uiCustomizationMap success:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 /// Creates an instance of Transaction through which the 3DS Requestor App gets the data that
 /// is required to perform the transaction.
 /// \param directoryServerId Registered Application Provider Identifier (RID) that is unique to
@@ -961,6 +993,8 @@ SWIFT_CLASS_NAMED("ThreeDS2ServiceSDK")
 /// The resources will be taken from the main application bundle.
 - (nonnull instancetype)init;
 - (BOOL)initialize:(NCAConfigParameters * _Nonnull)configParameters locale:(NSString * _Nullable)locale uiCustomization:(NCAUiCustomization * _Nullable)uiCustomization error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)initialize:(NCAConfigParameters * _Nonnull)configParameters locale:(NSString * _Nullable)locale uiCustomizationMap:(NSDictionary<NSString *, NCAUiCustomization *> * _Nullable)uiCustomizationMap error:(NSError * _Nullable * _Nullable)error;
+- (void)initialize:(NCAConfigParameters * _Nonnull)configParameters locale:(NSString * _Nullable)locale uiCustomizationMap:(NSDictionary<NSString *, NCAUiCustomization *> * _Nullable)uiCustomizationMap success:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 - (id <NCATransaction> _Nullable)createTransactionWithDirectoryServerId:(NSString * _Nonnull)directoryServerId messageVersion:(NSString * _Nullable)messageVersion error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 - (NSArray<NCAWarning *> * _Nullable)getWarningsAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getSDKVersionAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
@@ -1032,7 +1066,7 @@ SWIFT_CLASS_NAMED("ToolbarCustomization")
 ///
 /// throws:
 /// InvalidInputExpection
-- (BOOL)setDarkBackgroundColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)setDarkBackgroundColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("\n    Starting with protocol version 2.3.1, for dark mode UI customization,\n    the integrators shall use setBackgroundColor(...) and insert\n    the UiCustomization object into the uiCustomizationMap with key \"DARK\".\n    ");
 /// Sets the header text of the toolbar.
 /// \param headerText Text for the header.
 ///
@@ -1099,6 +1133,12 @@ SWIFT_PROTOCOL_NAMED("Transaction")
 /// Cleans up resources that are held by the Transaction object.
 - (BOOL)closeAndReturnError:(NSError * _Nullable * _Nullable)error;
 @end
+
+
+
+
+
+
 
 
 
@@ -1195,6 +1235,12 @@ SWIFT_CLASS_NAMED("UiCustomization")
 ///   <li>
 ///     RESEND: Resend button
 ///   </li>
+///   <li>
+///     ADD_CH: Additional choice button
+///   </li>
+///   <li>
+///     OPEN_OOB_APP: OOB app button
+///   </li>
 /// </ul>
 typedef SWIFT_ENUM_NAMED(NSInteger, NCAButtonType, "ButtonType", open) {
   NCAButtonTypeSUBMIT = 0,
@@ -1206,6 +1252,12 @@ typedef SWIFT_ENUM_NAMED(NSInteger, NCAButtonType, "ButtonType", open) {
   NCAButtonTypeOPEN_OOB_APP = 6,
 };
 
+/// Enumeration represeting the UI Customization types
+typedef SWIFT_ENUM_NAMED(NSInteger, NCAUICustomizationType, "UICustomizationType", open) {
+  NCAUICustomizationTypeDEFAULT = 0,
+  NCAUICustomizationTypeDARK = 1,
+  NCAUICustomizationTypeMONOCHROME = 2,
+};
 
 
 /// Represent a warning that is produced by the 3DS SDK while performing security checks during initialization.
@@ -1588,7 +1640,7 @@ SWIFT_CLASS_NAMED("Customization")
 ///
 /// throws:
 /// InvalidInput
-- (BOOL)setDarkTextColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)setDarkTextColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("\n    Starting with protocol version 2.3.1, for dark mode UI customization,\n    the integrators shall use setTextColor(...) and insert\n    the UiCustomization object into the uiCustomizationMap with key \"DARK\".\n    ");
 /// Setter fot the text font size
 /// \param fontSize the font size given as an integer value
 ///
@@ -1628,7 +1680,7 @@ SWIFT_CLASS_NAMED("ButtonCustomization")
 /// Set the dark background color of the button.
 /// \param hexColorCode Color code in Hex format.
 ///
-- (BOOL)setDarkBackgroundColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)setDarkBackgroundColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("\n    Starting with protocol version 2.3.1, for dark mode UI customization,\n    the integrators shall use setBackgroundColor(...) and insert\n    the UiCustomization object into the uiCustomizationMap with key \"DARK\".\n    ");
 /// Sets the radius of the button corners.
 /// \param cornerRadius Radius (integer value) for the button corners.
 ///
@@ -1771,15 +1823,16 @@ SWIFT_CLASS_NAMED("ConfigurationBuilder")
 @interface NCAConfigurationBuilder : NSObject
 /// Create  an emprty object with clean config parameters.
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-/// Add a license key to the ConfigParam object.
-/// \param key Value for the key.
+/// Add an api key to the ConfigParam object.
+/// \param key Value for the key as UUID string.
 ///
-- (BOOL)licenseWithKey:(NSString * _Nonnull)key error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)apiWithKey:(NSString * _Nonnull)key error:(NSError * _Nullable * _Nullable)error;
 /// Add restricted device info parameters to the ConfigParameters.
 /// \param parameters List of parameters.
 ///
 - (BOOL)restrictedParameters:(NSArray<NSString *> * _Nonnull)parameters error:(NSError * _Nullable * _Nullable)error;
 /// Add a scheme object to the configuration.
+/// Integrator defined SchemeConfiguration takes priority over prebundled 3DS SDK SchemeConfiguration for use during EMVCo Authentication. If the integrator wishes to utilise the automatic updates of SchemeConfiguration provided by the 3DS SDK, custom encryption certificates for the SDK should not be added/overriden.
 /// \param scheme Scheme object.
 ///
 - (BOOL)add:(NCAScheme * _Nonnull)scheme error:(NSError * _Nullable * _Nullable)error;
@@ -1787,12 +1840,16 @@ SWIFT_CLASS_NAMED("ConfigurationBuilder")
 /// \param level The desired log level.
 ///
 - (BOOL)logTo:(enum NCALogLevel)level error:(NSError * _Nullable * _Nullable)error;
+/// Modifies the support for sending and receiving bridging message extensions. By default the support is disabled.
+/// \param enabled Boolean that decides whether bridging message extension is enabled or disabled.
+///
+- (BOOL)bridgingMessageExtensionEnabled:(BOOL)enabled error:(NSError * _Nullable * _Nullable)error;
 /// Modifies the level of validation of the challenge response parameters. If the passed value is equal to true, the 3DS SDK will use weak validation for some of the challenge response parameters. The weak validation removes the mandatory status and the string length validation of several challenge response parameters.
 /// note:
 /// By using this method the Netcetera 3DS SDK will no longer be compliant with the latest bulletin of the EMVCo Protocol and Core Functions Specification. If any legal actions or consequences arise, the responsibility falls on the integrator of the Netcetera iOS 3DS SDK.
 /// \param value Decides whether weak validation should be enabled.
 ///
-- (BOOL)weakValidationEnabled:(BOOL)value error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)weakValidationEnabled:(BOOL)value error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("The Weak Validation configuration has been restructured and incorporated into the default behaviour of the SDK. As a result, this method should no longer be used and will be removed in the next iteration of the SDK.");
 /// Return a created ConfigParameters object.
 - (NCAConfigParameters * _Nonnull)configParameters SWIFT_WARN_UNUSED_RESULT;
 @end
@@ -1821,6 +1878,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (NSString * _Nonnull)jcb SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull cartesBancaires;)
 + (NSString * _Nonnull)cartesBancaires SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull eftpos;)
++ (NSString * _Nonnull)eftpos SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1900,7 +1959,7 @@ SWIFT_CLASS_NAMED("LabelCustomization")
 ///
 /// throws:
 /// InvalidInputExcpetion
-- (BOOL)setHeadingDarkTextColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)setHeadingDarkTextColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("\n    Starting with protocol version 2.3.1, for dark mode UI customization,\n    the integrators shall use setHeadingTextColor(...) and insert\n    the UiCustomization object into the uiCustomizationMap with key \"DARK\".\n    ");
 /// Sets the font type of the heading label text.
 /// \param fontName Font type for the heading label text.
 ///
@@ -2106,7 +2165,7 @@ SWIFT_CLASS_NAMED("TextBoxCustomization")
 ///
 /// throws:
 /// InvalidInput
-- (BOOL)setDarkBorderColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)setDarkBorderColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("\n    Starting with protocol version 2.3.1, for dark mode UI customization,\n    the integrators shall use setBorderColor(...) and insert\n    the UiCustomization object into the uiCustomizationMap with key \"DARK\".\n    ");
 /// Sets the corner radius of the text box corners.
 /// \param cornerRadius Radius (integer value) for the text box corners.
 ///
@@ -2178,7 +2237,32 @@ SWIFT_PROTOCOL_NAMED("ThreeDS2Service")
 ///
 /// throws:
 /// InvalidInput, SDKAlreadyInitialized, SDKRuntime
-- (BOOL)initialize:(NCAConfigParameters * _Nonnull)configParameters locale:(NSString * _Nullable)locale uiCustomization:(NCAUiCustomization * _Nullable)uiCustomization error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)initialize:(NCAConfigParameters * _Nonnull)configParameters locale:(NSString * _Nullable)locale uiCustomization:(NCAUiCustomization * _Nullable)uiCustomization error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("Starting with protocol version 2.3.1, integrators should pass the UICustomization as a map.");
+/// Initializes the 3DS SDK instance.
+/// \param configParameters Configuration information that shall be used during initialization.
+///
+/// \param locale String that represents the locale for the app’s user interface.
+///
+/// \param uiCustomizationMap UI configuration information that is used to specify the UI layout and theme. For example, font style and font size.
+/// Use UICustomizationType raw values as String keys for the uiCustomization dictionary. Each key represents a UI customization for a particular iOS appearance.
+///
+///
+/// throws:
+/// InvalidInput, SDKAlreadyInitialized, SDKRuntime
+- (BOOL)initialize:(NCAConfigParameters * _Nonnull)configParameters locale:(NSString * _Nullable)locale uiCustomizationMap:(NSDictionary<NSString *, NCAUiCustomization *> * _Nullable)uiCustomizationMap error:(NSError * _Nullable * _Nullable)error;
+/// Initializes the 3DS SDK instance.
+/// \param configParameters Configuration information that shall be used during initialization.
+///
+/// \param locale String that represents the locale for the app’s user interface.
+///
+/// \param uiCustomizationMap UI configuration information that is used to specify the UI layout and theme. For example, font style and font size.
+/// Use UICustomizationType raw values as String keys for the uiCustomization dictionary. Each key represents a UI customization for a particular iOS appearance.
+///
+/// \param success A closure that is called when the initialization finishes successfully.
+///
+/// \param failure A closure that is called when the initialization finishes unsuccessfully. The failure closure takes an Error parameter that contains the failure details.
+///
+- (void)initialize:(NCAConfigParameters * _Nonnull)configParameters locale:(NSString * _Nullable)locale uiCustomizationMap:(NSDictionary<NSString *, NCAUiCustomization *> * _Nullable)uiCustomizationMap success:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 /// Creates an instance of Transaction through which the 3DS Requestor App gets the data that
 /// is required to perform the transaction.
 /// \param directoryServerId Registered Application Provider Identifier (RID) that is unique to
@@ -2226,6 +2310,8 @@ SWIFT_CLASS_NAMED("ThreeDS2ServiceSDK")
 /// The resources will be taken from the main application bundle.
 - (nonnull instancetype)init;
 - (BOOL)initialize:(NCAConfigParameters * _Nonnull)configParameters locale:(NSString * _Nullable)locale uiCustomization:(NCAUiCustomization * _Nullable)uiCustomization error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)initialize:(NCAConfigParameters * _Nonnull)configParameters locale:(NSString * _Nullable)locale uiCustomizationMap:(NSDictionary<NSString *, NCAUiCustomization *> * _Nullable)uiCustomizationMap error:(NSError * _Nullable * _Nullable)error;
+- (void)initialize:(NCAConfigParameters * _Nonnull)configParameters locale:(NSString * _Nullable)locale uiCustomizationMap:(NSDictionary<NSString *, NCAUiCustomization *> * _Nullable)uiCustomizationMap success:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 - (id <NCATransaction> _Nullable)createTransactionWithDirectoryServerId:(NSString * _Nonnull)directoryServerId messageVersion:(NSString * _Nullable)messageVersion error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 - (NSArray<NCAWarning *> * _Nullable)getWarningsAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getSDKVersionAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
@@ -2297,7 +2383,7 @@ SWIFT_CLASS_NAMED("ToolbarCustomization")
 ///
 /// throws:
 /// InvalidInputExpection
-- (BOOL)setDarkBackgroundColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)setDarkBackgroundColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("\n    Starting with protocol version 2.3.1, for dark mode UI customization,\n    the integrators shall use setBackgroundColor(...) and insert\n    the UiCustomization object into the uiCustomizationMap with key \"DARK\".\n    ");
 /// Sets the header text of the toolbar.
 /// \param headerText Text for the header.
 ///
@@ -2364,6 +2450,12 @@ SWIFT_PROTOCOL_NAMED("Transaction")
 /// Cleans up resources that are held by the Transaction object.
 - (BOOL)closeAndReturnError:(NSError * _Nullable * _Nullable)error;
 @end
+
+
+
+
+
+
 
 
 
@@ -2460,6 +2552,12 @@ SWIFT_CLASS_NAMED("UiCustomization")
 ///   <li>
 ///     RESEND: Resend button
 ///   </li>
+///   <li>
+///     ADD_CH: Additional choice button
+///   </li>
+///   <li>
+///     OPEN_OOB_APP: OOB app button
+///   </li>
 /// </ul>
 typedef SWIFT_ENUM_NAMED(NSInteger, NCAButtonType, "ButtonType", open) {
   NCAButtonTypeSUBMIT = 0,
@@ -2471,6 +2569,12 @@ typedef SWIFT_ENUM_NAMED(NSInteger, NCAButtonType, "ButtonType", open) {
   NCAButtonTypeOPEN_OOB_APP = 6,
 };
 
+/// Enumeration represeting the UI Customization types
+typedef SWIFT_ENUM_NAMED(NSInteger, NCAUICustomizationType, "UICustomizationType", open) {
+  NCAUICustomizationTypeDEFAULT = 0,
+  NCAUICustomizationTypeDARK = 1,
+  NCAUICustomizationTypeMONOCHROME = 2,
+};
 
 
 /// Represent a warning that is produced by the 3DS SDK while performing security checks during initialization.

@@ -8,33 +8,57 @@
 		<data>
 		XXIk0GfSwfYfRUGxIqDUWf/YdCI=
 		</data>
+		<key>AmazonRootCA1.cer</key>
+		<data>
+		jaf5Zexe/DeRDxxuWf3BzGpu3hY=
+		</data>
+		<key>AmazonRootCA2.cer</key>
+		<data>
+		WozvRdemmFl2eoyLRJa1eM9HSxo=
+		</data>
+		<key>AmazonRootCA3.cer</key>
+		<data>
+		DUTdjDyMGhpYdWSB6Q8uKv+z0m4=
+		</data>
+		<key>AmazonRootCA4.cer</key>
+		<data>
+		9hCEB9b4u2eYDMLiRMLrrhzvY74=
+		</data>
 		<key>Assets.car</key>
 		<data>
-		CxxlK1sF8cAgklfZ5Mrko7oc/yM=
+		i6Nu22MEdL+gZiI42qn/HcsqAGI=
 		</data>
 		<key>BrandingZoneView.nib</key>
 		<data>
-		pR8m/9zKeqQLIfUyMqT6vZDWbSU=
+		VwfxQwFRVCIXe/YBg4n3/3LMa3Y=
 		</data>
 		<key>ButtonsView.nib</key>
 		<data>
-		2ZQ7q24YR1shGVLb2/1qvZol7mQ=
+		34+0uQWWQ4V4I7u82MlZsI8rOE8=
 		</data>
 		<key>CProcessScreen.nib</key>
 		<data>
-		FRUjggVeK6/JwsR8bVr229sZcEE=
+		XsM//q9IAXkBZ8Fwo3MT8pgnfbs=
 		</data>
 		<key>ChallengeEntryBoxView.nib</key>
 		<data>
-		RGmtkEatmVLMFUD+OEfjAsvEUUg=
+		otYsrqm9TrPPqcIsx3/f+6FD5e4=
 		</data>
 		<key>ChallengeInfoView.nib</key>
 		<data>
-		doGrsKq8tBNxJdG3F5ysajaqO8s=
+		EI52Kjm1IkzDiq1a+KhV/PbcAcU=
+		</data>
+		<key>ExpandableInfoZoneView.nib</key>
+		<data>
+		G72tVv5X0ucOuBi4pcjxZYTy1o0=
 		</data>
 		<key>ExpandableInformationView.nib</key>
 		<data>
-		kt2Ias6/66yU+Otx9AvWCHfOL0U=
+		3GAV+BZoWCoSbR7JcEH8jqUurec=
+		</data>
+		<key>FooterStackView.nib</key>
+		<data>
+		zFcYTRuFpFMpwY+c9bfsToY7bAo=
 		</data>
 		<key>GMEllipticCurveCrypto_LICENSE.txt</key>
 		<data>
@@ -70,7 +94,7 @@
 		</data>
 		<key>Headers/ThreeDS_SDK-Swift.h</key>
 		<data>
-		yQCKyPvRLfkcSSuuO8MkzJhFH4o=
+		qijiFiNIKbrzCg4R4n2wuxhOiv8=
 		</data>
 		<key>Headers/ThreeDS_SDK.h</key>
 		<data>
@@ -78,31 +102,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		SFVrXYC9P2SM9LhX+2NwiTbt8RM=
+		sevllEkcbTRvSw4qXPk8X6bGUTg=
 		</data>
 		<key>InformationView.nib</key>
 		<data>
-		WsEbM4MzRAsUq7DuP3s6SzM3QBw=
+		RIB5kEbirNdvnOLCvY5yJBo+kwA=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		qVm3f1ikHC1pULsnOQ+xXTZwGok=
+		iOTMchjMSyUet6rjV/nSsJym8zE=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		GW4FdeErKDyLqANIgdzmZ4+3RXI=
+		EUPrm6nHt35k+xiqziMCV3PILes=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		EvwYw7mWPaMMTJs08Jw86dOmgEU=
+		JUM7Dlol2E2eo6InfE1DyPn+km4=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		GW4FdeErKDyLqANIgdzmZ4+3RXI=
+		EUPrm6nHt35k+xiqziMCV3PILes=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		t2ug5pDpEQGnc+l1x/1mi2oLWIU=
+		e5SNsFfIQmDDV8a6vd2wnmXfe78=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -110,27 +134,55 @@
 		</data>
 		<key>OobView.nib</key>
 		<data>
-		YXpZyalq0JchCXQaxhFl2Re1oko=
+		ej6z5mZjeVw32ULbPOQYCfjHgRo=
 		</data>
 		<key>ProcessingZoneTextView.nib</key>
 		<data>
-		eaOQriC8fmMy9H3lvaN5HBCzPgs=
+		34kQHLz8skImvR9tdsM7xuqZ8LE=
 		</data>
 		<key>ProgressDialog.nib</key>
 		<data>
-		daIBds4SgxSpQT6Fldmyz6YGD9I=
+		/pz18kZUnHentIhWRuddfsuK+8E=
+		</data>
+		<key>SFSRootCAG2.cer</key>
+		<data>
+		klqPjSxtBOBmX1lq/yLYY+glbz8=
 		</data>
 		<key>SelectView.nib</key>
 		<data>
-		1JIGAefVwP6OZId1RhQ9LINXVgU=
+		Za4W1EzaNzNoqoV/YlSy0d/xC8U=
 		</data>
 		<key>SelectionView.nib</key>
 		<data>
-		ofADG6zr6KSYQy09w2MbGcnc8hQ=
+		dVBlbCzoZAZm16geFhGcGhzyAlg=
 		</data>
 		<key>WhitelistingZone.nib</key>
 		<data>
-		u2U3+Q/XJeORQg5Y7Rhcv6csjJQ=
+		BdTK70RQ66RUa3GJYqeCMYjQYVc=
+		</data>
+		<key>challengeVC.storyboardc/C4Y-y0-tcs-view-MrG-17-JGv.nib</key>
+		<data>
+		Rc8azX8NVsaE7CGrMtzkd4YtTv0=
+		</data>
+		<key>challengeVC.storyboardc/HTMLChallengeViewController.nib</key>
+		<data>
+		V/5zz174xDzlJcLSU4KSFiEydiw=
+		</data>
+		<key>challengeVC.storyboardc/Info.plist</key>
+		<data>
+		B3GZsyo10I3ndr3m5IZr/26iihM=
+		</data>
+		<key>challengeVC.storyboardc/NativeChallengeViewController.nib</key>
+		<data>
+		MaQXrcGg1mDjZ0jnBcsfpl1OJcE=
+		</data>
+		<key>challengeVC.storyboardc/WUm-ax-p1H-view-Hja-72-DgH.nib</key>
+		<data>
+		0aNGz3qEvQoRL302WSSi65DmYfU=
+		</data>
+		<key>challengeVC.storyboardc/challengeVC.nib</key>
+		<data>
+		n11ozXelQ0zuWpmof3D52kD7ifM=
 		</data>
 		<key>checkbox@3x.png</key>
 		<data>
@@ -140,60 +192,14 @@
 		<data>
 		xQGtkpkzyQsRB8rmhKMdrkeiIOc=
 		</data>
-		<key>en.lproj/challengeVC.storyboardc/C4Y-y0-tcs-view-MrG-17-JGv.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Rc8azX8NVsaE7CGrMtzkd4YtTv0=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>en.lproj/challengeVC.storyboardc/HTMLChallengeViewController.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			V/5zz174xDzlJcLSU4KSFiEydiw=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>en.lproj/challengeVC.storyboardc/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			B3GZsyo10I3ndr3m5IZr/26iihM=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>en.lproj/challengeVC.storyboardc/NativeChallengeViewController.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			MaQXrcGg1mDjZ0jnBcsfpl1OJcE=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>en.lproj/challengeVC.storyboardc/WUm-ax-p1H-view-Hja-72-DgH.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			0aNGz3qEvQoRL302WSSi65DmYfU=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>en.lproj/challengeVC.storyboardc/challengeVC.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			n11ozXelQ0zuWpmof3D52kD7ifM=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
+		<key>isrg-root-x2.der</key>
+		<data>
+		vbG5PNWXjUXGJhRV+NuVx1rRU68=
+		</data>
+		<key>isrgrootx1.der</key>
+		<data>
+		yr0qeaEHajHyHSU2NcsDnUMppeg=
+		</data>
 		<key>radiobox@3x.png</key>
 		<data>
 		kDUHXhS4P7m0pU5yzBzH0YTlmKI=
@@ -202,9 +208,13 @@
 		<data>
 		qT5ke0tRN8LAxVCW0T/tjYNp108=
 		</data>
-		<key>unchecked@3x.png</key>
+		<key>support_server_prev.p12</key>
 		<data>
-		kDUHXhS4P7m0pU5yzBzH0YTlmKI=
+		BDXh38RN6j2H/wHyidJhfFXYVRY=
+		</data>
+		<key>support_server_prod.p12</key>
+		<data>
+		nE/lYNjqTO4btbwIO8+X5tzlRX8=
 		</data>
 		<key>warning@3x.png</key>
 		<data>
@@ -220,53 +230,95 @@
 			ML1k8nOgNTwqgSnQr82SVF8TbXkr8wXqzKjLk7mTYtk=
 			</data>
 		</dict>
+		<key>AmazonRootCA1.cer</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			js3miE89h7ESW6Maw/yxPXAW3n9XzJBP4cuXxq6YGW4=
+			</data>
+		</dict>
+		<key>AmazonRootCA2.cer</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			G6WyqoxlQBqClgEY+AvsT2IwTYPOxHE6GcOcAR6kbbQ=
+			</data>
+		</dict>
+		<key>AmazonRootCA3.cer</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GM5s/nvxTmCy40e43+hoyzHQLrs62icVafUDQ7Rts6Q=
+			</data>
+		</dict>
+		<key>AmazonRootCA4.cer</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			410oQZ7QICXPppA4zWI5YkWNpcaV+96jwisL+yWJcJI=
+			</data>
+		</dict>
 		<key>Assets.car</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QmdRuvys3GoVu12Hw9u0H01mm1WymI8ZihkSvrAgqW4=
+			QTCyyRLv0i1EXao77On9bFwtie3vnBfl9KZqMYoJROw=
 			</data>
 		</dict>
 		<key>BrandingZoneView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5LcIsE3mM5t+ZkaQpoxcDJNzuZf+7TDnDJi0SaS5lLk=
+			DeJEkj7HOyff37kmCvYGrogG7FbigOi6delnaLiPtW0=
 			</data>
 		</dict>
 		<key>ButtonsView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			h3c+WhLqWmz4XxdyEENJCJ1atApPmR9wCJHsd2OiO6Q=
+			7P5umwOeZ1JDigTBBOq9/mlDaWGcT5bAcG3igXRvC2E=
 			</data>
 		</dict>
 		<key>CProcessScreen.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yjEpSYJ1IN4WZtlRZb9gLJpLohq+jAl3tTqKp6hiUpo=
+			Ma5M5KfHw7slx5BKhQqvSmgPF2Oc1am8l8OfKQmLtrE=
 			</data>
 		</dict>
 		<key>ChallengeEntryBoxView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Xskha/Rdqt9s6f0aLKbFxDf8c5CiTGik4hNscl92NZA=
+			4/+o9rfvqFzj0j5ccsfeyfJbbWDQYXoeq3y+ABgV8Uw=
 			</data>
 		</dict>
 		<key>ChallengeInfoView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ko8qL4F5DV2KSMGZa50AW/ngomTCXnp166WDIGGuyEE=
+			Ct9n7htemk+LolO8ccL2VNiaNkNv1pQYEDGR5SJSs2c=
+			</data>
+		</dict>
+		<key>ExpandableInfoZoneView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			7zD3aWTE/66sVGdMI1JChmbTVqtg8uhZw0QLtnm5L6Q=
 			</data>
 		</dict>
 		<key>ExpandableInformationView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			t7BSsBj683JeDWDH/zVqvVtni0ngk1dLLvPVtnxzTuk=
+			X5wIOiq+x5FwsZKojvDNM3vZwvT7kxGiCpOyi6ODxY4=
+			</data>
+		</dict>
+		<key>FooterStackView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			YQmuLzBUh3Zq1OpVqKUhKoFcZUP6R3FZDDWLrfvVquI=
 			</data>
 		</dict>
 		<key>GMEllipticCurveCrypto_LICENSE.txt</key>
@@ -329,7 +381,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			K/rbrZRmkZIDiO/jM9qixJSqPefF+ntQqYyQFDk7fn0=
+			XIhE4kpvo0Wd2hmzXOVbuVIqCyBo9hC7/+vtF7tkgYc=
 			</data>
 		</dict>
 		<key>Headers/ThreeDS_SDK.h</key>
@@ -343,42 +395,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lJ3axQgOb8/4uqrfJTG3yiIL95I2lYBk/32ZQwfFR5c=
+			tawWRcKt/37JLega5M3WvgQ0GWzAVEsZuQXVclgNGKU=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IqPk3WfVkKnH8mOgE4yMgwSjCF5C/VRr/4rLxzPxbAo=
+			5gTqhClX0TAnberxVZd7/Cs9ruaMbr5xr5FaUJbkx6Q=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			R08WQLAqPgZrjqYLZxIWYbGnRmhTQoNYo0PN4DAaSSM=
+			LZSD+WeSTEVna1ZeXWYs2jgFO+kpKJC2HHIGz+yrDwg=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5+n5SN0OegErcU6Qb9ZJPdje5C2JXvuo/XSVnp+KzY8=
+			pQWSWNFXujykkiprC6KQNioteinFUwJXIg5HlU2hSYs=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			R08WQLAqPgZrjqYLZxIWYbGnRmhTQoNYo0PN4DAaSSM=
+			LZSD+WeSTEVna1ZeXWYs2jgFO+kpKJC2HHIGz+yrDwg=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DsiTkwf1VKEGPY60Aj+KoLLm/3pANkXJQz13iiE8mt4=
+			pDWfT5gc6XRcqv7eKaf9Ikq8Z8KdJxXX0YamWlD8ra4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -392,42 +444,91 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3nhFC/uebrbIU4fGmvK6QFvveirVxjx38w1L0qplLm4=
+			UV7k7IXe7xLIy/rhbDzRF3varfwg8F7Ff+FCjmPnOfQ=
 			</data>
 		</dict>
 		<key>ProcessingZoneTextView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UvSgBF0aEvwlbvFQ4ZvSJkhIyLd2BYJQTewBaM5f7q4=
+			NfpAKIQ9swoJbfdqH6w1STuODpRxtZ7TYlCqva9aV6Y=
 			</data>
 		</dict>
 		<key>ProgressDialog.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CQGr/aPFDILOi0WtoaRnedAv6dnvs5eepJnoqO91Bzw=
+			DlQk4jgEvrgEzEXMHYGCfhHWembLvwl97EuTrX6BIfw=
+			</data>
+		</dict>
+		<key>SFSRootCAG2.cer</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Vo1pBaLIhwikswJRkO3P7bGXSmBqE8blKQ/LKuY+2rU=
 			</data>
 		</dict>
 		<key>SelectView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lTx07EQ8rRiPRwG3unndTEc05nRMRNDa2S1CWpZu9E4=
+			4NA3snb1XNribqB0ITG4NOK1bHkaqv77t6YMQQyiOjs=
 			</data>
 		</dict>
 		<key>SelectionView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PBRVesg3fLTlesVI4e/dnmqYRX26HxsxGYbSKxFgZhw=
+			gEyo2pnjAqb9tB43SjIlyQU4biQbJuvkH31OZ3jrFhI=
 			</data>
 		</dict>
 		<key>WhitelistingZone.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JMZm9d9MqBxQAZMjtXyk1WXFJQo8eHytvPaVOPdnP4E=
+			j2CocyEVwcNPFP038y9MoT90yVHbjVqwgN/ize5e+PQ=
+			</data>
+		</dict>
+		<key>challengeVC.storyboardc/C4Y-y0-tcs-view-MrG-17-JGv.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			DAcMX+EgFsngCCGn4jnRPc+2bCVqroP1i52mcxG+nng=
+			</data>
+		</dict>
+		<key>challengeVC.storyboardc/HTMLChallengeViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			efD2E2zUFivETDv2h/xOwSdIL+2p3Vxlvs5qYg3AqIQ=
+			</data>
+		</dict>
+		<key>challengeVC.storyboardc/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			pA4mrEz21qv5td9g/tpeIgKMnG9WYTv18gCvjk/W7Dc=
+			</data>
+		</dict>
+		<key>challengeVC.storyboardc/NativeChallengeViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fQpCxlmvp8JKbYTNM+ZLB5D5MC4XI8Rroy0+DvJdKoM=
+			</data>
+		</dict>
+		<key>challengeVC.storyboardc/WUm-ax-p1H-view-Hja-72-DgH.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			43dHxWuUX4yuX6x5VUhWWWMnCJ3LQ/yzIqoQ1xlW9ZE=
+			</data>
+		</dict>
+		<key>challengeVC.storyboardc/challengeVC.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			xBcqUv4tzM8ZfGp7FoRwyGKhnjp5ry2yIFRVJ9SFdKA=
 			</data>
 		</dict>
 		<key>checkbox@3x.png</key>
@@ -444,59 +545,19 @@
 			AHMNKlwTcqDTn3I5QfaL7+RhJjW5bpGc0OHr3faXtwo=
 			</data>
 		</dict>
-		<key>en.lproj/challengeVC.storyboardc/C4Y-y0-tcs-view-MrG-17-JGv.nib</key>
+		<key>isrg-root-x2.der</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DAcMX+EgFsngCCGn4jnRPc+2bCVqroP1i52mcxG+nng=
+			aXKbjhWobvwXelevtxcd/GSt0owvyozxUH40RTzLFHA=
 			</data>
-			<key>optional</key>
-			<true/>
 		</dict>
-		<key>en.lproj/challengeVC.storyboardc/HTMLChallengeViewController.nib</key>
+		<key>isrgrootx1.der</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			efD2E2zUFivETDv2h/xOwSdIL+2p3Vxlvs5qYg3AqIQ=
+			lrzsBiZJdvN0YHeazyjFp8/oo8Cq4RqP/O4FwL3fCMY=
 			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>en.lproj/challengeVC.storyboardc/Info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			pA4mrEz21qv5td9g/tpeIgKMnG9WYTv18gCvjk/W7Dc=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>en.lproj/challengeVC.storyboardc/NativeChallengeViewController.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			fQpCxlmvp8JKbYTNM+ZLB5D5MC4XI8Rroy0+DvJdKoM=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>en.lproj/challengeVC.storyboardc/WUm-ax-p1H-view-Hja-72-DgH.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			43dHxWuUX4yuX6x5VUhWWWMnCJ3LQ/yzIqoQ1xlW9ZE=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>en.lproj/challengeVC.storyboardc/challengeVC.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			xBcqUv4tzM8ZfGp7FoRwyGKhnjp5ry2yIFRVJ9SFdKA=
-			</data>
-			<key>optional</key>
-			<true/>
 		</dict>
 		<key>radiobox@3x.png</key>
 		<dict>
@@ -512,11 +573,18 @@
 			4IJ289FKq3+IldqEa8p8/5hG6xmPZMpvUMlTRQHvFKc=
 			</data>
 		</dict>
-		<key>unchecked@3x.png</key>
+		<key>support_server_prev.p12</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YHYMMC/yALKjrphoY6uFpjVpBvX1SelNxasPaCqX+mk=
+			wmTyD3lOTP7JqbrZisauwkGtZCaQe4kFhIEj3xJ01Vo=
+			</data>
+		</dict>
+		<key>support_server_prod.p12</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			YHYjBL7X3xyrSIhHxEwF254nYcooOCtCNOeuz9jTwXg=
 			</data>
 		</dict>
 		<key>warning@3x.png</key>
