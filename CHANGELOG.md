@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.1.0 (2023-12-14)
+
+### Feat
+
+- update to latest version of Netcetera SDK (#32)
+
 ## 2.0.2 (2023-10-25)
 
 ### Fix
