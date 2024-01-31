@@ -1,13 +1,15 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ThreeDS_SDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AdSupport
 import CommonCrypto
 import CoreLocation
+import DeveloperToolsSupport
 import Foundation
 import Security
 import Swift
+import SwiftUI
 @_exported import ThreeDS_SDK
 import UIKit
 import WebKit
@@ -15,6 +17,7 @@ import WebKit
 import _Concurrency
 #endif
 import _StringProcessing
+import _SwiftConcurrencyShims
 import os.log
 import os
 @objc(NCALogLevel) public enum LogLevel : Swift.Int, Swift.RawRepresentable {
@@ -60,10 +63,10 @@ extension ThreeDS_SDK.CompletionEvent : Foundation.NSCopying {
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(NCAThreeDS2Error) @objcMembers public class ThreeDS2Error : ObjectiveC.NSObject {
-  @objc public static func InvalidInput(message: Swift.String, cause: Swift.Error?) -> Swift.Error
-  @objc public static func SDKAlreadyInitialized(message: Swift.String, cause: Swift.Error?) -> Swift.Error
-  @objc public static func SDKNotInitialized(message: Swift.String, cause: Swift.Error?) -> Swift.Error
-  @objc public static func SDKRuntime(message: Swift.String, errorCode: Swift.String?, cause: Swift.Error?) -> Swift.Error
+  @objc public static func InvalidInput(message: Swift.String, cause: (any Swift.Error)?) -> any Swift.Error
+  @objc public static func SDKAlreadyInitialized(message: Swift.String, cause: (any Swift.Error)?) -> any Swift.Error
+  @objc public static func SDKNotInitialized(message: Swift.String, cause: (any Swift.Error)?) -> any Swift.Error
+  @objc public static func SDKRuntime(message: Swift.String, errorCode: Swift.String?, cause: (any Swift.Error)?) -> any Swift.Error
   @objc override dynamic public init()
   @objc deinit
 }
@@ -167,9 +170,16 @@ public func addOSVersionWarning()
   @objc public var ids: [Swift.String]?
   @objc public var logoImageName: Swift.String?
   @objc public var encryptionKeyValue: Swift.String?
-  @objc public var rootCertificateValue: Swift.String?
+  @objc @available(*, deprecated, message: "Please use `rootCertificateValues` instead.")
+  public var rootCertificateValue: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc public var rootCertificateValues: [Swift.String]?
   @objc public init(name: Swift.String)
-  @objc public init(name: Swift.String, ids: [Swift.String]?, logoImageName: Swift.String?, encryption: Swift.String?, root: Swift.String?)
+  @objc @available(*, deprecated, message: "Please use the initializer that accepts an array of root certificates.")
+  public init(name: Swift.String, ids: [Swift.String]?, logoImageName: Swift.String?, encryption: Swift.String?, root: Swift.String?)
+  @objc public init(name: Swift.String, ids: [Swift.String]?, logoImageName: Swift.String?, encryption: Swift.String?, roots: [Swift.String]?)
   @objc deinit
 }
 extension ThreeDS_SDK.Scheme {
@@ -208,8 +218,8 @@ extension ThreeDS_SDK.RuntimeErrorEvent : Foundation.NSCopying {
   @objc @available(*, deprecated, message: "Starting with protocol version 2.3.1, integrators should pass the UICustomization as a map.")
   func initialize(_ configParameters: ThreeDS_SDK.ConfigParameters, locale: Swift.String?, uiCustomization: ThreeDS_SDK.UiCustomization?) throws
   @objc func initialize(_ configParameters: ThreeDS_SDK.ConfigParameters, locale: Swift.String?, uiCustomizationMap: [Swift.String : ThreeDS_SDK.UiCustomization]?) throws
-  @objc func initialize(_ configParameters: ThreeDS_SDK.ConfigParameters, locale: Swift.String?, uiCustomizationMap: [Swift.String : ThreeDS_SDK.UiCustomization]?, success: @escaping () -> (), failure: @escaping (Swift.Error) -> ())
-  @objc func createTransaction(directoryServerId: Swift.String, messageVersion: Swift.String?) throws -> ThreeDS_SDK.Transaction
+  @objc func initialize(_ configParameters: ThreeDS_SDK.ConfigParameters, locale: Swift.String?, uiCustomizationMap: [Swift.String : ThreeDS_SDK.UiCustomization]?, success: @escaping () -> (), failure: @escaping (any Swift.Error) -> ())
+  @objc func createTransaction(directoryServerId: Swift.String, messageVersion: Swift.String?) throws -> any ThreeDS_SDK.Transaction
   @objc func getWarnings() throws -> [ThreeDS_SDK.Warning]
   @objc func getSDKVersion() throws -> Swift.String
   @objc func cleanup() throws
@@ -238,8 +248,8 @@ extension UIKit.UIControl {
 }
 @objc(NCATransaction) public protocol Transaction {
   @objc func getAuthenticationRequestParameters() throws -> ThreeDS_SDK.AuthenticationRequestParameters
-  @objc func doChallenge(challengeParameters: ThreeDS_SDK.ChallengeParameters, challengeStatusReceiver: ThreeDS_SDK.ChallengeStatusReceiver, timeOut: Swift.Int, inViewController: UIKit.UIViewController) throws
-  @objc func getProgressView() throws -> ThreeDS_SDK.ProgressDialog
+  @objc func doChallenge(challengeParameters: ThreeDS_SDK.ChallengeParameters, challengeStatusReceiver: any ThreeDS_SDK.ChallengeStatusReceiver, timeOut: Swift.Int, inViewController: UIKit.UIViewController) throws
+  @objc func getProgressView() throws -> any ThreeDS_SDK.ProgressDialog
   @objc func close() throws
 }
 @_inheritsConvenienceInitializers @objc(NCAToolbarCustomization) @objcMembers public class ToolbarCustomization : ThreeDS_SDK.Customization {
@@ -265,8 +275,8 @@ extension UIKit.UIControl {
   @objc public func getErrorMessageType() -> Swift.String
   @objc public func getMessageVersionNumber() -> Swift.String
   @objc deinit
-  public func encode(to encoder: Swift.Encoder) throws
-  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 extension ThreeDS_SDK.ErrorMessage : Foundation.NSCopying {
   @objc dynamic public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
@@ -388,8 +398,8 @@ extension ThreeDS_SDK.ProtocolErrorEvent : Foundation.NSCopying {
   @objc convenience override dynamic public init()
   @objc public func initialize(_ configParameters: ThreeDS_SDK.ConfigParameters, locale: Swift.String?, uiCustomization: ThreeDS_SDK.UiCustomization?) throws
   @objc public func initialize(_ configParameters: ThreeDS_SDK.ConfigParameters, locale: Swift.String?, uiCustomizationMap: [Swift.String : ThreeDS_SDK.UiCustomization]?) throws
-  @objc public func initialize(_ configParameters: ThreeDS_SDK.ConfigParameters, locale: Swift.String?, uiCustomizationMap: [Swift.String : ThreeDS_SDK.UiCustomization]?, success: @escaping () -> (), failure: @escaping (Swift.Error) -> ())
-  @objc public func createTransaction(directoryServerId: Swift.String, messageVersion: Swift.String?) throws -> ThreeDS_SDK.Transaction
+  @objc public func initialize(_ configParameters: ThreeDS_SDK.ConfigParameters, locale: Swift.String?, uiCustomizationMap: [Swift.String : ThreeDS_SDK.UiCustomization]?, success: @escaping () -> (), failure: @escaping (any Swift.Error) -> ())
+  @objc public func createTransaction(directoryServerId: Swift.String, messageVersion: Swift.String?) throws -> any ThreeDS_SDK.Transaction
   @objc public func getWarnings() throws -> [ThreeDS_SDK.Warning]
   @objc public func getSDKVersion() throws -> Swift.String
   @objc public func cleanup() throws
