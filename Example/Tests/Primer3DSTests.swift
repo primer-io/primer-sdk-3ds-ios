@@ -34,7 +34,7 @@ final class Primer3DSTests: XCTestCase {
         sdkProvider.onInitializeCalled = { config, _, _ in
             XCTAssertEqual(try config.getParamValue(group: nil, paramName: "api-key"), apiKey)
             XCTAssertEqual(try config.getParamValue(group: "schema_ds_ids", paramName: "cardscheme"), Primer3DS.supportedSchemeId)
-            XCTAssertEqual(try config.getParamValue(group: "schema_root_public_key", paramName: "cardscheme"), certificate.rootCertificate)
+            XCTAssertEqual(try config.getParamValue(group: "schema_root_public_keys", paramName: "cardscheme"), certificate.rootCertificate)
             XCTAssertEqual(try config.getParamValue(group: "schema_public_key", paramName: "cardscheme"), certificate.encryptionKey)
             expectation.fulfill()
         }
