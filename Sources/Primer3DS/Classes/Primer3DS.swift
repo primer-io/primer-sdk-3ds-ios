@@ -58,7 +58,7 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
                     let scheme = Scheme(name: certificate.cardScheme)
                     scheme.ids = supportedSchemeIds
                     scheme.encryptionKeyValue = certificate.encryptionKey
-                    scheme.rootCertificateValue = certificate.rootCertificate
+                    scheme.rootCertificateValues = [certificate.rootCertificate]
                     scheme.logoImageName = "visa"
                     try configBuilder.add(scheme)
                 }
