@@ -4,7 +4,7 @@
 
 ### Feat
 
-- Updated to latest version of Netcetera SDK
+- Updated 3DS SDK to version 2.4.10
 
 ## 2.1.0 (2023-12-14)
 
