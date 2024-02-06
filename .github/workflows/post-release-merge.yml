@@ -24,7 +24,7 @@ jobs:
           git tag $RELEASE_VERSION
           git push origin $RELEASE_VERSION
       - name: Record changelog for current release
-        run: cz changelog $RELEASE_VERSION --file-name="release.md"
+        run: cz changelog $FROM_VERSION..$RELEASE_VERSION --file-name="release.md"
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
