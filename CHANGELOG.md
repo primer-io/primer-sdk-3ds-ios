@@ -1,10 +1,16 @@
 # Change Log
 
+## 2.2.0 (2024-02-06)
+
+### Feat
+
+- Updated 3DS SDK to version 2.4.10
+
 ## 2.1.0 (2023-12-14)
 
 ### Feat
 
-- update to latest version of Netcetera SDK (#32)
+- Updated to latest version of Netcetera SDK
 
 ## 2.0.2 (2023-10-25)
 
