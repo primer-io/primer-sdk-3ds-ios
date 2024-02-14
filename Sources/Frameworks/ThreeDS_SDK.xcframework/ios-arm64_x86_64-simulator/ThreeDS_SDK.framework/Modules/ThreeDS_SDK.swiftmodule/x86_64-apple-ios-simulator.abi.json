@@ -15380,35 +15380,35 @@
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/ChallengeTransaction.swift",
       "kind": "BooleanLiteral",
-      "offset": 2537,
+      "offset": 2489,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/ChallengeTransaction.swift",
       "kind": "BooleanLiteral",
-      "offset": 2824,
+      "offset": 2696,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/ChallengeTransaction.swift",
       "kind": "BooleanLiteral",
-      "offset": 3078,
+      "offset": 2870,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/ChallengeTransaction.swift",
       "kind": "BooleanLiteral",
-      "offset": 3374,
+      "offset": 3086,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/ChallengeTransaction.swift",
       "kind": "BooleanLiteral",
-      "offset": 3710,
+      "offset": 3342,
       "length": 5,
       "value": "false"
     },
@@ -18012,21 +18012,21 @@
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/challenge\/challengeVC\/ChallengeUIHandler.swift",
       "kind": "BooleanLiteral",
-      "offset": 2869,
+      "offset": 2825,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/challenge\/challengeVC\/ChallengeUIHandler.swift",
       "kind": "BooleanLiteral",
-      "offset": 3096,
+      "offset": 3042,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/challenge\/challengeVC\/ChallengeUIHandler.swift",
       "kind": "StringLiteral",
-      "offset": 3258,
+      "offset": 3204,
       "length": 26,
       "value": "\"Setting up Challenge VC.\""
     },
@@ -21365,49 +21365,49 @@
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/SDKTransaction.swift",
       "kind": "StringLiteral",
-      "offset": 4718,
+      "offset": 4544,
       "length": 53,
       "value": "\"An error has occured while starting challenge flow.\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/SDKTransaction.swift",
       "kind": "StringLiteral",
-      "offset": 5298,
+      "offset": 5124,
       "length": 24,
       "value": "\"Returning ProgresView.\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/SDKTransaction.swift",
       "kind": "StringLiteral",
-      "offset": 5720,
+      "offset": 5546,
       "length": 45,
       "value": "\"Closing transaction and cleaning resources.\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/SDKTransaction.swift",
       "kind": "StringLiteral",
-      "offset": 6309,
+      "offset": 6135,
       "length": 25,
       "value": "\"Encrypting Device Info.\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/SDKTransaction.swift",
       "kind": "StringLiteral",
-      "offset": 6378,
+      "offset": 6204,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/SDKTransaction.swift",
       "kind": "StringLiteral",
-      "offset": 6413,
+      "offset": 6239,
       "length": 68,
       "value": "\"Starting encryption of device info with dsID: \""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/SDKTransaction.swift",
       "kind": "StringLiteral",
-      "offset": 6480,
+      "offset": 6306,
       "length": 2,
       "value": "\"\""
     },
@@ -24753,35 +24753,35 @@
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/challenge\/timeout\/SDKChallengeTimeout.swift",
       "kind": "StringLiteral",
-      "offset": 443,
+      "offset": 404,
       "length": 28,
       "value": "\"Starting challenge timmer.\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/challenge\/timeout\/SDKChallengeTimeout.swift",
       "kind": "StringLiteral",
-      "offset": 655,
+      "offset": 590,
       "length": 41,
       "value": "\"The challenge timer is already started.\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/challenge\/timeout\/SDKChallengeTimeout.swift",
       "kind": "BooleanLiteral",
-      "offset": 1144,
+      "offset": 1017,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/challenge\/timeout\/SDKChallengeTimeout.swift",
       "kind": "StringLiteral",
-      "offset": 1247,
+      "offset": 1110,
       "length": 30,
       "value": "\"General timer has timed out.\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/transaction\/challenge\/timeout\/SDKChallengeTimeout.swift",
       "kind": "StringLiteral",
-      "offset": 1545,
+      "offset": 1369,
       "length": 24,
       "value": "\"General timer stopped.\""
     },

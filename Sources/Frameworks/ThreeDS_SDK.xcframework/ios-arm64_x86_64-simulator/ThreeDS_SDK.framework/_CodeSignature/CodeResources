@@ -102,7 +102,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ywkJglFxYgB9ZwMSUWv41rBDcFs=
+		rzlf8miFVrgWllWsEnzv6CSm9jY=
 		</data>
 		<key>InformationView.nib</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		XwamdKaRapUmTNzu2AV59yNj5VQ=
+		qOAVDlHTgIfGohEt0Lk4aU2J+6A=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		XwamdKaRapUmTNzu2AV59yNj5VQ=
+		qOAVDlHTgIfGohEt0Lk4aU2J+6A=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -422,7 +422,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zosnVZiIeLE16Wwl8rhBvz3G/jHzEqZUgfZ3PwZMN0w=
+			vhfhNH1xEjotWmo6gDl0l4CgVaT/sSToEQpwf6beqk0=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -457,7 +457,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zosnVZiIeLE16Wwl8rhBvz3G/jHzEqZUgfZ3PwZMN0w=
+			vhfhNH1xEjotWmo6gDl0l4CgVaT/sSToEQpwf6beqk0=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
