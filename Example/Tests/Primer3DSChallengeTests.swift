@@ -154,15 +154,14 @@ final class Primer3DSChallengeTests: XCTestCase {
     }
     
     private func setupSDK(withTransaction transaction: Transaction? = nil) throws {
-        let directoryServerId = "DirectoryServerId"
         let protocolVersion = "2.2"
         
         if let transaction = transaction {
-            sdkProvider.transactions = ["\(directoryServerId):\(protocolVersion)": transaction]
+            sdkProvider.transactions = ["\(DirectoryServerNetwork.visa.directoryServerId!):\(protocolVersion)": transaction]
         }
         
         try primer3DS.initializeSDK(apiKey: "ApiKey")
-        _ = try primer3DS.createTransaction(directoryServerId: directoryServerId, supportedThreeDsProtocolVersions: [protocolVersion])
+        _ = try primer3DS.createTransaction(directoryServerNetwork: .visa, supportedThreeDsProtocolVersions: [protocolVersion])
     }
 
 }

@@ -1,5 +1,6 @@
 
 import Foundation
+import ThreeDS_SDK
 
 // Exposed structures
 
@@ -8,6 +9,37 @@ public enum Environment: String, Codable {
     case staging = "STAGING"
     case sandbox = "SANDBOX"
     case local = "LOCAL"
+}
+
+public enum DirectoryServerNetwork: String {
+    case masterCard = "MASTERCARD"
+    case visa = "VISA"
+    case amex = "AMEX"
+    case jcb = "JCB"
+    case diners = "DINERS_CLUB"
+    case discover = "DISCOVER"
+    case unionpay = "UNIONPAY"
+
+    var directoryServerId: String? {
+        switch self {
+        case .visa:
+            DsRidValues.visa
+        case .masterCard:
+            DsRidValues.mastercard
+        case .amex:
+            DsRidValues.amex
+        case .jcb:
+            DsRidValues.jcb
+        case .diners, .discover:
+            DsRidValues.diners
+        case .unionpay:
+            DsRidValues.union
+        }
+    }
+
+    public static func from(cardNetworkIdentifier: String) -> Self? {
+        Self(rawValue: cardNetworkIdentifier)
+    }
 }
 
 @objc internal class SDKAuthData: NSObject, Primer3DSSDKGeneratedAuthData {
