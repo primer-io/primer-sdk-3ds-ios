@@ -103,9 +103,16 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         }
     }
     
+    var fallbackDirectoryServerId: String? {
+        guard environment != .production else {
+            return nil
+        }
+        return "A999999999"
+    }
+
     public func createTransaction(directoryServerNetwork: DirectoryServerNetwork,
                                   supportedThreeDsProtocolVersions: [String]) throws -> SDKAuthResult {
-        guard let directoryServerId = directoryServerNetwork.directoryServerId else {
+        guard let directoryServerId = directoryServerNetwork.directoryServerId ?? fallbackDirectoryServerId else {
             throw Primer3DSError.missingDsRid(cardNetwork: directoryServerNetwork.rawValue)
         }
         guard let maxSupportedThreeDsProtocolVersion = getMaxValidSupportedThreeDSVersion(supportedThreeDsProtocolVersions) else {

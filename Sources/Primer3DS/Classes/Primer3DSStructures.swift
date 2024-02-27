@@ -19,6 +19,7 @@ public enum DirectoryServerNetwork: String {
     case diners = "DINERS_CLUB"
     case discover = "DISCOVER"
     case unionpay = "UNIONPAY"
+    case unknown = "UNKNOWN"
 
     var directoryServerId: String? {
         switch self {
@@ -34,11 +35,13 @@ public enum DirectoryServerNetwork: String {
             DsRidValues.diners
         case .unionpay:
             DsRidValues.union
+        case .unknown:
+            nil
         }
     }
 
-    public static func from(cardNetworkIdentifier: String) -> Self? {
-        Self(rawValue: cardNetworkIdentifier)
+    public static func from(cardNetworkIdentifier: String) -> Self {
+        Self(rawValue: cardNetworkIdentifier) ?? .unknown
     }
 }
 
