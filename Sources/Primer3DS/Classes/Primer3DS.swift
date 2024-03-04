@@ -103,13 +103,23 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         }
     }
     
-    public func createTransaction(directoryServerId: String, 
+    var fallbackDirectoryServerId: String? {
+        guard environment != .production else {
+            return nil
+        }
+        return "A999999999"
+    }
+
+    public func createTransaction(directoryServerNetwork: DirectoryServerNetwork,
                                   supportedThreeDsProtocolVersions: [String]) throws -> SDKAuthResult {
+        guard let directoryServerId = directoryServerNetwork.directoryServerId ?? fallbackDirectoryServerId else {
+            throw Primer3DSError.missingDsRid(cardNetwork: directoryServerNetwork.rawValue)
+        }
         guard let maxSupportedThreeDsProtocolVersion = getMaxValidSupportedThreeDSVersion(supportedThreeDsProtocolVersions) else {
             let err = Primer3DSError.unsupportedProtocolVersion(supportedProtocols: supportedThreeDsProtocolVersions)
             throw err
         }
-        
+
         do {
             transaction = try sdkProvider.createTransaction(
                 directoryServerId: directoryServerId,
@@ -119,8 +129,14 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
                                  maxSupportedThreeDsProtocolVersion: maxSupportedThreeDsProtocolVersion)
             
         } catch let error {
-            let err = Primer3DSError.failedToCreateTransaction(error: error)
-            throw err
+            if let error = error as? Primer3DSError {
+                throw error
+            }
+            if let error = error as? NSError {
+                let err = Primer3DSError.failedToCreateTransaction(error: error)
+                throw err
+            }
+            throw Primer3DSError.unknown(description: "Transaction failed but an invalid error was provided")
         }
     }
     

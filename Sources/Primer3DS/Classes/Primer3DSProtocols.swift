@@ -1,14 +1,15 @@
 import Foundation
 import UIKit
 
-@objc public protocol Primer3DSProtocol {
-    @objc func initializeSDK(apiKey: String, certificates: [Primer3DSCertificate]?) throws
-    @objc func createTransaction(directoryServerId: String, 
-                                 supportedThreeDsProtocolVersions: [String]) throws -> SDKAuthResult
-    @objc func performChallenge(threeDSAuthData: Primer3DSServerAuthData,
-                                threeDsAppRequestorUrl: URL?,
-                                presentOn viewController: UIViewController,
-                                completion: @escaping (Primer3DSCompletion?, Error?) -> Void)
+public protocol Primer3DSProtocol {
+    func initializeSDK(apiKey: String,
+                       certificates: [Primer3DSCertificate]?) throws
+    func createTransaction(directoryServerNetwork: DirectoryServerNetwork,
+                           supportedThreeDsProtocolVersions: [String]) throws -> SDKAuthResult
+    func performChallenge(threeDSAuthData: Primer3DSServerAuthData,
+                          threeDsAppRequestorUrl: URL?,
+                          presentOn viewController: UIViewController,
+                          completion: @escaping (Primer3DSCompletion?, Error?) -> Void)
 }
 
 @objc public protocol Primer3DSCertificate {

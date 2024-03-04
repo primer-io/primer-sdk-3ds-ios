@@ -71,15 +71,13 @@ final class Primer3DSTests: XCTestCase {
     }
     
     func testSDKCreateTransaction_Success() throws {
-        
-        let directoryServerId = "DirectoryServerId"
         let protocolVersion = "2.2"
         
         let transaction = MockTransaction()
-        sdkProvider.transactions = ["\(directoryServerId):\(protocolVersion)": transaction]
-        
+        sdkProvider.transactions = ["\(DirectoryServerNetwork.visa.directoryServerId!):\(protocolVersion)": transaction]
+
         try primer3DS.initializeSDK(apiKey: "ApiKey")
-        let authResult = try primer3DS.createTransaction(directoryServerId: directoryServerId, supportedThreeDsProtocolVersions: [protocolVersion])
+        let authResult = try primer3DS.createTransaction(directoryServerNetwork: .visa, supportedThreeDsProtocolVersions: [protocolVersion])
         
         XCTAssertEqual(authResult.authData.sdkAppId, transaction.mockAuthRequestParameters.getSDKAppID())
         XCTAssertEqual(authResult.authData.sdkTransactionId, transaction.mockAuthRequestParameters.getSDKTransactionId())

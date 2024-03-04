@@ -123,9 +123,8 @@ public enum Primer3DSError: CustomNSError, LocalizedError {
     }
     
     public var errorUserInfo: [String : Any] {
-        guard let underlyingError = underlyingError else { return [:] }
-        let nsErr = underlyingError as NSError
-        return nsErr.userInfo
+        guard let underlyingError = underlyingError as? NSError else { return [:] }
+        return underlyingError.userInfo
     }
     
     public var threeDsErrorCode: Int? {
