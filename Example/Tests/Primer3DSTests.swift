@@ -34,7 +34,7 @@ final class Primer3DSTests: XCTestCase {
         sdkProvider.onInitializeCalled = { config, _, _ in
             XCTAssertEqual(try config.getParamValue(group: nil, paramName: "api-key"), apiKey)
             XCTAssertEqual(try config.getParamValue(group: "schema_ds_ids", paramName: "cardscheme"), Primer3DS.supportedSchemeId)
-            XCTAssertEqual(try config.getParamValue(group: "schema_root_public_key", paramName: "cardscheme"), certificate.rootCertificate)
+            XCTAssertEqual(try config.getParamValue(group: "schema_root_public_keys", paramName: "cardscheme"), certificate.rootCertificate)
             XCTAssertEqual(try config.getParamValue(group: "schema_public_key", paramName: "cardscheme"), certificate.encryptionKey)
             expectation.fulfill()
         }
@@ -71,15 +71,13 @@ final class Primer3DSTests: XCTestCase {
     }
     
     func testSDKCreateTransaction_Success() throws {
-        
-        let directoryServerId = "DirectoryServerId"
         let protocolVersion = "2.2"
         
         let transaction = MockTransaction()
-        sdkProvider.transactions = ["\(directoryServerId):\(protocolVersion)": transaction]
-        
+        sdkProvider.transactions = ["\(DirectoryServerNetwork.visa.directoryServerId!):\(protocolVersion)": transaction]
+
         try primer3DS.initializeSDK(apiKey: "ApiKey")
-        let authResult = try primer3DS.createTransaction(directoryServerId: directoryServerId, supportedThreeDsProtocolVersions: [protocolVersion])
+        let authResult = try primer3DS.createTransaction(directoryServerNetwork: .visa, supportedThreeDsProtocolVersions: [protocolVersion])
         
         XCTAssertEqual(authResult.authData.sdkAppId, transaction.mockAuthRequestParameters.getSDKAppID())
         XCTAssertEqual(authResult.authData.sdkTransactionId, transaction.mockAuthRequestParameters.getSDKTransactionId())
