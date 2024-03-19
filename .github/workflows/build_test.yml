@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     name: "Run Danger"
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
       - name: Danger
-        uses: docker://ghcr.io/danger/danger-swift:3.13.0
+        uses: docker://ghcr.io/danger/danger-swift@sha256:36fc10dd9d02f09cf61cad6231a3f414d0d997d2 # 3.13.0
         with:
             args: --failOnErrors --no-publish-check --remove-previous-comments
         env:
@@ -26,17 +26,17 @@ jobs:
     name: "Build and test"
     steps:
       - name: Cancel previous jobs
-        uses: styfle/cancel-workflow-action@0.11.0
+        uses: styfle/cancel-workflow-action@b173b6ec0100793626c2d9e6b90435061f4fc3e5 # 0.11.0
         with:
           access_token: ${{ github.token }}
 
       - name: Git - Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
         with:
           ref: ${{ github.ref }}
 
       - name: Select Xcode Version
-        uses: maxim-lobanov/setup-xcode@v1
+        uses: maxim-lobanov/setup-xcode@60606e260d2fc5762a71e64e74b2174e8ea3c8bd # v1.6.0
         with:
           xcode-version: '15.0' 
 
@@ -51,13 +51,13 @@ jobs:
       #   with:
       #     ssh-private-key: ${{ secrets.SSH_KEY }}
 
-      - uses: ruby/setup-ruby@v1
+      - uses: ruby/setup-ruby@22fdc77bf4148f810455b226c90fb81b5cbc00a7 # v1.172.0
         with:
           ruby-version: "3.2.2"
           bundler-cache: true
           
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
         with:
           node-version: 18.3.0
 
