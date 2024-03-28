@@ -24,19 +24,19 @@ public enum DirectoryServerNetwork: String {
     var directoryServerId: String? {
         switch self {
         case .visa:
-            DsRidValues.visa
+            return DsRidValues.visa
         case .masterCard:
-            DsRidValues.mastercard
+            return DsRidValues.mastercard
         case .amex:
-            DsRidValues.amex
+            return DsRidValues.amex
         case .jcb:
-            DsRidValues.jcb
+            return DsRidValues.jcb
         case .diners, .discover:
-            DsRidValues.diners
+            return DsRidValues.diners
         case .unionpay:
-            DsRidValues.union
+            return DsRidValues.union
         case .unknown:
-            nil
+            return nil
         }
     }
 
