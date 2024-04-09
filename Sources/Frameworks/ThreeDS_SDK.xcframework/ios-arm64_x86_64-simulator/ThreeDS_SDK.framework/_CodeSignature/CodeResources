@@ -46,7 +46,7 @@
 		</data>
 		<key>ChallengeInfoView.nib</key>
 		<data>
-		vZwVN0A63szJ8zC1X6mgrtjjRNE=
+		s5SMZc09Oy/Udd0gSX8mpPK+v9w=
 		</data>
 		<key>ExpandableInfoZoneView.nib</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ywkJglFxYgB9ZwMSUWv41rBDcFs=
+		HheVVAESKblbisgqZstI2Lh7xhA=
 		</data>
 		<key>InformationView.nib</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		XwamdKaRapUmTNzu2AV59yNj5VQ=
+		ijrbmmLkzxLUEk70mWtBZ5rUn/4=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		5P40D1wkPI5LQ/yW8RZZY86XJU8=
+		mrFU0FEEIYqHsopb0+cGZcNXmuo=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
@@ -126,11 +126,11 @@
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		N+QxY3V0iN3YkBDL/ezuK2aKYFw=
+		HKhWgtCQpQdCAxJV0hoYHLm8YeE=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		XwamdKaRapUmTNzu2AV59yNj5VQ=
+		ijrbmmLkzxLUEk70mWtBZ5rUn/4=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -138,7 +138,7 @@
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		kRZr8Z4LSi1yVODmEXFaZVbV1Ik=
+		Nz0LKEbbN95Pbm6cbhx0HI44tr8=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
@@ -146,7 +146,7 @@
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		il+b8gsPjhD/KSmLBORHhA/h6DA=
+		KBtegnJFY5VVcI07j/1oY30TAIw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -155,6 +155,10 @@
 		<key>OobView.nib</key>
 		<data>
 		s5r+cFkbHq1sQjAnAmaivbkkiSM=
+		</data>
+		<key>PrivacyInfo.xcprivacy</key>
+		<data>
+		qskfk5qssgV/i1MjhbStTWrvSVs=
 		</data>
 		<key>ProcessingZoneTextView.nib</key>
 		<data>
@@ -317,7 +321,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UsYQJom24WY2DoQIofJKOS0q/Ww/Gb7apSJLpf15Sq4=
+			qgpW1QNTBFymHT/WYiH5b5cAvhZ4f4Vvr/hpWzXOQv8=
 			</data>
 		</dict>
 		<key>ExpandableInfoZoneView.nib</key>
@@ -422,7 +426,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zosnVZiIeLE16Wwl8rhBvz3G/jHzEqZUgfZ3PwZMN0w=
+			rZygOnSlAADvn8uYsARWyPcwYrnXT2kX7SrvRHjGTeo=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -436,7 +440,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vhJei7o8B2gzKR41M999upIz/4jA/IrZ3wtR8BPCu+8=
+			K6BKrkhvnfubj7xgETVmEgcP7SYyn2Usc9Z6U1LRHCw=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
@@ -450,14 +454,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BO68ny6KnKPA0uJ759bjLW4WXtPaE5FBU+XVLrixuk8=
+			RvFsrfP8ZRpC8J7ruKlzNuIp9E159P3xmFuCSSZRGXs=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zosnVZiIeLE16Wwl8rhBvz3G/jHzEqZUgfZ3PwZMN0w=
+			rZygOnSlAADvn8uYsARWyPcwYrnXT2kX7SrvRHjGTeo=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -471,7 +475,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YPABbf9OgcRq7yRWKzVlFkYJs26YwZfcPwczniFeSzU=
+			b9jROX3znr3yfj80bicOkZ4wCuglPJi64mkL/6HmwOI=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
@@ -485,7 +489,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YdWPwJpIHeqzEw5WjwFqZC2vTZaT8Lj8SDOw76ymntk=
+			STbhoslU+IhINkrlUJTkS07XSwPXH9yOEqvgkvpqR80=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -500,6 +504,13 @@
 			<key>hash2</key>
 			<data>
 			bUmuD4XE4VRTqDwGpLOiFlfgNUfQpasi/rMTPw91GRg=
+			</data>
+		</dict>
+		<key>PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			OYWc9/zlCKA5FiI2RbNeeX93E7g8o1InDM/ek2Ic0uI=
 			</data>
 		</dict>
 		<key>ProcessingZoneTextView.nib</key>

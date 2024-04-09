@@ -16192,63 +16192,63 @@
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/dependency\/GirdersSwift-0.4.2\/http\/Request.swift",
       "kind": "Dictionary",
-      "offset": 2429,
+      "offset": 2179,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/dependency\/GirdersSwift-0.4.2\/http\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 3246,
+      "offset": 2996,
       "length": 14,
       "value": "\"Content-Type\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/dependency\/GirdersSwift-0.4.2\/http\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 3265,
+      "offset": 3015,
       "length": 35,
       "value": "\"application\/x-www-form-urlencoded\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/dependency\/GirdersSwift-0.4.2\/http\/Request.swift",
       "kind": "Dictionary",
-      "offset": 3905,
+      "offset": 3667,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/dependency\/GirdersSwift-0.4.2\/http\/Request.swift",
       "kind": "Dictionary",
-      "offset": 4619,
+      "offset": 4381,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/dependency\/GirdersSwift-0.4.2\/http\/Request.swift",
       "kind": "Dictionary",
-      "offset": 4649,
+      "offset": 4411,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/dependency\/GirdersSwift-0.4.2\/http\/Request.swift",
       "kind": "BooleanLiteral",
-      "offset": 6413,
+      "offset": 6175,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/dependency\/GirdersSwift-0.4.2\/http\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 6677,
+      "offset": 6439,
       "length": 20,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/dependency\/GirdersSwift-0.4.2\/http\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 6696,
+      "offset": 6458,
       "length": 3,
       "value": "\"\""
     },
@@ -18880,168 +18880,168 @@
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "BooleanLiteral",
-      "offset": 3132,
+      "offset": 3123,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "StringLiteral",
-      "offset": 3532,
+      "offset": 3523,
       "length": 40,
       "value": "\"Retrying Remote Configuration Request.\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "BooleanLiteral",
-      "offset": 3726,
+      "offset": 3717,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "BooleanLiteral",
-      "offset": 4235,
+      "offset": 4226,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "StringLiteral",
-      "offset": 4745,
+      "offset": 4736,
       "length": 40,
       "value": "\"Retrying Remote Configuration Request.\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "BooleanLiteral",
-      "offset": 4987,
+      "offset": 4978,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "StringLiteral",
-      "offset": 5961,
+      "offset": 5952,
       "length": 57,
       "value": "\"Remote Configuration Request Failed. Request timed out.\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "StringLiteral",
-      "offset": 6133,
+      "offset": 6124,
       "length": 53,
       "value": "\"Remote Configuration Request Failed. Unknown error.\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "StringLiteral",
-      "offset": 6657,
+      "offset": 6648,
       "length": 68,
       "value": "\"Remote Configuration Response Body is empty or has invalid format.\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "StringLiteral",
-      "offset": 7258,
+      "offset": 7249,
       "length": 125,
       "value": "\"Remote Configuration Request Failed. HTTP Status Code: \""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "StringLiteral",
-      "offset": 7327,
+      "offset": 7318,
       "length": 1,
       "value": "\". Response error \""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "StringLiteral",
-      "offset": 7381,
+      "offset": 7372,
       "length": 1,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "StringLiteral",
-      "offset": 8055,
+      "offset": 8046,
       "length": 67,
       "value": "\"Error decoding RemoteConfig JSON to Object, with error: \""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "StringLiteral",
-      "offset": 8120,
+      "offset": 8111,
       "length": 1,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "BooleanLiteral",
-      "offset": 8445,
+      "offset": 8436,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "BooleanLiteral",
-      "offset": 8752,
+      "offset": 8743,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "IntegerLiteral",
-      "offset": 8884,
+      "offset": 8875,
       "length": 4,
       "value": "3600"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "IntegerLiteral",
-      "offset": 8891,
+      "offset": 8882,
       "length": 2,
       "value": "24"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "IntegerLiteral",
-      "offset": 8896,
+      "offset": 8887,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "BooleanLiteral",
-      "offset": 9087,
+      "offset": 9078,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "BooleanLiteral",
-      "offset": 9283,
+      "offset": 9274,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "BooleanLiteral",
-      "offset": 9423,
+      "offset": 9414,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "BooleanLiteral",
-      "offset": 9747,
+      "offset": 9738,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/remoteConfiguration\/networking\/SDKRemoteConfigWebService.swift",
       "kind": "BooleanLiteral",
-      "offset": 9777,
+      "offset": 9768,
       "length": 5,
       "value": "false"
     },
@@ -22071,92 +22071,155 @@
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
+      "kind": "BooleanLiteral",
+      "offset": 385,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
+      "kind": "BooleanLiteral",
+      "offset": 425,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
+      "kind": "BooleanLiteral",
+      "offset": 464,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
       "kind": "Dictionary",
-      "offset": 400,
+      "offset": 519,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
       "kind": "StringLiteral",
-      "offset": 441,
+      "offset": 560,
       "length": 30,
       "value": "\"SynchronizedDictionaryAccess\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
       "kind": "Dictionary",
-      "offset": 1069,
+      "offset": 1188,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1226,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1266,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1305,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1708,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
       "kind": "StringLiteral",
-      "offset": 1342,
+      "offset": 1747,
       "length": 6,
       "value": "\"SW01\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
       "kind": "StringLiteral",
-      "offset": 1448,
+      "offset": 1853,
       "length": 27,
       "value": "\"The device is jailbroken.\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2312,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
       "kind": "StringLiteral",
-      "offset": 1779,
+      "offset": 2351,
       "length": 6,
       "value": "\"SW02\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
       "kind": "StringLiteral",
-      "offset": 1885,
+      "offset": 2457,
       "length": 45,
       "value": "\"The integrity of the SDK has been tampered.\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
       "kind": "StringLiteral",
-      "offset": 2205,
+      "offset": 2777,
       "length": 6,
       "value": "\"SW03\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
       "kind": "StringLiteral",
-      "offset": 2311,
+      "offset": 2883,
       "length": 43,
       "value": "\"An emulator is being used to run the App.\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3354,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
       "kind": "StringLiteral",
-      "offset": 2655,
+      "offset": 3392,
       "length": 6,
       "value": "\"SW04\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
       "kind": "StringLiteral",
-      "offset": 2759,
+      "offset": 3496,
       "length": 36,
       "value": "\"A debugger is attached to the app.\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
       "kind": "StringLiteral",
-      "offset": 3070,
+      "offset": 3807,
       "length": 6,
       "value": "\"SW05\""
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/securityChecks\/SecurityWarnings.swift",
       "kind": "StringLiteral",
-      "offset": 3176,
+      "offset": 3913,
       "length": 44,
       "value": "\"The OS or the OS version is not supported.\""
     },
@@ -25782,21 +25845,21 @@
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/dependency\/GirdersSwift-0.4.2\/http\/HTTPClient.swift",
       "kind": "IntegerLiteral",
-      "offset": 5045,
+      "offset": 5058,
       "length": 3,
       "value": "100"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/dependency\/GirdersSwift-0.4.2\/http\/HTTPClient.swift",
       "kind": "IntegerLiteral",
-      "offset": 5053,
+      "offset": 5066,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/hanastas\/Documents\/3ds-sdk\/ios-3ds-skd\/src\/main\/dependency\/GirdersSwift-0.4.2\/http\/HTTPClient.swift",
       "kind": "IntegerLiteral",
-      "offset": 6332,
+      "offset": 6345,
       "length": 1,
       "value": "0"
     },
