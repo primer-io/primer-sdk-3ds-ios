@@ -345,6 +345,20 @@ SWIFT_CLASS_NAMED("AuthenticationRequestParameters")
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 @end
 
+/// Defines the version of the Bridging Message Extension.
+/// <ul>
+///   <li>
+///     v1: ‘1.0’
+///   </li>
+///   <li>
+///     v2: ‘2.0’
+///   </li>
+/// </ul>
+typedef SWIFT_ENUM_NAMED(NSInteger, NCABridgingExtensionVersion, "BridgingExtensionVersion", open) {
+  NCABridgingExtensionVersionV1 = 0,
+  NCABridgingExtensionVersionV2 = 1,
+};
+
 
 /// Provides methods to pass UI customization parameters to the 3DS SDK.
 SWIFT_CLASS_NAMED("Customization")
@@ -431,6 +445,24 @@ SWIFT_CLASS_NAMED("ButtonCustomization")
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+enum NCACertificateType : NSInteger;
+@class NSDate;
+
+SWIFT_CLASS_NAMED("CertificateInfo")
+@interface NCACertificateInfo : NSObject
+@property (nonatomic, readonly) enum NCACertificateType type;
+@property (nonatomic, readonly, copy) NSString * _Nullable name;
+@property (nonatomic, readonly, copy) NSDate * _Nullable expiryDate;
+@property (nonatomic, readonly, copy) NSString * _Nonnull certPrefix;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, NCACertificateType, "CertificateType", open) {
+  NCACertificateTypeCERTIFICATE = 0,
+  NCACertificateTypePUBLIC_KEY = 1,
+};
 
 
 /// The ChallengeParameters class holds the parameters that are required to conduct the challenge
@@ -570,16 +602,6 @@ SWIFT_CLASS_NAMED("ConfigurationBuilder")
 /// \param level The desired log level.
 ///
 - (BOOL)logTo:(enum NCALogLevel)level error:(NSError * _Nullable * _Nullable)error;
-/// Modifies the support for sending and receiving bridging message extensions. By default the support is disabled.
-/// \param enabled Boolean that decides whether bridging message extension is enabled or disabled.
-///
-- (BOOL)bridgingMessageExtensionEnabled:(BOOL)enabled error:(NSError * _Nullable * _Nullable)error;
-/// Modifies the level of validation of the challenge response parameters. If the passed value is equal to true, the 3DS SDK will use weak validation for some of the challenge response parameters. The weak validation removes the mandatory status and the string length validation of several challenge response parameters.
-/// note:
-/// By using this method the Netcetera 3DS SDK will no longer be compliant with the latest bulletin of the EMVCo Protocol and Core Functions Specification. If any legal actions or consequences arise, the responsibility falls on the integrator of the Netcetera iOS 3DS SDK.
-/// \param value Decides whether weak validation should be enabled.
-///
-- (BOOL)weakValidationEnabled:(BOOL)value error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("The Weak Validation configuration has been restructured and incorporated into the default behaviour of the SDK. As a result, this method should no longer be used and will be removed in the next iteration of the SDK.");
 /// Return a created ConfigParameters object.
 - (NCAConfigParameters * _Nonnull)configParameters SWIFT_WARN_UNUSED_RESULT;
 @end
@@ -799,8 +821,23 @@ SWIFT_CLASS_NAMED("RuntimeErrorEvent")
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 @end
 
+@class NCASchemeInfo;
 
-/// Hold info for Scheme.
+SWIFT_CLASS_NAMED("SDKInfo")
+@interface NCASDKInfo : NSObject
+/// The schemes configured in the SDK.
+@property (nonatomic, readonly, copy) NSArray<NCASchemeInfo *> * _Nonnull schemes;
+/// The date until which the 3DS SDK is licensed to operate.
+/// If the date is in the past, it means the SDK is in a short grace period, allowing it to continue working temporarily.
+@property (nonatomic, readonly, copy) NSDate * _Nonnull licenseExpiryDate;
+/// A list of all of the EMVCo 3DS protocol versions that the SDK supports.
+@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull supportedProtocolVersions;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// Holds info for Scheme.
 SWIFT_CLASS_NAMED("Scheme")
 @interface NCAScheme : NSObject <NSCopying>
 @property (nonatomic, copy) NSArray<NSString *> * _Nullable ids;
@@ -808,6 +845,7 @@ SWIFT_CLASS_NAMED("Scheme")
 @property (nonatomic, copy) NSString * _Nullable encryptionKeyValue;
 @property (nonatomic, copy) NSString * _Nullable rootCertificateValue SWIFT_DEPRECATED_MSG("Please use `rootCertificateValues` instead.");
 @property (nonatomic, copy) NSArray<NSString *> * _Nullable rootCertificateValues;
+@property (nonatomic, copy) NSString * _Nullable encryptionKeyId;
 /// Create an empty object of a scheme.
 /// \param name Name of the scheme.
 ///
@@ -824,7 +862,7 @@ SWIFT_CLASS_NAMED("Scheme")
 ///
 /// \param roots Array of root certificates.
 ///
-- (nonnull instancetype)initWithName:(NSString * _Nonnull)name ids:(NSArray<NSString *> * _Nullable)ids logoImageName:(NSString * _Nullable)logoImageName encryption:(NSString * _Nullable)encryption roots:(NSArray<NSString *> * _Nullable)roots OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithName:(NSString * _Nonnull)name ids:(NSArray<NSString *> * _Nullable)ids logoImageName:(NSString * _Nullable)logoImageName encryption:(NSString * _Nullable)encryption encryptionKeyId:(NSString * _Nullable)encryptionKeyId roots:(NSArray<NSString *> * _Nullable)roots OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -852,6 +890,18 @@ SWIFT_CLASS_NAMED("Scheme")
 + (NCAScheme * _Nonnull)jcb SWIFT_WARN_UNUSED_RESULT;
 /// Create a scheme with the same name as cartesBancaires.
 + (NCAScheme * _Nonnull)cb SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS_NAMED("SchemeInfo")
+@interface NCASchemeInfo : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull name;
+@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable ids;
+@property (nonatomic, readonly, copy) NSArray<NCACertificateInfo *> * _Nullable rootCertificates;
+@property (nonatomic, readonly, strong) NCACertificateInfo * _Nullable encryptionCertificate;
+@property (nonatomic, readonly, copy) NSString * _Nullable kid;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 /// Defines the severity levels of warnings produced by the 3DS SDK while conducting security
@@ -1020,9 +1070,17 @@ SWIFT_PROTOCOL_NAMED("ThreeDS2Service")
 /// SDKNotInitialized, SDKRuntime
 ///
 /// returns:
-/// returns (as a string) the version of the 3DS SDK that is integrated with the 3DS
-/// Requestor App.
+/// String representation of the version of the 3DS SDK that is integrated with the 3DS
+/// Requestor App
 - (NSString * _Nullable)getSDKVersionAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
+/// Returns collected SDK configuration information.
+///
+/// throws:
+/// SDKNotInitialized, SDKRuntime
+///
+/// returns:
+/// SDKInfo object that contains configuration information.
+- (NCASDKInfo * _Nullable)getSDKInfoAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 /// Frees up resources that are used by the 3DS Requestor App until it is closed. It shall be called only once during a single 3DS Requestor App session.
 ///
 /// throws:
@@ -1053,6 +1111,11 @@ SWIFT_CLASS_NAMED("ThreeDS2ServiceSDK")
 
 @interface NCAThreeDS2ServiceSDK (SWIFT_EXTENSION(ThreeDS_SDK)) <NSCopying>
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+@interface NCAThreeDS2ServiceSDK (SWIFT_EXTENSION(ThreeDS_SDK))
+- (NCASDKInfo * _Nullable)getSDKInfoAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -1107,14 +1170,14 @@ SWIFT_CLASS_NAMED("ToolbarCustomization")
 ///
 ///
 /// throws:
-/// InvalidInputExpection
+/// InvalidInput
 - (BOOL)setBackgroundColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error;
 /// Sets the dark background color for the toolbar.
 /// \param hexColorCode Color code in Hex format.
 ///
 ///
 /// throws:
-/// InvalidInputExpection
+/// InvalidInput
 - (BOOL)setDarkBackgroundColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("\n    Starting with protocol version 2.3.1, for dark mode UI customization,\n    the integrators shall use setBackgroundColor(...) and insert\n    the UiCustomization object into the uiCustomizationMap with key \"DARK\".\n    ");
 /// Sets the header text of the toolbar.
 /// \param headerText Text for the header.
@@ -1179,6 +1242,10 @@ SWIFT_PROTOCOL_NAMED("Transaction")
 /// returns:
 /// Returns a ProgressDialog object.
 - (id <NCAProgressDialog> _Nullable)getProgressViewAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
+/// Enables Bridging Message Extension for the transaction.
+/// \param version Which version of the extension to be used. .v1 or .v2
+///
+- (void)useBridgingExtensionWithVersion:(enum NCABridgingExtensionVersion)version;
 /// Cleans up resources that are held by the Transaction object.
 - (BOOL)closeAndReturnError:(NSError * _Nullable * _Nullable)error;
 @end
@@ -1198,6 +1265,7 @@ SWIFT_PROTOCOL_NAMED("Transaction")
 
 
 enum NCAButtonType : NSInteger;
+@class NCAViewCustomization;
 
 /// Provides the functionality required for 3DS SDK UI customization.
 SWIFT_CLASS_NAMED("UiCustomization")
@@ -1227,6 +1295,10 @@ SWIFT_CLASS_NAMED("UiCustomization")
 /// \param textBoxCustomization A TextBoxCustomization object.
 ///
 - (void)setTextBoxCustomizationWithTextBoxCustomization:(NCATextBoxCustomization * _Nonnull)textBoxCustomization;
+/// Sets the attributes of a ViewCustomization object.
+/// \param viewCustomization A ViewCustomization object.
+///
+- (void)setViewCustomizationWithViewCustomization:(NCAViewCustomization * _Nonnull)viewCustomization;
 /// Returns a ButtonCustomization object.
 /// \param buttonType A pre-defined list of button types.
 ///
@@ -1256,6 +1328,11 @@ SWIFT_CLASS_NAMED("UiCustomization")
 /// returns:
 /// A TextBoxCustomization object.
 - (NCATextBoxCustomization * _Nullable)getTextboxCustomization SWIFT_WARN_UNUSED_RESULT;
+/// Returns a ViewCustomization object.
+///
+/// returns:
+/// A ViewCustomization object.
+- (NCAViewCustomization * _Nullable)getViewCustomization SWIFT_WARN_UNUSED_RESULT;
 /// Method creating a deep copy of the given object.
 /// \param zone Nil
 ///
@@ -1309,6 +1386,38 @@ typedef SWIFT_ENUM_NAMED(NSInteger, NCAUICustomizationType, "UICustomizationType
   NCAUICustomizationTypeDARK = 1,
   NCAUICustomizationTypeMONOCHROME = 2,
 };
+
+
+/// Class holding the UI details specific for a ChallengeView
+SWIFT_CLASS_NAMED("ViewCustomization")
+@interface NCAViewCustomization : NSObject <NSCopying>
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// Sets the background color of the challenge view.
+/// \param hexColorCode Color code in Hex format.
+///
+///
+/// throws:
+/// InvalidInput.
+- (BOOL)setChallengeViewBackgroundColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error;
+/// Sets the background color of the progress view.
+/// \param hexColorCode Color code in Hex format.
+///
+///
+/// throws:
+/// InvalidInput.
+- (BOOL)setProgressViewBackgroundColorWithHexColorCode:(NSString * _Nonnull)hexColorCode error:(NSError * _Nullable * _Nullable)error;
+/// Returns the background color for the challenge view.
+///
+/// returns:
+/// Background color code for the challenge view as a String.
+- (NSString * _Nonnull)getChallengeViewBackgroundColor SWIFT_WARN_UNUSED_RESULT;
+/// Returns the background color for the progress view.
+///
+/// returns:
+/// Background color code for the progress view as a String.
+- (NSString * _Nonnull)getProgressViewBackgroundColor SWIFT_WARN_UNUSED_RESULT;
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+@end
 
 
 /// Represent a warning that is produced by the 3DS SDK while performing security checks during initialization.
