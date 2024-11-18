@@ -33,6 +33,7 @@ class MockSDKProvider: Primer3DSSDKProviderProtocol {
 }
 
 class MockTransaction: Transaction {
+    func useBridgingExtension(version: ThreeDS_SDK.BridgingExtensionVersion) {}
     
     let mockAuthRequestParameters = try! AuthenticationRequestParameters(
         sdkTransactionId: "SDKTransactionId",

@@ -39,6 +39,12 @@ import os
 extension ThreeDS_SDK.CompletionEvent : Foundation.NSCopying {
   @objc dynamic public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
 }
+@_hasMissingDesignatedInitializers @objc(NCASDKInfo) @objcMembers public class SDKInfo : ObjectiveC.NSObject {
+  @objc final public let schemes: [ThreeDS_SDK.SchemeInfo]
+  @objc final public let licenseExpiryDate: Foundation.Date
+  @objc final public let supportedProtocolVersions: [Swift.String]
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers public class ASN1DERDecoder {
   public static func decode(data: Foundation.Data) throws -> [ThreeDS_SDK.ASN1Object]
   @objc deinit
@@ -176,10 +182,11 @@ public func addOSVersionWarning()
     @objc set
   }
   @objc public var rootCertificateValues: [Swift.String]?
+  @objc public var encryptionKeyId: Swift.String?
   @objc public init(name: Swift.String)
   @objc @available(*, deprecated, message: "Please use the initializer that accepts an array of root certificates.")
   public init(name: Swift.String, ids: [Swift.String]?, logoImageName: Swift.String?, encryption: Swift.String?, root: Swift.String?)
-  @objc public init(name: Swift.String, ids: [Swift.String]?, logoImageName: Swift.String?, encryption: Swift.String?, roots: [Swift.String]?)
+  @objc public init(name: Swift.String, ids: [Swift.String]?, logoImageName: Swift.String?, encryption: Swift.String?, encryptionKeyId: Swift.String? = nil, roots: [Swift.String]?)
   @objc deinit
 }
 extension ThreeDS_SDK.Scheme {
@@ -214,6 +221,15 @@ extension ThreeDS_SDK.Scheme {
 extension ThreeDS_SDK.RuntimeErrorEvent : Foundation.NSCopying {
   @objc dynamic public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
 }
+@_inheritsConvenienceInitializers @objc(NCAViewCustomization) @objcMembers public class ViewCustomization : ObjectiveC.NSObject, Foundation.NSCopying {
+  @objc required override dynamic public init()
+  @objc public func setChallengeViewBackgroundColor(hexColorCode: Swift.String) throws
+  @objc public func setProgressViewBackgroundColor(hexColorCode: Swift.String) throws
+  @objc public func getChallengeViewBackgroundColor() -> Swift.String
+  @objc public func getProgressViewBackgroundColor() -> Swift.String
+  @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc deinit
+}
 @objc(NCAThreeDS2Service) public protocol ThreeDS2Service {
   @objc @available(*, deprecated, message: "Starting with protocol version 2.3.1, integrators should pass the UICustomization as a map.")
   func initialize(_ configParameters: ThreeDS_SDK.ConfigParameters, locale: Swift.String?, uiCustomization: ThreeDS_SDK.UiCustomization?) throws
@@ -222,6 +238,7 @@ extension ThreeDS_SDK.RuntimeErrorEvent : Foundation.NSCopying {
   @objc func createTransaction(directoryServerId: Swift.String, messageVersion: Swift.String?) throws -> any ThreeDS_SDK.Transaction
   @objc func getWarnings() throws -> [ThreeDS_SDK.Warning]
   @objc func getSDKVersion() throws -> Swift.String
+  @objc func getSDKInfo() throws -> ThreeDS_SDK.SDKInfo
   @objc func cleanup() throws
 }
 @_inheritsConvenienceInitializers @objc(NCAChallengeParameters) @objcMembers public class ChallengeParameters : ObjectiveC.NSObject {
@@ -250,6 +267,7 @@ extension UIKit.UIControl {
   @objc func getAuthenticationRequestParameters() throws -> ThreeDS_SDK.AuthenticationRequestParameters
   @objc func doChallenge(challengeParameters: ThreeDS_SDK.ChallengeParameters, challengeStatusReceiver: any ThreeDS_SDK.ChallengeStatusReceiver, timeOut: Swift.Int, inViewController: UIKit.UIViewController) throws
   @objc func getProgressView() throws -> any ThreeDS_SDK.ProgressDialog
+  @objc func useBridgingExtension(version: ThreeDS_SDK.BridgingExtensionVersion)
   @objc func close() throws
 }
 @_inheritsConvenienceInitializers @objc(NCAToolbarCustomization) @objcMembers public class ToolbarCustomization : ThreeDS_SDK.Customization {
@@ -263,6 +281,14 @@ extension UIKit.UIControl {
   @objc public func getButtonText() -> Swift.String
   @objc override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
   @objc required dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc(NCASchemeInfo) @objcMembers public class SchemeInfo : ObjectiveC.NSObject {
+  @objc final public let name: Swift.String
+  @objc final public let ids: [Swift.String]?
+  @objc final public let rootCertificates: [ThreeDS_SDK.CertificateInfo]?
+  @objc final public let encryptionCertificate: ThreeDS_SDK.CertificateInfo?
+  @objc final public let kid: Swift.String?
   @objc deinit
 }
 @objc(NCAErrorMessage) @objcMembers public class ErrorMessage : ObjectiveC.NSObject, Swift.Codable {
@@ -319,6 +345,15 @@ extension ThreeDS_SDK.ProtocolErrorEvent : Foundation.NSCopying {
   @objc func timedout()
   @objc func protocolError(protocolErrorEvent: ThreeDS_SDK.ProtocolErrorEvent)
   @objc func runtimeError(runtimeErrorEvent: ThreeDS_SDK.RuntimeErrorEvent)
+}
+@objc(NCABridgingExtensionVersion) public enum BridgingExtensionVersion : Swift.Int, Swift.RawRepresentable {
+  case v1
+  case v2
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+  public init?(rawValue: ThreeDS_SDK.BridgingExtensionVersion.RawValue)
 }
 @_inheritsConvenienceInitializers @objc(NCALabelCustomization) @objcMembers public class LabelCustomization : ThreeDS_SDK.Customization {
   @objc public func setHeadingTextColor(hexColorCode: Swift.String) throws
@@ -390,6 +425,22 @@ extension ThreeDS_SDK.ProtocolErrorEvent : Foundation.NSCopying {
   }
   @objc deinit
 }
+@_hasMissingDesignatedInitializers @objc(NCACertificateInfo) @objcMembers public class CertificateInfo : ObjectiveC.NSObject {
+  @objc final public let type: ThreeDS_SDK.CertificateType
+  @objc final public let name: Swift.String?
+  @objc final public let expiryDate: Foundation.Date?
+  @objc final public let certPrefix: Swift.String
+  @objc deinit
+}
+@objc(NCACertificateType) public enum CertificateType : Swift.Int, Swift.RawRepresentable {
+  case CERTIFICATE
+  case PUBLIC_KEY
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+  public init?(rawValue: ThreeDS_SDK.CertificateType.RawValue)
+}
 @_hasMissingDesignatedInitializers public class ChallengeValues {
   @objc deinit
 }
@@ -405,6 +456,9 @@ extension ThreeDS_SDK.ProtocolErrorEvent : Foundation.NSCopying {
   @objc public func cleanup() throws
   @objc deinit
 }
+extension ThreeDS_SDK.ThreeDS2ServiceSDK {
+  @objc dynamic public func getSDKInfo() throws -> ThreeDS_SDK.SDKInfo
+}
 extension ThreeDS_SDK.ThreeDS2ServiceSDK : Foundation.NSCopying {
   @objc dynamic public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
 }
@@ -415,11 +469,13 @@ extension ThreeDS_SDK.ThreeDS2ServiceSDK : Foundation.NSCopying {
   @objc public func setToolbarCustomization(toolbarCustomization: ThreeDS_SDK.ToolbarCustomization)
   @objc public func setLabelCustomization(labelCustomization: ThreeDS_SDK.LabelCustomization)
   @objc public func setTextBoxCustomization(textBoxCustomization: ThreeDS_SDK.TextBoxCustomization)
+  @objc public func setViewCustomization(viewCustomization: ThreeDS_SDK.ViewCustomization)
   @objc public func getButtonCustomization(buttonType: ThreeDS_SDK.UiCustomization.ButtonType) -> ThreeDS_SDK.ButtonCustomization?
   @objc public func getButtonCustomization(btnType: Swift.String) -> ThreeDS_SDK.ButtonCustomization?
   @objc public func getToolbarCustomization() -> ThreeDS_SDK.ToolbarCustomization?
   @objc public func getLabelCustomization() -> ThreeDS_SDK.LabelCustomization?
   @objc public func getTextboxCustomization() -> ThreeDS_SDK.TextBoxCustomization?
+  @objc public func getViewCustomization() -> ThreeDS_SDK.ViewCustomization?
   @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
   @objc deinit
 }
@@ -455,9 +511,6 @@ extension ThreeDS_SDK.UiCustomization {
   @objc public func restrictedParameters(_ parameters: [Swift.String]) throws
   @objc public func add(_ scheme: ThreeDS_SDK.Scheme) throws
   @objc public func log(to level: ThreeDS_SDK.LogLevel) throws
-  @objc public func bridgingMessageExtensionEnabled(_ enabled: Swift.Bool) throws
-  @objc @available(*, deprecated, message: "The Weak Validation configuration has been restructured and incorporated into the default behaviour of the SDK. As a result, this method should no longer be used and will be removed in the next iteration of the SDK.")
-  public func weakValidationEnabled(_ value: Swift.Bool) throws
   @objc public func configParameters() -> ThreeDS_SDK.ConfigParameters
   @objc deinit
 }
@@ -483,12 +536,16 @@ extension ThreeDS_SDK.ThreeDS2ErrorCode : Swift.Hashable {}
 extension ThreeDS_SDK.ThreeDS2ErrorCode : Swift.RawRepresentable {}
 extension ThreeDS_SDK.Severity : Swift.Equatable {}
 extension ThreeDS_SDK.Severity : Swift.Hashable {}
+extension ThreeDS_SDK.BridgingExtensionVersion : Swift.Equatable {}
+extension ThreeDS_SDK.BridgingExtensionVersion : Swift.Hashable {}
 extension ThreeDS_SDK.ASN1Identifier.Class : Swift.Equatable {}
 extension ThreeDS_SDK.ASN1Identifier.Class : Swift.Hashable {}
 extension ThreeDS_SDK.ASN1Identifier.Class : Swift.RawRepresentable {}
 extension ThreeDS_SDK.ASN1Identifier.TagNumber : Swift.Equatable {}
 extension ThreeDS_SDK.ASN1Identifier.TagNumber : Swift.Hashable {}
 extension ThreeDS_SDK.ASN1Identifier.TagNumber : Swift.RawRepresentable {}
+extension ThreeDS_SDK.CertificateType : Swift.Equatable {}
+extension ThreeDS_SDK.CertificateType : Swift.Hashable {}
 extension ThreeDS_SDK.UiCustomization.ButtonType : Swift.Equatable {}
 extension ThreeDS_SDK.UiCustomization.ButtonType : Swift.Hashable {}
 extension ThreeDS_SDK.UiCustomization.UICustomizationType : Swift.Equatable {}
