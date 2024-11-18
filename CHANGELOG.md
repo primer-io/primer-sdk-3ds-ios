@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.4.0 (2024-11-18)
+
+### Feat
+
+- Updates the 3DS SDK to version 2.5.10
+
 ## 2.3.2 (2024-04-09)
 
 - Updates the 3DS SDK to version 2.4.12
