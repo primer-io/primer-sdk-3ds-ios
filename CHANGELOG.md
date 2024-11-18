@@ -4,7 +4,7 @@
 
 ### Feat
 
-- Update netcetera SDK (#49)
+- Updates the 3DS SDK to version 2.5.10
 
 ## 2.3.2 (2024-04-09)
 
