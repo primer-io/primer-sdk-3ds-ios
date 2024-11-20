@@ -26,7 +26,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		aH4BlEbtXmF+Te3kBQeQbOlEJrw=
+		+OYBEJmzaQGtMLcCrpP/isNQTqk=
 		</data>
 		<key>BrandingZoneView.nib</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Za19Y/yz7bIOg0DBnSOw+cHyUOA=
+		Pt+RtrJpGwCD1ybx6ecYInCquVM=
 		</data>
 		<key>InformationView.nib</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		dueLD3UOeeesGmqsdA+eWIRSLok=
+		ZE6FVImMz+qKaeX8xHZuZ6Yby6k=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -126,11 +126,11 @@
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		b1OBcei1b5V37N9yBJ8pumouAM8=
+		c5wkBI+9kkGmVKHDIPWLCd4z6fg=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		dueLD3UOeeesGmqsdA+eWIRSLok=
+		ZE6FVImMz+qKaeX8xHZuZ6Yby6k=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -146,7 +146,7 @@
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		xPXGtJwnDMuDUgLpq9C9UCW2FGM=
+		gFZyd3fl0Jk9gnXjM3pP+Pdo1QQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -286,7 +286,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2RmG7oZlczvjaBwmc6/2xCEu63Iuo8x2PK7WWWrl8Lc=
+			M36RSvqmYSfltkxn741BRI8Ht17ArV4jSFmuNVK7T6w=
 			</data>
 		</dict>
 		<key>BrandingZoneView.nib</key>
@@ -426,7 +426,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TGteQ88FRly8iN2SPV/bdI0gnedHhVSu5LH93lqJc64=
+			a4FWZIrtyUSPx2SrF+hTMOoVyNSHS+6nQaVN1VRSfCo=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -454,14 +454,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			p2z9qMGjVWT6CtCJevnjVl9c9xTxpDpNB8L76tGh7IQ=
+			lcFeNazWtUkoSgGkKxg0kkBlV9HniOdGRpThktti/aU=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TGteQ88FRly8iN2SPV/bdI0gnedHhVSu5LH93lqJc64=
+			a4FWZIrtyUSPx2SrF+hTMOoVyNSHS+6nQaVN1VRSfCo=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -489,7 +489,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wnwbu/7mG+G9iZtE3aDm/oA6hBPPh6ch0sYPAsVuxkE=
+			8YojfQHsY5Dmtg8BQY+PxAfkoIKsB4/Wm9ADALLofeM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
