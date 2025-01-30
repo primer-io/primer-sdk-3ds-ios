@@ -48,73 +48,40 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         do {
             let configBuilder = ThreeDS_SDK.ConfigurationBuilder()
             try configBuilder.api(key: apiKey)
-
-            // Only override scheme configuration if we're NOT in production
+            
             if environment != .production {
                 try configBuilder.log(to: .debug)
+                
                 let supportedSchemeIds: [String] = [Self.supportedSchemeId]
-
-                // Loop through all provided certificates (non-prod)
+                
                 for certificate in certificates ?? [] {
-
-                    // Choose specialized scheme constructor if available
-                    let scheme: Scheme
-                    switch certificate.cardScheme.uppercased() {
-                    case "VISA":
-                        scheme = .visa()
-                    case "MASTERCARD":
-                        scheme = .mastercard()
-                    case "AMEX":
-                        scheme = .amex()
-                    case "DINERS_CLUB":
-                        scheme = .diners()
-                    case "JCB":
-                        scheme = .jcb()
-                    case "CARTES_BANCAIRES":
-                        // Netcetera's 3DS SDK calls this "cb()"
-                        scheme = .cb()
-                    case "UNIONPAY":
-                        // Netcetera's 3DS SDK calls this "union()"
-                        scheme = .union()
-                    default:
-                        // Fallback to default scheme constructor if no specialized API exists
-                        scheme = Scheme(name: certificate.cardScheme)
-                        scheme.ids = supportedSchemeIds
-                        scheme.logoImageName = "visa"
-                    }
-
-                    // Override encryption and root certificates with values from /configuration response
+                    let scheme = Scheme(name: certificate.cardScheme)
+                    scheme.ids = supportedSchemeIds
                     scheme.encryptionKeyValue = certificate.encryptionKey
                     scheme.rootCertificateValues = [certificate.rootCertificate]
-
-                    // Add scheme to the configBuilder
+                    scheme.logoImageName = "visa"
                     try configBuilder.add(scheme)
                 }
             }
-
-            // Build configuration and initialize the 3DS SDK
+            
             let configParameters = configBuilder.configParameters()
-            try sdkProvider.initialize(
-                configParameters: configParameters,
-                locale: nil,
-                uiCustomization: nil
-            )
-
+            try sdkProvider.initialize(configParameters: configParameters,
+                                       locale: nil,
+                                       uiCustomization: nil)
+            
         } catch {
             let nsErr = error as NSError
-            // If the 3DS SDK is already initialized (code 1001), ignore it. Otherwise, re-throw.
-            if nsErr.domain == "com.netcetera.ThreeDS-SDK", nsErr.code == 1001 {
-                // Continue silently
+            if nsErr.domain == "com.netcetera.ThreeDS-SDK" && nsErr.code == 1001 {
+                // Continue
             } else {
                 let err = Primer3DSError.initializationError(error: error, warnings: nil)
                 throw err
             }
         }
-
-        // Verify any warnings after initialization
+        
         try self.verifyWarnings()
     }
-
+    
     private func verifyWarnings() throws {
         if !is3DSSanityCheckEnabled { return }
         
