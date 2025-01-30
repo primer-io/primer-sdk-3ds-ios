@@ -2,6 +2,10 @@
 
 ## 2.4.2 (2025-01-30)
 
+### Fix
+
+- Update 3DS SDK Keys for Non-Production Environments
+
 ## 2.4.1 (2024-11-21)
 
 ### Fix
