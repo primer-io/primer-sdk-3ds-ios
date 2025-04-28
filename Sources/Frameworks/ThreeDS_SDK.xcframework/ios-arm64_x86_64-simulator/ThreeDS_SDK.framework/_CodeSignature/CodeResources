@@ -26,7 +26,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		+OYBEJmzaQGtMLcCrpP/isNQTqk=
+		kTMbOUKowDryM10tvAXwtIPZkFk=
 		</data>
 		<key>BrandingZoneView.nib</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>Headers/ThreeDS_SDK-Swift.h</key>
 		<data>
-		lWStVHxRwhvQJ1RnokzUb8gh05I=
+		HThsxi7eA2Y1Pk4Dycm5LzRnKcM=
 		</data>
 		<key>Headers/ThreeDS_SDK.h</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Pt+RtrJpGwCD1ybx6ecYInCquVM=
+		uziE3bIQkefoNwdGHWQAnyiip2A=
 		</data>
 		<key>InformationView.nib</key>
 		<data>
@@ -110,43 +110,43 @@
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		ZE6FVImMz+qKaeX8xHZuZ6Yby6k=
+		i9khyNs9dfsb0BqLLB+nVBo2gbY=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		B9LIz+5VCcirgwddloWNdqwjlfs=
+		fSFOsUBsTam5931I5kssPNYS72w=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		cWsuYM87CXqpvueSuHhkZrJQKF4=
+		1dXxsWl3bZb1oi4Y6Ydok0Zv/4Y=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		B9LIz+5VCcirgwddloWNdqwjlfs=
+		fSFOsUBsTam5931I5kssPNYS72w=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		c5wkBI+9kkGmVKHDIPWLCd4z6fg=
+		9Wi2n1wixa202TyoUcjDgGU+uLE=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		ZE6FVImMz+qKaeX8xHZuZ6Yby6k=
+		i9khyNs9dfsb0BqLLB+nVBo2gbY=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		PelXIeqWrOw9rFwDC6f7nHQIuZU=
+		M22/mELUlw76cB78LA2851CMLQw=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		FdSNTljGkokILRYWOI/+NHgUXok=
+		zJSUCj9s/B3Vu9XYZJVmdaTH750=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		PelXIeqWrOw9rFwDC6f7nHQIuZU=
+		M22/mELUlw76cB78LA2851CMLQw=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		gFZyd3fl0Jk9gnXjM3pP+Pdo1QQ=
+		sfEWkn4WfGnnX/Lqf6qvSl5qM9s=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -286,7 +286,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			M36RSvqmYSfltkxn741BRI8Ht17ArV4jSFmuNVK7T6w=
+			ny8ty1N4GKUMjV9E6BDzoj942qphto75YgsmePgpcq4=
 			</data>
 		</dict>
 		<key>BrandingZoneView.nib</key>
@@ -405,7 +405,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			H31eYVVxnI3oPogGpTZYz+cj373OCndpW+nZvOUPe2g=
+			F3+17jWSSGeSUoiZJZUAO2r5ksxowV8eTcOidqFmlvo=
 			</data>
 		</dict>
 		<key>Headers/ThreeDS_SDK.h</key>
@@ -426,70 +426,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			a4FWZIrtyUSPx2SrF+hTMOoVyNSHS+6nQaVN1VRSfCo=
+			oZvddhL0tvA5i8tuyHlzPkZRvf7JvJyWQUISCFR/ofk=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zu3x0Rfqh55n4GrBTaC7r8cphTjvfMozAfaxpXQlzbA=
+			MdSddp2LA9H7Bzmx4764zQ4oIcU30guKum+GMsu6mRk=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			euxTfp+P/v9ch41sHFMH2b8z20aWUrTYZohGSlGg/Hg=
+			pEEVNPMpZXdifdsuZdt337pDKnlYl9euxxwFxE7GExI=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zu3x0Rfqh55n4GrBTaC7r8cphTjvfMozAfaxpXQlzbA=
+			MdSddp2LA9H7Bzmx4764zQ4oIcU30guKum+GMsu6mRk=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lcFeNazWtUkoSgGkKxg0kkBlV9HniOdGRpThktti/aU=
+			XRayx4prGwNswByJDNDjhsx2vc3WwB8v8jyACv08qp8=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			a4FWZIrtyUSPx2SrF+hTMOoVyNSHS+6nQaVN1VRSfCo=
+			oZvddhL0tvA5i8tuyHlzPkZRvf7JvJyWQUISCFR/ofk=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GTmLeHTcDMjgwC/6uEZaal0Yf8T26csFy6JJ0r7WfSI=
+			LOKLEVh7QPNF7O9WMNO2DYLdMCuROQIDGhx0uLIT2RM=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/bOGkLyG/ErywqvtN4mG/x+1XyMTV0pXrkwXCYLmfDc=
+			ypAOFKvHjLaJrJcl8YlgR4Z8e4WeSeZ78UP6op1AWcw=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GTmLeHTcDMjgwC/6uEZaal0Yf8T26csFy6JJ0r7WfSI=
+			LOKLEVh7QPNF7O9WMNO2DYLdMCuROQIDGhx0uLIT2RM=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8YojfQHsY5Dmtg8BQY+PxAfkoIKsB4/Wm9ADALLofeM=
+			iHCG9/BH+nrDSeUM+SS7FZ/vPydvDWjasJ0Y2ZW6JFQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

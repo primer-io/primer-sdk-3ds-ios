@@ -26,7 +26,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		aH4BlEbtXmF+Te3kBQeQbOlEJrw=
+		kTMbOUKowDryM10tvAXwtIPZkFk=
 		</data>
 		<key>BrandingZoneView.nib</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>Headers/ThreeDS_SDK-Swift.h</key>
 		<data>
-		V8fe18qNlMVQuMaPTOtMoZ9JkBM=
+		w6SBFyRncWzakRW6ZyU0nYD5Sjw=
 		</data>
 		<key>Headers/ThreeDS_SDK.h</key>
 		<data>
@@ -102,27 +102,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		COw3LpxDc7zzadu4Zq21jJl800k=
+		6/A9SzugTnmwd/XqeUJg3Zf2JaI=
 		</data>
 		<key>InformationView.nib</key>
 		<data>
 		v5B2iJKizV2kZuDzAh5ka862UUg=
 		</data>
+		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.abi.json</key>
+		<data>
+		s6eXmvZ/wXREHAoEOeQRzDBPZ+A=
+		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		JpaASORjLK3zJfq2YSF4zdEPy6g=
+		BjNNYn8LcILSLe3wh5E8I+sSSY4=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		s33mT+Vqmmw2gNSx2x75N9ttnOU=
+		wP+jd5Bvud10daEDCOq0BA8SoHg=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		JpaASORjLK3zJfq2YSF4zdEPy6g=
+		BjNNYn8LcILSLe3wh5E8I+sSSY4=
 		</data>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		nt8k/Q/C3pZ5jdTkWMCb/wbx54w=
+		M1DvCTw+t5RRQRkRnTjCOneGMh4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -262,7 +266,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2RmG7oZlczvjaBwmc6/2xCEu63Iuo8x2PK7WWWrl8Lc=
+			ny8ty1N4GKUMjV9E6BDzoj942qphto75YgsmePgpcq4=
 			</data>
 		</dict>
 		<key>BrandingZoneView.nib</key>
@@ -381,7 +385,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Xoh/AMP8vhhOZkrqTjUiJkjHz9Vi6ROkG1JeRV1wrpM=
+			g2VqnJudD1OzhgakrRJKD4rqGp/jOsYCKpzmSbC9JMs=
 			</data>
 		</dict>
 		<key>Headers/ThreeDS_SDK.h</key>
@@ -398,32 +402,39 @@
 			op47CjCnNrKBkYUFS5zXpVEaYLRpFdveSJuwjclNH/c=
 			</data>
 		</dict>
+		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			i1bHT4+Ms5buO2ZQDpKnmLvH7x0qleEzSJJjPtvcj7A=
+			</data>
+		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			F/Z7nP8Kf15oRWlvx+xybKas6PHQCHFXTUKmtBgBllI=
+			bGPtRMTl86gUU/EJV6SrF8p4y66Va4K5pQtkQAbmyWo=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fleRcXQCdsPWx/ZEClnfkGStse7Ac3MPIDcilLnDMLo=
+			Fut/IPuDS4/7ydWn8KCyzj0Pw2ozAQ+xltivdG7g/Mk=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			F/Z7nP8Kf15oRWlvx+xybKas6PHQCHFXTUKmtBgBllI=
+			bGPtRMTl86gUU/EJV6SrF8p4y66Va4K5pQtkQAbmyWo=
 			</data>
 		</dict>
 		<key>Modules/ThreeDS_SDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nFE2Atr61UCuEWYcy1IX+60YOXmWvcXGj2rbHgB0aj0=
+			6n3tzk2kAc5mVbdGAcAKXj54s1seVTKh+fGYHaoA/pk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
