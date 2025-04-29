@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.5.0 (2025-04-29)
+
+### Feat
+
+- Update ThreeDS SDK to 2.5.20
+
 ## 2.4.2 (2025-01-30)
 
 ### Fix
