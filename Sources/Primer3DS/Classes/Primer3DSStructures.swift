@@ -20,7 +20,7 @@ public enum DirectoryServerNetwork: String {
     case diners = "DINERS_CLUB"
     case discover = "DISCOVER"
     case unionpay = "UNIONPAY"
-    case cartesbancaires = "CARTES_BANCAIRES"
+    case cartesBancaires = "CARTES_BANCAIRES"
     case unknown = "UNKNOWN"
 
     var directoryServerId: String? {
@@ -49,7 +49,7 @@ public enum DirectoryServerNetwork: String {
     }
 }
 
-@objc class SDKAuthData: NSObject, Primer3DSSDKGeneratedAuthData {
+@objc final class SDKAuthData: NSObject, Primer3DSSDKGeneratedAuthData {
     var sdkAppId: String
     var sdkTransactionId: String
     var sdkTimeout: Int
@@ -62,7 +62,6 @@ public enum DirectoryServerNetwork: String {
         self.sdkTransactionId = sdkTransactionId
         self.sdkTimeout = sdkTimeout
         self.sdkEncData = sdkEncData
-        self.sdkEphemPubKey = sdkEphemPubKey
         self.sdkEphemPubKey = sdkEphemPubKey
         self.sdkReferenceNumber = sdkReferenceNumber
         super.init()
