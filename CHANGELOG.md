@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.4.4 (2025-07-01)
+
+### Fix
+
+- Add CARTES_BANCAIRES DSID Mapping (#60)
+
 ## 2.4.3 (2025-04-29)
 
 ### Feat
