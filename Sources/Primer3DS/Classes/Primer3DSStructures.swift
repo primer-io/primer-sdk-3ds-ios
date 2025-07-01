@@ -96,18 +96,12 @@ enum AuthenticationStatus: String {
 
     init(rawValue: String) {
         switch rawValue.lowercased() {
-        case "y":
-            self = AuthenticationStatus.y
-        case "a":
-            self = AuthenticationStatus.a
-        case "n":
-            self = AuthenticationStatus.n
-        case "u":
-            self = AuthenticationStatus.u
-        case "e":
-            self = AuthenticationStatus.e
-        default:
-            self = AuthenticationStatus.e
+        case "y": self = .y
+        case "a": self = .a
+        case "n": self = .n
+        case "u": self = .u
+        case "e": self = .e
+        default: self = .e
         }
     }
 
