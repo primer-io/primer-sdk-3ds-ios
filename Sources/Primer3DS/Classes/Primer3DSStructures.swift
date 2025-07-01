@@ -37,7 +37,7 @@ public enum DirectoryServerNetwork: String {
             return DsRidValues.diners
         case .unionpay:
             return DsRidValues.union
-        case .cartesbancaires:
+        case .cartesBancaires:
             return DsRidValues.cartesBancaires
         case .unknown:
             return nil
