@@ -21,6 +21,7 @@ public enum DirectoryServerNetwork: String {
     case discover = "DISCOVER"
     case unionpay = "UNIONPAY"
     case cartesBancaires = "CARTES_BANCAIRES"
+    case eftpos = "EFTPOS"
     case unknown = "UNKNOWN"
 
     var directoryServerId: String? {
@@ -39,6 +40,8 @@ public enum DirectoryServerNetwork: String {
             return DsRidValues.union
         case .cartesBancaires:
             return DsRidValues.cartesBancaires
+        case .eftpos:
+            return DsRidValues.eftpos
         case .unknown:
             return nil
         }
