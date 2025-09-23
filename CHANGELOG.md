@@ -1,5 +1,9 @@
 # Change Log
 
+## 2.5.0 (2025-09-23)
+
+- Add EFTPOS DSID Mapping
+
 ## 2.4.4 (2025-07-01)
 
 ### Fix
