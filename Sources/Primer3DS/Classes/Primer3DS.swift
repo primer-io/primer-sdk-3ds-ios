@@ -285,9 +285,13 @@ extension Primer3DS: ChallengeStatusReceiver {
     }
     
     public func runtimeError(runtimeErrorEvent: RuntimeErrorEvent) {
-        let err = Primer3DSError.runtimeError(
-            description: runtimeErrorEvent.getErrorMessage(),
-            code: runtimeErrorEvent.getErrorCode())
+        let err: Primer3DSError = if runtimeErrorEvent.getErrorCode() == "402" {
+            .timeOut
+        } else {
+            .runtimeError(
+                description: runtimeErrorEvent.getErrorMessage(),
+                code: runtimeErrorEvent.getErrorCode())
+        }
         sdkCompletion?(nil, err)
         self.cleanup()
     }

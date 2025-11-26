@@ -78,16 +78,16 @@ final class Primer3DSChallengeTests: XCTestCase {
     func testSDKPerformChallenge_RuntimeError() throws {
         let transaction = MockTransaction()
         try setupSDK(withTransaction: transaction)
-        
+
         let viewController = UIViewController()
-        
+
         let expectation = self.expectation(description: "Expect challenge to succeed")
-        
+
         let runtimeErrorEvent = RuntimeErrorEvent(errorCode: "RuntimeErrorCode", errorMessage: "RuntimeErrorMessage")
         transaction.onDoChallengeCalled = { _, receiver, _, _ in
             receiver.runtimeError(runtimeErrorEvent: runtimeErrorEvent)
         }
-        
+
         primer3DS.performChallenge(threeDSAuthData: MockServerAuthData(), threeDsAppRequestorUrl: nil, presentOn: viewController, completion: { completion, error in
             let error = error as! Primer3DSError
             switch error {
@@ -101,7 +101,34 @@ final class Primer3DSChallengeTests: XCTestCase {
             }
             expectation.fulfill()
         })
-        
+
+        wait(for: [expectation], timeout: 1.0)
+    }
+
+    func testSDKPerformChallenge_RuntimeError_WithTimeoutErrorCode() throws {
+        let transaction = MockTransaction()
+        try setupSDK(withTransaction: transaction)
+
+        let viewController = UIViewController()
+
+        let expectation = self.expectation(description: "Expect timeout error when runtime error has code 402")
+
+        let runtimeErrorEvent = RuntimeErrorEvent(errorCode: "402", errorMessage: "Transaction timed-out")
+        transaction.onDoChallengeCalled = { _, receiver, _, _ in
+            receiver.runtimeError(runtimeErrorEvent: runtimeErrorEvent)
+        }
+
+        primer3DS.performChallenge(threeDSAuthData: MockServerAuthData(), threeDsAppRequestorUrl: nil, presentOn: viewController, completion: { completion, error in
+            let error = error as! Primer3DSError
+            switch error {
+            case Primer3DSError.timeOut:
+                XCTAssertEqual(error.errorId, Primer3DSError.timeOut.errorId)
+            default:
+                XCTFail("Expected timeOut error but got \(error)")
+            }
+            expectation.fulfill()
+        })
+
         wait(for: [expectation], timeout: 1.0)
     }
     
