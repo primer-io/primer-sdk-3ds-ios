@@ -1,6 +1,6 @@
 [tool.commitizen]
 version_scheme = "semver"
-version = "2.5.0"
+version = "2.6.0"
 version_files = [
   "Sources/Primer3DS/Classes/version.swift:let Primer3DSSDKVersion",
   "Primer3DS.podspec:s.version",

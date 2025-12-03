@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.6.0 (2025-12-03)
+
+### Feat
+
+- Update ThreeDS SDK to 2.5.32
+
 ## 2.5.0 (2025-09-23)
 
 - Add EFTPOS DSID Mapping
