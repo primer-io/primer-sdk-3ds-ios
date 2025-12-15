@@ -185,10 +185,6 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
             return
         }
 
-        // Initialize the processing screen before starting the challenge.
-        // This is required by Netcetera SDK to avoid error 522.
-        _ = try? transaction.getProgressView()
-
         let challengeParameters = ChallengeParameters(
             threeDSServerTransactionID: threeDSAuthData.transactionId,
             acsTransactionID: threeDSAuthData.acsTransactionId,
@@ -253,6 +249,36 @@ public class Primer3DS: NSObject, Primer3DSProtocol {
         try? sdkProvider.cleanup()
     }
 }
+
+// MARK: - Progress Dialog
+
+class Primer3DSProgressDialog: NSObject, Primer3DSProgressDialogProtocol {
+    private let progressView: ProgressDialog
+
+    init(progressView: ProgressDialog) {
+        self.progressView = progressView
+    }
+
+    func show() {
+        progressView.start()
+    }
+
+    func dismiss() {
+        progressView.stop()
+    }
+}
+
+extension Primer3DS {
+    public func getProgressDialog() -> Primer3DSProgressDialogProtocol? {
+        guard let transaction = transaction,
+              let progressView = try? transaction.getProgressView() else {
+            return nil
+        }
+        return Primer3DSProgressDialog(progressView: progressView)
+    }
+}
+
+// MARK: - ChallengeStatusReceiver
 
 extension Primer3DS: ChallengeStatusReceiver {
 
