@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.6.1 (2025-12-15)
+
+### Fix
+
+- Initialize processing screen before 3DS challenge to prevent error 522
+
 ## 2.6.0 (2025-12-03)
 
 ### Feat
