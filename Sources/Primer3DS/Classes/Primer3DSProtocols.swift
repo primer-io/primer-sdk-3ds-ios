@@ -10,6 +10,7 @@ public protocol Primer3DSProtocol {
                           threeDsAppRequestorUrl: URL?,
                           presentOn viewController: UIViewController,
                           completion: @escaping (Primer3DSCompletion?, Error?) -> Void)
+    func getProgressDialog() -> Primer3DSProgressDialogProtocol?
 }
 
 @objc public protocol Primer3DSCertificate {
@@ -38,4 +39,10 @@ public protocol Primer3DSProtocol {
 @objc public protocol Primer3DSCompletion {
     var sdkTransactionId: String { get }
     var transactionStatus: String { get }
+}
+
+@objc public protocol Primer3DSProgressDialogProtocol {
+    func show()
+    func dismiss()
+    var view: UIView? { get }
 }
