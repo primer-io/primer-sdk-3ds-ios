@@ -44,4 +44,5 @@ public protocol Primer3DSProtocol {
 @objc public protocol Primer3DSProgressDialogProtocol {
     func show()
     func dismiss()
+    var view: UIView? { get }
 }

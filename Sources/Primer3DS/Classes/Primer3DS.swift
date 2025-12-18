@@ -266,6 +266,10 @@ class Primer3DSProgressDialog: NSObject, Primer3DSProgressDialogProtocol {
     func dismiss() {
         progressView.stop()
     }
+
+    var view: UIView? {
+        return progressView as? UIView
+    }
 }
 
 extension Primer3DS {
