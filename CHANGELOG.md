@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.7.0 (2025-12-22)
+
+### Feat
+
+- Add EMVCo-compliant 3DS processing screen support
+
 ## 2.6.1 (2025-12-15)
 
 ### Fix
