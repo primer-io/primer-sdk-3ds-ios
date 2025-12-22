@@ -1,2 +1,2 @@
-let Primer3DSSDKVersion = "2.6.1"
+let Primer3DSSDKVersion = "2.7.0"
 let NetceteraSDKVersion = "2.5.32"
