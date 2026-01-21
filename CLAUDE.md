@@ -69,7 +69,7 @@ open Primer3DS.xcworkspace
 - Xcode 15.0 (CI uses this version)
 
 ## Version Management
-- Version is defined in `Primer3DS.podspec` (current: 2.4.4)
+- Version is defined in `Primer3DS.podspec` (current: 2.8.0)
 - Also tracked in `Sources/Primer3DS/Classes/version.swift`
 - Version utilities in `VersionUtils.swift` handle SDK version numbers
 
