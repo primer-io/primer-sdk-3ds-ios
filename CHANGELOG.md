@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.8.0 (2026-01-22)
+
+### Feat
+
+- Update Netcetera ThreeDS SDK to 2.6.00
+
 ## 2.7.0 (2025-12-22)
 
 ### Feat
