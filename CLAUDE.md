@@ -41,11 +41,10 @@ bundle exec fastlane unit_tests
 
 ### Fastlane
 ```bash
-# Run unit tests with iPhone 14 Pro simulator
+# Run unit tests with iPhone 17 Pro simulator
 bundle exec fastlane unit_tests
 
-# Tests run on: platform=iOS Simulator,name=iPhone 14 Pro
-# Excludes arm64 architecture for simulator builds
+# Tests run on: platform=iOS Simulator,name=iPhone 17 Pro
 ```
 
 ### Manual Testing
@@ -66,7 +65,7 @@ open Primer3DS.xcworkspace
 ### Deployment Targets
 - iOS 13.0+ (defined in Package.swift and Podspec)
 - Swift 5.0+
-- Xcode 15.0 (CI uses this version)
+- Xcode 26.2 (CI uses this version)
 
 ## Version Management
 - Version is defined in `Primer3DS.podspec` (current: 2.7.0)
