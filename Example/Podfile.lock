@@ -1,5 +1,5 @@
 PODS:
-  - Primer3DS (2.7.0)
+  - Primer3DS (2.8.0)
 
 DEPENDENCIES:
   - Primer3DS (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Primer3DS: 2af939b4c28167eab227aba134e53f24862a173f
+  Primer3DS: b8b583ef260f703180870358bc55069de74f8f51
 
 PODFILE CHECKSUM: 4f7264ca4fa7ed996327b5aeee4d7cddd56cebe7
 
