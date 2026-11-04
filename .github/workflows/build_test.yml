@@ -21,7 +21,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
   build-and-test:
     needs: danger
-    runs-on: macos-13
+    runs-on: macos-26
     timeout-minutes: 20
     name: "Build and test"
     steps:
@@ -38,7 +38,7 @@ jobs:
       - name: Select Xcode Version
         uses: maxim-lobanov/setup-xcode@60606e260d2fc5762a71e64e74b2174e8ea3c8bd # v1.6.0
         with:
-          xcode-version: '15.0' 
+          xcode-version: '26.6'
 
       # - name: Install SSH key
       #   uses: shimataro/ssh-key-action@v2
@@ -51,7 +51,7 @@ jobs:
       #   with:
       #     ssh-private-key: ${{ secrets.SSH_KEY }}
 
-      - uses: ruby/setup-ruby@22fdc77bf4148f810455b226c90fb81b5cbc00a7 # v1.172.0
+      - uses: ruby/setup-ruby@de492cf36cbab201753d720ce4f4e336cd688c94 # v1.336.0
         with:
           ruby-version: "3.2.2"
           bundler-cache: true
