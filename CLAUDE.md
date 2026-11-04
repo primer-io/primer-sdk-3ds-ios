@@ -65,7 +65,7 @@ open Primer3DS.xcworkspace
 ### Deployment Targets
 - iOS 13.0+ (defined in Package.swift and Podspec)
 - Swift 5.0+
-- Xcode 26.6 (CI uses this version)
+- Xcode 26.2 (CI uses this version, same as primer-sdk-ios)
 
 ## Version Management
 - Version is defined in `Primer3DS.podspec` (current: 2.7.0)
